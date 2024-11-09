@@ -1,7 +1,7 @@
 # CHIIDS
 Center for Holistic Integration Integrated Digital System
 
-[Link to the Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)
+[Link to the Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing) 2024-09-21  
 
 # CHI Integrated Digital System (CHIIDS) - Summary
 
