@@ -21,13 +21,40 @@ CHIIDS is guided by CHI's core philosophy of _Holistic Integration_ and the _Bal
 ## Core Components
 CHIIDS is structured around four essential components:
 
-1. **Project Management**: Facilitates task assignments, progress tracking, resource allocation, and milestone management across projects, reducing redundancy and improving overall management efficiency.
+1. **Project Management**: Facilitates task assignments, progress tracking, resource allocation, and milestone management across projects, reducing redundancy and improving overall management efficiency.  
+    - 1.1 Project 1  
+    - 1.2 Project 2  
+    - 1.n Project n  
 
 2. **Communications**: Provides real-time collaboration tools for internal teams and external partners, supporting public engagement and ensuring information flows seamlessly between all stakeholders.
+     - 2.1 Internal Communcation
+       - 2.1.1 Project Communication
+       - 2.1.2 Extra-CHI Communication
+       - 2.1.3 Meta-Project Communication
+     - 2.2 External Communication
+       - 2.2.1 Public Web site
+       - 2.2.2 Social Media
+       - 2.2.3 Research Opportunities 
 
-3. **Storage**: Centralized and secure organization of project documents, media, and deliverables, with efficient version control and archival functionality, ensuring all data is well-managed and easily accessible.
-
+3. **Storage**: Centralized and secure organization of project documents, media, and deliverables, with efficient version control and archival functionality, ensuring all data is well-managed and easily accessible.  
+     - 3.1 Documentation Repositories
+       - 3.1.1 Project Documentation
+       - 3.1.2 Version Control
+       - 3.1.3 Meta-Project Assessment
+     - 3.2 Archiving  
+       - 3.2.1 Project Archives
+       - 3.2.2 Administrative Archives
+       - 3.2.3 Living Archive(?)
+     -  3.3 Dynamic Virtual Environments
+       - 3.3.1 Virtual Worlds
+       - 3.3.2 World Canons/wikis
+       - 3.3.3 Research Databases
+       - 3.3.4 LLM datasets
+        
 4. **Integration with External Systems**: Recognizing the collaborative nature of CHI’s mission, this component enables CHIIDS to connect with external tools and platforms via APIs, ensuring smooth interaction with different systems and preserving project integrity without reinventing or duplicating capabilities.
+     - 4.1 External System 1
+     - 4.2 External System 2
+     - 4.n External System n
 
 ## System Components and Data Types
 CHIIDS manages a variety of data, including:
