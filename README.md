@@ -44,17 +44,17 @@ CHIIDS is structured around four essential components:
      - 3.2 Archiving  
        - 3.2.1 Project Archives
        - 3.2.2 Administrative Archives
-       - 3.2.3 Living Archive(?)
-     -  3.3 Dynamic Virtual Environments
+       - 3.2.3 Living Archive
+     - 3.3 Dynamic Virtual Environments  
        - 3.3.1 Virtual Worlds
        - 3.3.2 World Canons/wikis
        - 3.3.3 Research Databases
        - 3.3.4 LLM datasets
         
 4. **Integration with External Systems**: Recognizing the collaborative nature of CHI’s mission, this component enables CHIIDS to connect with external tools and platforms via APIs, ensuring smooth interaction with different systems and preserving project integrity without reinventing or duplicating capabilities.
-     - 4.1 External System 1
-     - 4.2 External System 2
-     - 4.n External System n
+    - 4.1 External System 1
+    - 4.2 External System 2
+    - 4.n External System n
 
 ## System Components and Data Types
 CHIIDS manages a variety of data, including:
