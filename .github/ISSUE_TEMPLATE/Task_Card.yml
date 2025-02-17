@@ -1,0 +1,93 @@
+name: "01 Task Issue"
+description: "Template for tracking individual project tasks."
+labels: [task, tracking]
+assignees: []
+body:
+  - type: textarea
+    id: task_description
+    attributes:
+      label: "Task Description"
+      description: "Provide a brief description of what this task entails"
+    validations:
+      required: true
+
+  - type: input
+    id: milestone
+    attributes:
+      label: "Associated Milestone"
+      description: "Enter the milestone this task is associated with"
+
+  - type: input
+    id: due_date
+    attributes:
+      label: "Due Date"
+      description: "Enter the due date for this task"
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: "Status"
+      description: "Select the current status of the task"
+      options:
+        - "Not Started"
+        - "In Progress"
+        - "Completed"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to Complete"
+      description: "List the steps needed to complete this task"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies"
+      description: "List any other tasks or resources required before starting this task"
+
+  - type: textarea
+    id: challenges
+    attributes:
+      label: "Challenges & Notes"
+      description: "Describe any potential roadblocks or important considerations"
+
+  - type: textarea
+    id: review_feedback
+    attributes:
+      label: "Review & Feedback"
+      description: "Request feedback from at least one peer or instructor"
+
+  - type: dropdown
+    id: ai_label
+    attributes:
+      label: "AI Involvement Level"
+      description: "Select the level of AI involvement in this task"
+      options:
+        - "No AI Used"
+        - "Minimal AI Assistance"
+        - "Moderate AI Involvement"
+        - "Extensive AI Use"
+
+  - type: textarea
+    id: ai_use
+    attributes:
+      label: "AI Use in Task"
+      description: "If AI was used, describe which AI tools were used in completing this task and how they contributed."
+
+  - type: textarea
+    id: next_steps
+    attributes:
+      label: "Next Steps"
+      description: "Outline what follows after completing this task"
+
+  - type: checkboxes
+    id: final_check
+    attributes:
+      label: "Final Check"
+      options:
+        - label: "Ensure all steps are completed before marking this issue as Completed"
+          required: true
