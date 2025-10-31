@@ -1,9 +1,12 @@
 # CHIIDS
-Center for Holistic Integration Integrated Digital System
+
+<img src="assets/ChatGPT_CHIIDS_Logo.png" alt="CHIIDS Logo" width="100" align="left" style="margin-left: 5px; margin-bottom: 15px;"/>
+
+# Center for Holistic Integration Integrated Digital System
 
 [Link to the Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing) 2024-09-21  
 
-# CHI Integrated Digital System (CHIIDS) - Summary
+## CHI Integrated Digital System (CHIIDS) - Summary
 
 The CHI Integrated Digital System (CHIIDS) is a modular digital framework developed to support the collaborative mission of the Center for Holistic Integration (CHI). It enhances interdisciplinary projects, maintains project integrity, and ensures efficient use of existing tools while integrating seamlessly with external systems. A guiding philosophy of CHIIDS is **Integration over Creation**—instead of building redundant tools, CHIIDS integrates existing systems into the larger ecosystem, allowing CHI to focus on innovation and essential project goals.
 
@@ -51,10 +54,15 @@ CHIIDS is structured around four essential components:
        - 3.3.3 Research Databases
        - 3.3.4 LLM datasets
         
-4. **Integration with External Systems**: Recognizing the collaborative nature of CHI’s mission, this component enables CHIIDS to connect with external tools and platforms via APIs, ensuring smooth interaction with different systems and preserving project integrity without reinventing or duplicating capabilities.
+4. **Integration with External Systems**: Recognizing the collaborative nature of CHI's mission, this component enables CHIIDS to connect with external tools and platforms via APIs, ensuring smooth interaction with different systems and preserving project integrity without reinventing or duplicating capabilities.
     - 4.1 External System 1
     - 4.2 External System 2
     - 4.n External System n
+
+### CHIIDS System Map
+
+![CHIIDS V1 System Map showing the four core components - Project Management, Communications, Storage, and Integration with External Systems - and their interconnected subsystems and data flows within the Center for Holistic Integration's digital ecosystem](assets/CHIIDS_V1.jpg)
+*Visual representation of the CHIIDS integrated system architecture and component relationships*
 
 ## System Components and Data Types
 CHIIDS manages a variety of data, including:
