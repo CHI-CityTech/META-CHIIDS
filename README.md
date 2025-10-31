@@ -73,6 +73,7 @@ CHIIDS manages a variety of data, including:
 - **Media Data**: Manages multimedia outputs and project-related media.
 - **Archival Data**: Preserves historical project data and outcomes for future reference.
 - **Communication Logs**: Tracks both internal and external communications for continuity across projects.
+- **Virtual Environments**: Maintains datasets for CHI-sponsored virtual environments/worlds/games  
 
 ## Tentative Subsystems
 In keeping with the principle of **Integration over Creation**, CHIIDS integrates existing systems to ensure smooth functionality across all project activities:
