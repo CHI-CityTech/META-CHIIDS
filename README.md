@@ -187,10 +187,18 @@ The CHIIDS ecosystem is stored in a SQLite database (`database/chiids.db`) with 
 
 ### Quick Start
 
-**Web UI (Recommended):**
-1. **🌐 Live Public Access:** [chiids-hnob40vt2-david-b-smiths-projects.vercel.app](https://chiids-hnob40vt2-david-b-smiths-projects.vercel.app) — explore, search, and export from anywhere
-2. **Local Testing:** Run `python3 -m datasette database/chiids.db` → Open http://localhost:8001
-3. **How to Use:** See [USAGE.md](USAGE.md) for search, filter, and export instructions
+**Web UI (Recommended for Local Use):**
+1. **Local Web Interface:** Run `python3 -m datasette database/chiids.db` → Open http://localhost:8001
+2. **How to Use:** See [USAGE.md](USAGE.md) for search, filter, and export instructions
+3. **Cloud Hosting:** See [DATASETTE.md](DATASETTE.md) for deployment to Railway, Render, or Heroku
+
+**CLI (Quick Queries - Works Everywhere):**
+```bash
+python3 scripts/chiids_cli.py list-projects
+python3 scripts/chiids_cli.py hierarchy
+python3 scripts/chiids_cli.py dependencies --slug ai-integrated-performance
+python3 scripts/chiids_cli.py project --slug blended-reality-performance-system
+```
 
 **CLI (no dependencies):**
 ```bash
@@ -213,19 +221,19 @@ See [database/INITIALIZATION.md](database/INITIALIZATION.md) for example queries
 
 ### Cloud Deployment (Public Access)
 
-✅ **Live now!** Your database is deployed to Vercel at:
-**[chiids-hnob40vt2-david-b-smiths-projects.vercel.app](https://chiids-hnob40vt2-david-b-smiths-projects.vercel.app)**
+**Option 1: Railway (Recommended for Datasette)**
+Railway natively supports Python ASGI apps. See [DATASETTE.md](DATASETTE.md) for step-by-step deployment.
 
-Anyone can search, filter, and export CHIIDS project data from their browser—no installation needed.
+**Option 2: Render.com**
+Similar to Railway; also supports Python web services well.
 
-**To redeploy after database updates:**
+**Option 3: Heroku**
+Free tier discontinued, but still available on paid plans.
+
+**Local Alternative (Works Great):**
 ```bash
-# After updating seed_data.sql locally:
-rm database/chiids.db
-sqlite3 database/chiids.db < database/schema.sql < database/seed_data.sql
-
-# Redeploy:
-vercel deploy --prod
+python3 -m datasette database/chiids.db
+# Open http://localhost:8001 in your browser
 ```
 
 See [DATASETTE.md](DATASETTE.md) for detailed deployment instructions.
