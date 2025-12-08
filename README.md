@@ -187,6 +187,14 @@ The CHIIDS ecosystem is stored in a SQLite database (`database/chiids.db`) with 
 
 ### Quick Start
 
+**Web UI (Recommended):**
+Deploy a searchable, filterable web explorer using [Datasette](DATASETTE.md):
+```bash
+pip install datasette
+datasette database/chiids.db
+# Open http://localhost:8001
+```
+
 **CLI (no dependencies):**
 ```bash
 python3 scripts/chiids_cli.py list-projects

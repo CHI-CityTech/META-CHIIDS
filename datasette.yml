@@ -1,0 +1,58 @@
+title: CHIIDS Meta-Project Explorer
+description: Discover CHI projects by domain, type, and dependencies
+
+databases:
+  chiids:
+    tables:
+      projects:
+        sortable_columns:
+          - name
+          - domain
+          - type
+          - status
+          - created_date
+        searchable: true
+        facet_columns:
+          - domain
+          - type
+          - status
+        units:
+          project_id: ID
+      dependencies:
+        searchable: true
+        facet_columns:
+          - relationship_type
+      tags:
+        searchable: true
+        facet_columns:
+          - category
+      project_tags:
+        hidden: true
+      bbs_syntax:
+        sortable_columns:
+          - project_id
+          - created_date
+      project_activity:
+        sortable_columns:
+          - semester
+          - project_id
+        facet_columns:
+          - semester
+          - status
+
+allow_facet:
+  - domain
+  - type
+  - status
+  - relationship_type
+  - category
+
+plugins:
+  datasette-json-html: {}
+
+# Enable query parameter faceting
+facet_limit: 30
+max_insert_or_update_json_units: 1000
+
+# Allow advanced users to run custom SQL
+allow_csv_stream: true
