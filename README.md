@@ -181,6 +181,37 @@ See **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** for full integration g
 
 ---
 
+## Explore the Meta-Project Database
+
+The CHIIDS ecosystem is stored in a SQLite database (`database/chiids.db`) with queryable projects, dependencies, and tags.
+
+### Quick Start
+
+**CLI (no dependencies):**
+```bash
+python3 scripts/chiids_cli.py list-projects
+python3 scripts/chiids_cli.py hierarchy
+python3 scripts/chiids_cli.py dependencies --slug ai-integrated-performance
+python3 scripts/chiids_cli.py project --slug blended-reality-performance-system
+```
+
+**VS Code GUI:**
+1. Install the SQLite extension (alexcvzz)
+2. `Cmd+Shift+P` → "SQLite: Open Database" → `database/chiids.db`
+3. Browse tables in the Explorer sidebar
+
+**Interactive SQL:**
+```bash
+sqlite3 database/chiids.db
+```
+See [database/INITIALIZATION.md](database/INITIALIZATION.md) for example queries.
+
+### On GitHub Pages
+
+Auto-generated project hierarchy and dependency graphs are published to the CHI-CityTech wiki. See [links in the organization](https://github.com/CHI-CityTech).
+
+---
+
 ## The CHIIDS System Map
 
 ![CHIIDS V1 System Map showing the four core components - Project Management, Communications, Storage, and Integration with External Systems - and their interconnected subsystems and data flows within the Center for Holistic Integration's digital ecosystem](assets/CHIIDS_V1.jpg)

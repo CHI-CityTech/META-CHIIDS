@@ -1,0 +1,88 @@
+name: Generate Project Hierarchy Report
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'database/seed_data.sql'
+      - 'database/schema.sql'
+  workflow_dispatch:
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Initialize database
+        run: |
+          sqlite3 database/chiids.db < database/schema.sql
+          sqlite3 database/chiids.db < database/seed_data.sql
+
+      - name: Generate hierarchy report
+        run: |
+          python3 << 'EOF'
+          import sqlite3
+          
+          conn = sqlite3.connect('database/chiids.db')
+          conn.row_factory = sqlite3.Row
+          
+          # Query all projects with hierarchy
+          rows = conn.execute("""
+            SELECT p.name, p.slug, p.type, pp.name as parent_name, p.description, p.domain
+            FROM projects p
+            LEFT JOIN projects pp ON p.primary_parent_id = pp.project_id
+            WHERE p.status = 'active'
+            ORDER BY COALESCE(pp.name, 'ZZZ'), p.name
+          """).fetchall()
+          
+          # Query dependencies
+          deps = conn.execute("""
+            SELECT p.name, dp.name as depends_on, d.description
+            FROM dependencies d
+            JOIN projects p ON d.project_id = p.project_id
+            JOIN projects dp ON d.depends_on_id = dp.project_id
+            ORDER BY p.name, dp.name
+          """).fetchall()
+          
+          conn.close()
+          
+          # Generate markdown
+          with open('docs/PROJECT_HIERARCHY.md', 'w') as f:
+            f.write("# CHIIDS Project Hierarchy (Auto-Generated)\n\n")
+            f.write("_Last generated: " + __import__('datetime').datetime.now().isoformat() + "_\n\n")
+            
+            f.write("## Projects by Hierarchy\n\n")
+            current_parent = None
+            for row in rows:
+              parent = row['parent_name'] or '(root)'
+              if parent != current_parent:
+                f.write(f"\n### Parent: {parent}\n\n")
+                current_parent = parent
+              f.write(f"- **{row['name']}** ({row['type']})\n")
+              f.write(f"  - Slug: `{row['slug']}`\n")
+              f.write(f"  - Domain: {row['domain']}\n")
+              if row['description']:
+                f.write(f"  - {row['description']}\n")
+            
+            f.write("\n## Dependencies\n\n")
+            for row in deps:
+              f.write(f"- **{row['name']}** depends on **{row['depends_on']}**\n")
+              if row['description']:
+                f.write(f"  - _{row['description']}_\n")
+          
+          print("✓ Generated docs/PROJECT_HIERARCHY.md")
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/PROJECT_HIERARCHY.md
+          git commit -m "chore: auto-generate project hierarchy report" || echo "No changes to commit"
+          git push
