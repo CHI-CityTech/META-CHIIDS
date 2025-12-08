@@ -188,7 +188,7 @@ The CHIIDS ecosystem is stored in a SQLite database (`database/chiids.db`) with 
 ### Quick Start
 
 **Web UI (Recommended):**
-1. **🌐 Live Public Access:** [chiids-dcha87xgm-david-b-smiths-projects.vercel.app](https://chiids-dcha87xgm-david-b-smiths-projects.vercel.app) — explore, search, and export from anywhere
+1. **🌐 Live Public Access:** [chiids-hnob40vt2-david-b-smiths-projects.vercel.app](https://chiids-hnob40vt2-david-b-smiths-projects.vercel.app) — explore, search, and export from anywhere
 2. **Local Testing:** Run `python3 -m datasette database/chiids.db` → Open http://localhost:8001
 3. **How to Use:** See [USAGE.md](USAGE.md) for search, filter, and export instructions
 
@@ -213,10 +213,10 @@ See [database/INITIALIZATION.md](database/INITIALIZATION.md) for example queries
 
 ### Cloud Deployment (Public Access)
 
-✅ **Live now!** Your database is already deployed to Vercel at:
-**[chiids-dcha87xgm-david-b-smiths-projects.vercel.app](https://chiids-dcha87xgm-david-b-smiths-projects.vercel.app)**
+✅ **Live now!** Your database is deployed to Vercel at:
+**[chiids-hnob40vt2-david-b-smiths-projects.vercel.app](https://chiids-hnob40vt2-david-b-smiths-projects.vercel.app)**
 
-Anyone can now search, filter, and export CHIIDS project data from their browser—no installation needed.
+Anyone can search, filter, and export CHIIDS project data from their browser—no installation needed.
 
 **To redeploy after database updates:**
 ```bash
@@ -225,7 +225,7 @@ rm database/chiids.db
 sqlite3 database/chiids.db < database/schema.sql < database/seed_data.sql
 
 # Redeploy:
-python3 -m datasette publish vercel database/chiids.db --project chiids
+vercel deploy --prod
 ```
 
 See [DATASETTE.md](DATASETTE.md) for detailed deployment instructions.
