@@ -107,3 +107,21 @@ Once database is verified:
 1. Create Python CLI tool for querying
 2. Set up GitHub Action for semester sync
 3. Add database initialization to README setup instructions
+
+---
+
+## Optional: Python CLI for Quick Queries
+
+A lightweight helper is available at `scripts/chiids_cli.py` (no extra deps beyond Python + sqlite3).
+
+Examples:
+
+```bash
+python scripts/chiids_cli.py list-projects
+python scripts/chiids_cli.py hierarchy
+python scripts/chiids_cli.py dependencies --slug ai-integrated-performance
+python scripts/chiids_cli.py project --slug blended-reality-performance-system
+python scripts/chiids_cli.py tags
+```
+
+Use `--db` to point to a different SQLite file if needed.
