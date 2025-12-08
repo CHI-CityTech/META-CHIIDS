@@ -6,45 +6,69 @@
 
 1. Install Datasette:
 ```bash
-pip install datasette
+pip3 install datasette
 ```
 
 2. Run locally:
 ```bash
-cd /Users/davidsmith/Dropbox\ \(Personal\)/GitHub/META-CHIIDS
-datasette database/chiids.db --port 8001
+python3 -m datasette database/chiids.db
 ```
 
-3. Open http://localhost:8001 in your browser. You can:
-   - Browse all tables
-   - Click on rows to inspect
-   - Use the search box to filter by text
-   - Click column headers to sort
-   - Use facets (checkboxes) to filter by domain, type, status, etc.
+3. Open **http://localhost:8001** in your browser
 
-## Deploy to Vercel (Recommended)
+See [USAGE.md](USAGE.md) for complete search, filter, and export instructions.
 
-Datasette can be deployed serverlessly to Vercel for free:
+## Deploy to Vercel (Recommended for Public Access)
 
-1. Install the Datasette CLI:
+The database file is stored in the repository, so deployment is simple:
+
+1. Make sure you're authenticated with Vercel:
 ```bash
-pip install datasette
+pip3 install datasette
+datasette auth token
+# (Follow Vercel sign-up/login prompts)
 ```
 
-2. Create a `datasette.yml` config file in the repo root (see below)
-
-3. Deploy:
+2. Deploy directly from the repo:
 ```bash
-datasette publish vercel database/chiids.db --project chiids
+datasette publish vercel database/chiids.db \
+  --project chiids-explorer \
+  --install datasette-csv
 ```
 
-This creates a live URL where anyone can search the projects.
+3. **Vercel creates a live URL** (e.g., `https://chiids-explorer.vercel.app`)
+   - Database is automatically published from your local file
+   - Anyone with the URL can search and explore
+   - No authentication or backend server needed
+
+4. Update your README with the public URL:
+```markdown
+🌐 **Explore the Database Online:** [chiids-explorer.vercel.app](https://chiids-explorer.vercel.app)
+```
+
+### How Database Updates Work
+
+When you update `database/seed_data.sql`:
+1. **Regenerate local database:** `rm database/chiids.db && sqlite3 database/chiids.db < database/schema.sql < database/seed_data.sql`
+2. **Redeploy to Vercel:** `datasette publish vercel database/chiids.db --project chiids-explorer`
+
+The published instance reflects your latest data.
+
+### Why Vercel?
+
+- **Free tier** for small datasets (CHIIDS is tiny)
+- **HTTPS by default**
+- **Automatic CORS** for API access
+- **Instant redeploy** on database changes
+- **No server management**
 
 ## Deploy to Heroku (Alternative)
 
 ```bash
-datasette publish heroku database/chiids.db --project chiids
+datasette publish heroku database/chiids.db --project chiids-childs
 ```
+
+Similar to Vercel but requires Heroku account. Vercel is simpler for SQLite.
 
 ## Configuration
 

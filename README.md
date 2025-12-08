@@ -188,12 +188,9 @@ The CHIIDS ecosystem is stored in a SQLite database (`database/chiids.db`) with 
 ### Quick Start
 
 **Web UI (Recommended):**
-Deploy a searchable, filterable web explorer using [Datasette](DATASETTE.md):
-```bash
-pip install datasette
-datasette database/chiids.db
-# Open http://localhost:8001
-```
+1. **Local Testing:** [DATASETTE.md](DATASETTE.md) → Run `python3 -m datasette database/chiids.db` → Open http://localhost:8001
+2. **Public Access:** Deploy to Vercel (see cloud deployment below)
+3. **How to Use:** See [USAGE.md](USAGE.md) for search, filter, and export instructions
 
 **CLI (no dependencies):**
 ```bash
@@ -213,6 +210,27 @@ python3 scripts/chiids_cli.py project --slug blended-reality-performance-system
 sqlite3 database/chiids.db
 ```
 See [database/INITIALIZATION.md](database/INITIALIZATION.md) for example queries.
+
+### Cloud Deployment (Public Access)
+
+To share the database with collaborators online:
+
+```bash
+# One-time setup: authenticate with Vercel
+pip3 install datasette
+datasette auth token
+
+# Deploy
+datasette publish vercel database/chiids.db --project chiids-explorer
+```
+
+This creates a live, public URL (e.g., `https://chiids-explorer.vercel.app`) where anyone can:
+- Search and filter all projects
+- Export results to CSV/JSON
+- Explore dependencies and relationships
+- Share filtered views via URL
+
+See [DATASETTE.md](DATASETTE.md) for detailed deployment instructions and updates.
 
 ### On GitHub Pages
 
