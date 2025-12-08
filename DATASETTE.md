@@ -18,115 +18,89 @@ python3 -m datasette database/chiids.db
 
 See [USAGE.md](USAGE.md) for complete search, filter, and export instructions.
 
-## Deploy to Vercel (Recommended for Public Access)
+## Deploy to Railway (Recommended for Public Access)
 
-The database file is stored in the repository, so deployment is simple:
+Railway natively supports Python ASGI applications and is ideal for Datasette:
 
-1. Make sure you're authenticated with Vercel:
-```bash
-pip3 install datasette
-datasette auth token
-# (Follow Vercel sign-up/login prompts)
-```
+1. **Create Railway account** at [railway.app](https://railway.app)
 
-2. Deploy directly from the repo:
-```bash
-datasette publish vercel database/chiids.db \
-  --project chiids-explorer \
-  --install datasette-csv
-```
+2. **Create a new project** and select "Deploy from GitHub"
 
-3. **Vercel creates a live URL** (e.g., `https://chiids-explorer.vercel.app`)
-   - Database is automatically published from your local file
-   - Anyone with the URL can search and explore
-   - No authentication or backend server needed
+3. **Connect your GitHub repo** (META-CHIIDS)
 
-4. Update your README with the public URL:
-```markdown
-🌐 **Explore the Database Online:** [chiids-explorer.vercel.app](https://chiids-explorer.vercel.app)
-```
+4. **Set environment variable**:
+   ```
+   PORT=8000
+   ```
 
-### How Database Updates Work
+5. **Railway auto-detects** `requirements.txt` and deploys
+   - Database file (`database/chiids.db`) is included
+   - Datasette starts automatically
+   - Get a live URL instantly
 
-When you update `database/seed_data.sql`:
-1. **Regenerate local database:** `rm database/chiids.db && sqlite3 database/chiids.db < database/schema.sql < database/seed_data.sql`
-2. **Redeploy to Vercel:** `datasette publish vercel database/chiids.db --project chiids-explorer`
+6. **Access your database**:
+   ```
+   https://YOUR-RAILWAY-PROJECT.up.railway.app
+   ```
 
-The published instance reflects your latest data.
+### Updating Database
 
-### Why Vercel?
-
-- **Free tier** for small datasets (CHIIDS is tiny)
-- **HTTPS by default**
-- **Automatic CORS** for API access
-- **Instant redeploy** on database changes
-- **No server management**
-
-## Deploy to Heroku (Alternative)
-
-```bash
-datasette publish heroku database/chiids.db --project chiids-childs
-```
-
-Similar to Vercel but requires Heroku account. Vercel is simpler for SQLite.
-
-## Configuration
-
-Create `datasette.yml` in the repo root to customize the UI:
-
-```yaml
-title: CHIIDS Meta-Project Explorer
-description: Discover CHI projects by domain, expertise, and dependencies
-
-databases:
-  chiids:
-    tables:
-      projects:
-        sortable_columns:
-          - name
-          - domain
-          - type
-          - status
-        searchable: true
-        facet_columns:
-          - domain
-          - type
-          - status
-      dependencies:
-        searchable: true
-        facet_columns:
-          - relationship_type
-      tags:
-        searchable: true
-
-allow_facet:
-  - domain
-  - type
-  - status
-
-plugins:
-  datasette-json-html:
-    enabled: true
-```
-
-## Features
-
-Once deployed, users can:
-- **Search** projects by name, description, keywords
-- **Filter** by domain (Theory, Engineering, Creative, etc.)
-- **Filter** by type (meta-project, sub-project, infrastructure)
-- **Filter** by status (active, inactive, planned, archived)
-- **Explore** dependencies and related projects
-- **View** full project details and metadata
-- **Export** results as JSON, CSV, or other formats (built-in)
-
-## Next Steps
-
-1. Test locally: `datasette database/chiids.db`
-2. Create `datasette.yml` config (optional but recommended)
-3. Deploy to Vercel or Heroku when ready
-4. Link the public URL in README and GitHub Pages
+1. Update `database/seed_data.sql` and push to GitHub
+2. Regenerate locally: `rm database/chiids.db && sqlite3 database/chiids.db < database/schema.sql < database/seed_data.sql`
+3. Commit and push: Railway auto-redeploys on every push
 
 ---
 
-See https://datasette.io/ for full documentation and advanced features.
+## Alternative: Deploy to Render.com
+
+Render also supports Python web services:
+
+1. Go to [render.com](https://render.com)
+2. Create new "Web Service"
+3. Connect GitHub repo
+4. Use `python3 -m datasette database/chiids.db --host 0.0.0.0 --port 8000` as start command
+5. Deploy and get a public URL
+
+---
+
+## Deploy to Vercel (Legacy - Has Issues)
+
+⚠️ **Note:** Datasette on Vercel's serverless functions has compatibility issues with ASGI initialization. Railway or Render are recommended instead.
+
+The original `datasette publish vercel` command is deprecated and no longer works reliably.
+
+If you still want to try:
+```bash
+datasette publish vercel database/chiids.db --project chiids
+---
+
+## Local Alternative (Recommended for Development)
+
+```bash
+pip3 install datasette
+python3 -m datasette database/chiids.db
+# Open http://localhost:8001 in your browser
+```
+
+Perfect for:
+- Development and testing
+- Sharing with teammates on the same network
+- Custom plugin development
+- Learning Datasette
+
+---
+
+## Features
+
+Once deployed (locally or cloud), users can:
+- **Search** projects by name, description, keywords
+- **Filter** by domain (Engineering, Artistic, Infrastructure, Foundational)
+- **Filter** by type (meta-project, sub-project)
+- **Filter** by status (active, inactive, planned, archived)
+- **Explore** dependencies and related projects
+- **View** full project details and metadata
+- **Export** results as JSON or CSV (built-in)
+
+---
+
+See https://datasette.io/ for full documentation.
