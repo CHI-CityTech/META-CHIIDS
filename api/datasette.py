@@ -1,19 +1,15 @@
-"""Datasette ASGI app for Vercel serverless deployment"""
-import os
+"""Simple HTTP server wrapper for Datasette on Vercel"""
 from pathlib import Path
 from datasette.app import Datasette
 
-# Path to the database file (relative to this file)
-db_path = Path(__file__).parent.parent / "database" / "chiids.db"
+# Database path relative to this file
+db_path = str(Path(__file__).parent.parent / "database" / "chiids.db")
 
-# Create Datasette instance
-ds = Datasette(
-    [str(db_path)],
+# Create and export the ASGI app
+app = Datasette(
+    [db_path],
     metadata={
         "title": "CHIIDS Meta-Project Explorer",
         "description": "Discover CHI projects, dependencies, and expertise domains",
     }
-)
-
-# ASGI app for Vercel
-app = ds.app()
+).app()
