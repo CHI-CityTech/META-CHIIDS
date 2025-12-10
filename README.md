@@ -193,6 +193,23 @@ The CHIIDS ecosystem is stored in a SQLite database (`database/chiids.db`) with 
 3. **Cloud Hosting:** See [DATASETTE.md](DATASETTE.md) for deployment to Railway, Render, or Heroku
 
 **CLI (Quick Queries - Works Everywhere):**
+
+**🎨 React Web App (New!):**
+1. **Navigate to frontend:** `cd frontend`
+2. **Install dependencies:** `npm install`
+3. **Start the app:** `npm run dev`
+4. **Open browser:** http://localhost:5173
+
+The React app provides:
+- **Project Discovery** — Browse all CHIIDS projects as interactive cards
+- **Search & Filter** — Filter by domain, type, status
+- **Project Details** — Click to see full information and dependencies
+- **Modern UI** — Responsive design built with React + TailwindCSS
+
+See [frontend/README.md](frontend/README.md) for architecture and customization.
+
+**Important:** The React app queries the Datasette API at `http://localhost:8001`. Make sure Datasette is running in a separate terminal before starting the frontend!
+
 ```bash
 python3 scripts/chiids_cli.py list-projects
 python3 scripts/chiids_cli.py hierarchy
