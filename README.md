@@ -6,7 +6,7 @@ The digital nervous system for the Center for Holistic Integration (CHI) and the
 
 CHIIDS is a distributed, three-layer digital ecosystem designed to support the entire lifecycle of CHI's meta-projects: from theoretical proposal through active research to long-term archival.
 
-**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Abstract](ABSTRACT.md)** | **[Getting Started](#getting-started)**
+**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Abstract](docs/overview.md)** | **[Getting Started](#getting-started)**
 
 ---
 
@@ -189,8 +189,8 @@ The CHIIDS ecosystem is stored in a SQLite database (`database/chiids.db`) with 
 
 **Web UI (Recommended for Local Use):**
 1. **Local Web Interface:** Run `python3 -m datasette database/chiids.db` → Open http://localhost:8001
-2. **How to Use:** See [USAGE.md](USAGE.md) for search, filter, and export instructions
-3. **Cloud Hosting:** See [DATASETTE.md](DATASETTE.md) for deployment to Railway, Render, or Heroku
+2. **How to Use:** See [Usage Guide](docs/usage.md) for search, filter, and export instructions
+3. **Cloud Hosting:** See [Datasette Integration](docs/integrations/datasette.md) for deployment to Railway, Render, or Heroku
 
 **CLI (Quick Queries - Works Everywhere):**
 
@@ -239,7 +239,7 @@ See [database/INITIALIZATION.md](database/INITIALIZATION.md) for example queries
 ### Cloud Deployment (Public Access)
 
 **Option 1: Railway (Recommended for Datasette)**
-Railway natively supports Python ASGI apps. See [DATASETTE.md](DATASETTE.md) for step-by-step deployment.
+Railway natively supports Python ASGI apps. See [Datasette Integration](docs/integrations/datasette.md) for step-by-step deployment.
 
 **Option 2: Render.com**
 Similar to Railway; also supports Python web services well.
@@ -253,7 +253,7 @@ python3 -m datasette database/chiids.db
 # Open http://localhost:8001 in your browser
 ```
 
-See [DATASETTE.md](DATASETTE.md) for detailed deployment instructions.
+See [Datasette Integration](docs/integrations/datasette.md) for detailed deployment instructions.
 
 ### On GitHub Pages
 
