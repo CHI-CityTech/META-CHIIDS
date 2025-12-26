@@ -1,4 +1,4 @@
-CHI Integrated Digital System (CHIIDS) — Abstract
+# CHI Integrated Digital System (CHIIDS) — Abstract
 
 The CHI Integrated Digital System (CHIIDS) is a modular framework designed to support the Center for Holistic Integration's interdisciplinary projects by emphasizing integration over duplication. CHIIDS provides a lightweight, interoperable architecture that connects project management, communications, storage, and external systems into a cohesive digital ecosystem. The design prioritizes scalability, user accessibility, data security, and adaptability to different collaboration models. Key functions include task and milestone tracking, real-time and asynchronous communication channels, centralized document and media storage with versioning and archiving, and API-driven integration points to leverage established external tools.
 
