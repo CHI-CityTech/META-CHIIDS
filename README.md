@@ -22,14 +22,14 @@ The system is built on three interacting layers:
 2. **Research Coordination** — Semester-updated student assignments and project tracking  
 3. **Execution** — Individual team repositories where actual work happens
 
-See **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** for the full three-layer system description.
+See **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** for the full three-layer system description.
 
 ---
 
 ## Quick Links
 
 ### Core Documentation
-- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** — The three-layer system design and how layers connect
+- **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** — The three-layer system design and how layers connect
 - **[ECOSYSTEM.md](docs/ECOSYSTEM.md)** — Current state of all CHI meta-projects (coming soon)
 - **[GLOSSARY.md](docs/GLOSSARY.md)** — Definitions of key terms (BBS, BRPS, BSP, CAI, meta-project, etc.)
 - **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** — How CHIIDS connects to GitHub, OpenLab, WorldAnvil, Zotero, and other systems
@@ -84,7 +84,7 @@ See **[ECOSYSTEM.md](docs/ECOSYSTEM.md)** for comprehensive descriptions.
 ## Getting Started
 
 ### For Faculty/PIs
-1. Read **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** — understand the three-layer system
+1. Read **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** — understand the three-layer system
 2. Use **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** to propose new projects
 3. Store proposals in `/database/proposals/[project_name]/`
 4. Update SQLite metadata with project information
@@ -97,7 +97,7 @@ See **[ECOSYSTEM.md](docs/ECOSYSTEM.md)** for comprehensive descriptions.
 5. Document AI usage in your team repo README
 
 ### For StudentResearch Managers
-1. Review **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** for the coordination layer role
+1. Review **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** for the coordination layer role
 2. Use **[PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)** for each active project per semester
 3. Link proposals from META-CHIIDS to team repositories
 4. Maintain semester rosters and milestone tracking
@@ -277,7 +277,7 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ## For More Information
 
-- **Architecture & Design:** [ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- **Architecture & Design:** [ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)
 - **Current Ecosystem:** [ECOSYSTEM.md](docs/ECOSYSTEM.md)
 - **Key Terms:** [GLOSSARY.md](docs/GLOSSARY.md)
 - **External Integration:** [INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)
