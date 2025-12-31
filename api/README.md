@@ -67,3 +67,7 @@ The [React frontend](../frontend) consumes this API. Ensure the API is running l
 ---
 
 For full deployment and integration guidance, see [`docs/integrations/datasette.md`](../docs/integrations/datasette.md).
+
+## Related Docs
+- Deployment configs: [`deployment/`](../deployment)
+- Datasette integration guide: [`docs/integrations/datasette.md`](../docs/integrations/datasette.md)
