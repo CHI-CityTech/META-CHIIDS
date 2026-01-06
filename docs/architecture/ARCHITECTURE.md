@@ -4,6 +4,25 @@
 
 The CHI Integrated Digital System (CHIIDS) is a distributed digital ecosystem consisting of three interacting layers, each with distinct responsibilities and temporal characteristics. This document describes how these layers work together to support the Balanced Blended Space (BBS) framework and all related CHI meta-projects.
 
+---
+
+## Important: CHIIDS as Structural Blueprint, Not Territory
+
+**CHIIDS is the architectural map, not the territory.**
+
+This repository documents **how** the CHI research ecosystem is organized and coordinated. It does not duplicate project content. For project details, proposals, and active work, see the authoritative sources:
+
+- **For Meta-Project Descriptions & Proposals** → [CHI-CityTech Organization](https://github.com/CHI-CityTech)
+  - Example: [META-Balanced-Blended-Space](https://github.com/CHI-CityTech/META-Balanced-Blended-Space)
+- **For Semester Activity & Coordination** → [StudentResearch Repository](https://github.com/CHI-CityTech/StudentResearch)
+  - Project Cards, team assignments, milestones
+- **For Execution & Deliverables** → Individual team repositories in CHI-CityTech org
+  - Code, assets, research logs, sprint tracking
+
+This architecture document explains the *structure* and *principles* that organize all that activity. If you're looking for "What is BSP?" or "Who's working on BRPS this semester?", follow the links above. If you're asking "How does CHI's digital infrastructure work?", you're in the right place.
+
+---
+
 ## The Three Layers
 
 ### Layer 1: Meta-Project Layer (Permanent, Canonical)
