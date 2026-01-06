@@ -186,6 +186,131 @@ GitHub Actions maintain synchronization across layers:
    - AI documents and validates BBS compliance
    - AI helps analyze project dependencies and relationships
 
+---
+
+## External Systems & Surfaces
+
+**Note:** CHIIDS is an active work-in-progress; systems listed reflect current intended architecture and evolve as integration deepens. The structure (not specific tools) is canonical.
+
+### Primary Systems (Universal, External-Partner-Ready)
+
+These systems prioritize cross-institutional collaboration and are not locked to CUNY infrastructure.
+
+| Surface | Purpose | Primary Layer Touchpoints | Data Types |
+| --- | --- | --- | --- |
+| Slack / Discord / Mattermost | Communication, collaboration, meetings | Layer 2 (coordination), Layer 3 (team ops) | Chat logs, meeting summaries, decisions (policy-bound) |
+| Google Drive / Notion / Nextcloud / GitHub | Document storage, active collaboration, backup | Layer 1 (canonical docs), Layer 2 (coordination artifacts), Layer 3 (assets/code) | Docs, media, assets, version history |
+| GitHub | Version control, issues, CI/CD | Layer 1 (canonical proposals/DB), Layer 2 (cards/issues), Layer 3 (code) | Code, version history, issues, PRs |
+| Zenodo / OSF / Internet Archive | Long-term research archival, public access | Layer 1 (published outputs), Layer 3 (deliverables) | Research data, media, publications, DOI-minted artifacts |
+| CUNY Academic Works | Institutional repository, student/faculty publications | Layer 1 (canonical outputs), Layer 3 (deliverables) | Papers, datasets, theses, creative works with DOIs |
+| WordPress / Open Lab / Static site | Public web presence | Layer 2 (publishing coordination), Layer 3 (content sources) | Public content, project outcomes, research opportunities |
+| CHI Publications (OJS Journal) | Peer-reviewed academic journal | Layer 2 (editorial management), Layer 3 (manuscript sources) | Reviewed articles, creative scholarship, multimedia works |
+| Datasette API (or similar) | Read-only project metadata & visualization | Layers 1–3 (frontend consumption) | Project/ontology data, dashboards |
+
+### Secondary Systems (CUNY-Specific, Optional Internal Integration)
+
+These systems support internal CUNY workflows but are not required for cross-institutional collaboration.
+
+| Surface | Purpose | Primary Layer Touchpoints | Notes |
+| --- | --- | --- | --- |
+| Microsoft Teams | Internal CUNY meetings, async chat | Layer 2 (coordination), Layer 3 (team ops) | Bridge to Slack/Discord via webhooks/integrations; optional for fully external teams |
+| SharePoint / OneDrive | CUNY-managed storage, compliance | Layer 1 (backup), Layer 3 (internal file sharing) | Mirrors primary system (Google Drive/Nextcloud); consider for CUNY institutional requirements only |
+
+---
+
+## Data Domains & Stewardship
+
+- **Project Management:** Layer 1 (canonical definitions/ontology), Layer 2 (cards/assignments), Layer 3 (issues/boards).
+- **Research Opportunities Dataset:** Layer 1 (SQLite), surfaced to frontend/public; linked to StudentResearch for assignments.
+- **Docs & Reports:** Layer 1 (canonical proposals/decisions), Layer 3 (working docs); Layer 2 references and publishes.
+- **Media & Living Archive:** Produced in Layer 3; curated/published via Layer 2 to OpenLab; backed up to OneDrive/SharePoint.
+- **Version Control:** GitHub across layers; Layer 1 schema/proposals, Layer 2 coordination artifacts, Layer 3 code/assets.
+- **Communication Data:** Teams/Discord; retain per policy; summaries/decisions flow back to Layer 2 records.
+- **Backup & Archival:** OneDrive/SharePoint snapshots for Layer 1 docs, Layer 3 assets/code/virtual envs; defined cadence/retention.
+
+---
+
+## Public Engagement & Publishing Flow
+
+### General Publishing Pipeline
+
+1. Layer 3 produces code, media, and write-ups.
+2. Layer 2 curates, reviews, and approves for public release.
+3. Publish to OpenLab/WordPress (site) and Buffer (social). Track cadence and approvals in Layer 2.
+4. Archive published assets to CUNY Academic Works / Zenodo / archival storage per backup policy.
+
+### CHI Publications: Academic Journal (In Development)
+
+**Purpose:** Formalize student and faculty research outputs through peer/faculty-reviewed academic publishing.
+
+**Scope:**
+- Student-authored research (undergraduate/graduate)
+- Faculty-mentored scholarship
+- Interdisciplinary/creative works (papers, media, interactive)
+- Diamond Open Access (free to read and publish)
+
+**Platform:** Open Journal Systems (OJS) or equivalent, hosted via CUNY Libraries or self-hosted.
+
+**Editorial Workflow (Layer 2 Managed):**
+1. **Submission:** Layer 3 outputs submitted via OJS editorial system.
+2. **Review:** Faculty/peer review coordinated by editorial board.
+3. **Acceptance:** Approved articles receive DOIs and formal publication.
+4. **Archival:** Published works automatically deposited to:
+   - CUNY Academic Works (institutional record)
+   - Zenodo (cross-institutional backup)
+   - Indexed in DOAJ, Google Scholar
+5. **Announcement:** Layer 2 coordinates announcements via OpenLab and social channels.
+
+**CHIIDS Integration:**
+- **Layer 1:** SQLite tracks publication metadata (DOI, authors, linked projects).
+- **Layer 2:** Manages editorial board, review assignments, publication schedule.
+- **Layer 3:** Source of manuscripts and supporting materials.
+
+**External Communications Role:**
+- Public-facing journal increases CHI visibility and credibility.
+- Provides citeable, DOI-minted outputs for student portfolios and faculty tenure.
+- Connects to broader academic community and external partners.
+
+**Internal Coordination:**
+- Editorial board meetings and decisions tracked in Layer 2 coordination tools.
+- Submission deadlines align with semester milestones.
+- Published issues linked back to originating CHIIDS projects.
+
+---
+
+## Storage, Backup, and Archival Policy (Draft)
+
+- **Active storage:** OneDrive/SharePoint for current docs and media; GitHub for code.
+- **Backups:** Scheduled backups of Layer 1 canonical docs/DB and Layer 3 assets/code bundles to OneDrive/SharePoint.
+- **Archival:** Completed project packages (reports, media, virtual environments) stored with metadata for retrieval.
+- **Recovery:** Define RPO/RTO targets; test restores periodically.
+
+---
+
+## Communication Pathways
+
+- **Internal (Teams/Discord):** Day-to-day coordination; key decisions summarized into Layer 2 records.
+- **External (OpenLab/Buffer):** Announcements and public updates managed via Layer 2, sourced from Layer 3 outputs.
+
+---
+
+## Integration Principles (from Draft Engineering Specification)
+
+- Scalability for more participants/projects without performance loss.
+- Interoperability with City Tech systems (e.g., CIS, OpenLab) and external tools.
+- Accessibility and inclusivity for varied technical ability and resources.
+- Automation for syncs, backups, and validations.
+- Robust version control for documents and code.
+- Reuse existing solutions before building new ones.
+
+---
+
+## Research Opportunities Dataset (Draft Placement)
+
+- **Source:** Layer 1 SQLite schema holds opportunity metadata (title, tags, deadlines, eligibility).
+- **Exposure:** Datasette/Frontend reads from SQLite for browse/search.
+- **Linkage:** Layer 2 Project Cards reference opportunities; student assignments tracked in StudentResearch; Layer 3 delivers outputs linked back to the opportunity record.
+
 ## For More Information
 
 - See `ECOSYSTEM.md` for the current state of all meta-projects
