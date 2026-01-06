@@ -56,37 +56,56 @@ Projects are defined once, thoroughly, with clear dependencies. Proposals are th
 
 **Location:** `StudentResearch` repository
 
+**Role:** 
+StudentResearch is the **coordination hub** for semester activity—like CHIIDS is the map of the data system, StudentResearch is the map of the Student Research *program*. It does not duplicate work; it *links* to it.
+
 **Contents:**
-- Project Cards (one per active project per semester)
-- Student assignment tracking
-- Team membership rosters
-- Semester milestones and goals
-- GitHub Issues and tracking links
-- Coordination documentation
+- GitHub Projects boards (one per semester) with active project cards
+- Team rosters linking to team repositories
+- Student proposals (documentation of what was proposed)
+- Links to meta-project repositories (META-BRPS, META-BSP, etc.)
+- Program-level reports (enrollment, participation, meta-project coverage, semester assessment)
+
+**What it DOES NOT contain:**
+- Code, assets, or deliverables (those live in team repos)
+- Canonical project proposals (those live in META-CHIIDS)
+- Individual project reports (those live in team repos)
 
 **Purpose:**
-Connect abstract projects (defined in Layer 1) to actual work (done in Layer 3) and track who is doing what, when.
+Coordinate who is working on what, when, and link to where actual work happens. Track the Student Research *program* as a whole (enrollment, meta-project participation, semester outcomes).
 
 **Key Principle:**
-StudentResearch is *persistent* (it never resets), but *updated* every semester. It coordinates between proposals and execution; it does not store execution details.
-
-**Does NOT contain:**
-- Code, assets, or deliverables (those live in team repos)
-- Canonical proposals (those live in META-CHIIDS)
+StudentResearch is *persistent* (updated every semester), *semester-organized*, and *linking-focused*. Everything points elsewhere; the repo itself is coordination and program metadata.
 
 **Structure (by semester):**
 ```
 StudentResearch/
-├── ProjectCards/
-│   ├── BRPS-BABS-Fall2025.md
-│   ├── BSP-GameTeam-Fall2025.md
-│   └── ...
-├── Students/
-│   ├── studentname1.md
-│   └── ...
-└── SemesterLogs/
-    ├── Fall2025.md
-    └── Spring2026.md
+├── README.md                          # Current semester overview
+├── semesters/
+│   ├── 2025-Spring/
+│   │   ├── README.md                  # Active projects, links to meta-projects
+│   │   ├── proposals/                 # Student proposals (what was proposed)
+│   │   ├── teams/
+│   │   │   ├── BRPS-AI-Team.md        # Team roster with repo link
+│   │   │   ├── BSP-Video-Team.md      # Points to github.com/CHI-CityTech/team-repo
+│   │   │   └── ...
+│   │   └── program-reports/           # Program-level assessment
+│   │       ├── enrollment.md          # How many students, which meta-projects
+│   │       └── semester-assessment.md # Overall outcomes & lessons learned
+│   ├── 2025-Fall/
+│   │   ├── README.md
+│   │   ├── proposals/
+│   │   ├── teams/
+│   │   └── program-reports/
+│   └── 2026-Spring/
+└── potential-projects/                # Ideas waiting for semester assignment
+    ├── CASTI-Mobility.md
+    └── ...
+
+GitHub Projects (attached to StudentResearch repo):
+├── "Spring 2025 Research"   → Cards for each active project
+├── "Fall 2025 Research"     → Cards for Fall projects
+└── "Spring 2026 Research"   → Boards created at start of semester
 ```
 
 ---
