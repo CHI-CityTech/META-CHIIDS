@@ -31,7 +31,7 @@ It does **not** refer to:
 
 ## Documents in This Folder
 
-### `ARCHITECTURE.md`  
+### `architecture.md`  
 **System-Level Architecture**
 
 Defines:

@@ -80,14 +80,14 @@ CHIIDS is guided by CHI's core philosophy of _Holistic Integration_ and the _Bal
 | **Bio-Aware Blended Spaces (BABS)** | Systems | Sensor-driven intelligent environments |
 | **AI-Integrated Performance** | Production | Virtual Orchestra, immersive audio, robotics |
 
-See **[docs/reference/ECOSYSTEM.md](docs/reference/ECOSYSTEM.md)** for comprehensive descriptions.
+See **[docs/reference/ecosystem.md](docs/reference/ecosystem.md)** for comprehensive descriptions.
 
 ---
 
 ## Getting Started
 
 ### For Faculty/PIs
-1. Read **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** — understand the three-layer system
+1. Read **[architecture.md](docs/architecture/architecture.md)** — understand the three-layer system
 2. Use **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** to propose new projects
 3. Store proposals in `/database/proposals/[project_name]/`
 4. Update SQLite metadata with project information
@@ -100,13 +100,13 @@ See **[docs/reference/ECOSYSTEM.md](docs/reference/ECOSYSTEM.md)** for comprehen
 5. Document AI usage in your team repo README
 
 ### For StudentResearch Managers
-1. Review **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** for the coordination layer role
+1. Review **[architecture.md](docs/architecture/architecture.md)** for the coordination layer role
 2. Use **[PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)** for each active project per semester
 3. Link proposals from META-CHIIDS to team repositories
 4. Maintain semester rosters and milestone tracking
 
 ### For System Integration
-1. Read **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** for GitHub, OpenLab, WorldAnvil, Zotero guidance
+1. Read **[integration_paths.md](docs/reference/integration_paths.md)** for GitHub, OpenLab, WorldAnvil, Zotero guidance
 2. For world-building workflows, see **[WORLDANVIL-WORKFLOW.md](docs/WORLDANVIL-WORKFLOW.md)**
 
 ---

@@ -151,9 +151,9 @@ Assists in writing, analysis, synthesis, planning, and documentation. Treated as
 
 ## For More Information
 
-- **Three-Layer Architecture:** See `ARCHITECTURE.md`
-- **Current Ecosystem State:** See `ECOSYSTEM.md`
-- **Integration with External Systems:** See `INTEGRATION-PATHS.md`
+- **Three-Layer Architecture:** See `architecture.md`
+- **Current Ecosystem State:** See `ecosystem.md`
+- **Integration with External Systems:** See `integration_paths.md`
 - **WorldAnvil Detailed Workflow:** See `WORLDANVIL-WORKFLOW.md`
 - **Database Schema:** See `/database/schema.sql`
 

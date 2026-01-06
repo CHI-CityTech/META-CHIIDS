@@ -2,7 +2,7 @@
 
 *This document provides detailed guidance for using WorldAnvil as the canonical repository for the Blended Shadow Puppet (BSP) fictional universe, with GitHub as the proposal and review space.*
 
-**See `INTEGRATION-PATHS.md` for the full WorldAnvil integration philosophy and workflow.**
+**See `integration_paths.md` for the full WorldAnvil integration philosophy and workflow.**
 
 This document focuses on practical implementation steps.
 
@@ -249,5 +249,5 @@ This workflow ensures:
 - ✔ AI and human reviewers can validate consistency
 - ✔ Semester progress is tracked in StudentResearch
 
-For questions, see `INTEGRATION-PATHS.md` or the main `README.md`.
+For questions, see `integration_paths.md` or the main `README.md`.
 

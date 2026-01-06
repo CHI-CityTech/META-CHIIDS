@@ -2,7 +2,7 @@
 
 This document describes how CHIIDS connects to and integrates with external systems, platforms, and tools used by CHI. It consolidates guidance for GitHub, OpenLab, WorldAnvil, Zotero, and other services.
 
-**See Also:** [docs/architecture/ARCHITECTURE.md](../architecture/ARCHITECTURE.md) for the full three-layer system architecture, primary/secondary external systems, and publishing workflows.
+**See Also:** [docs/architecture/architecture.md](../architecture/architecture.md) for the full three-layer system architecture, primary/secondary external systems, and publishing workflows.
 
 ## Core Integration Philosophy
 
