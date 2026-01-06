@@ -1,5 +1,7 @@
 # CHIIDS Architecture: Three-Layer System
 
+> **Historical Note:** This architecture evolved from the [original CHIIDS engineering specification](CHIIDS-ORIGINAL-SPEC.md) (September 2024). The original spec provides foundational context for the design decisions documented here.
+
 ## Overview
 
 The CHI Integrated Digital System (CHIIDS) is a distributed digital ecosystem consisting of three interacting layers, each with distinct responsibilities and temporal characteristics. This document describes how these layers work together to support the Balanced Blended Space (BBS) framework and all related CHI meta-projects.
