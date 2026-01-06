@@ -270,6 +270,26 @@ These systems support internal CUNY workflows but are not required for cross-ins
 
 ---
 
+## CHIIDS as Meta-Project (Self-Referential)
+
+CHIIDS is **both** the architectural blueprint AND a meta-project with its own implementation roadmap.
+
+**As Blueprint:** CHIIDS defines the structure (three layers, data domains, integration paths) and coordinates all meta-projects (BRPS, BSP, CAI, etc.).
+
+**As Implementation:** CHIIDS itself is a meta-project that requires student work to build:
+- Layer 1: Database schema, seed data population, Datasette API
+- Layer 2: Research coordination system, StudentResearch GitHub Projects
+- Layer 3: Frontend (React/Vite), automation (GitHub Actions), integrations (CUNY Academic Works, OJS, Zenodo)
+
+**In StudentResearch:** CHIIDS appears as active project card(s) each semester:
+- **Fall 2025–Spring 2026:** "CHIIDS Database & API Deployment" (infrastructure student)
+- **Spring 2026:** "CHIIDS Frontend Development" (web dev student team)
+- **Ongoing:** "CHIIDS Automation & Integration" (as needed)
+
+This is intentional: the system that coordinates all work *itself* is coordinated through that same system. CHIIDS is simultaneously the map and the territory.
+
+---
+
 ## Public Engagement & Publishing Flow
 
 ### General Publishing Pipeline
