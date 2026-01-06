@@ -330,8 +330,25 @@ These systems support internal CUNY workflows but are not required for cross-ins
 - **Exposure:** Datasette/Frontend reads from SQLite for browse/search.
 - **Linkage:** Layer 2 Project Cards reference opportunities; student assignments tracked in StudentResearch; Layer 3 delivers outputs linked back to the opportunity record.
 
+## CHIIDS as a Meta-Project: Its Own Roadmap
+
+CHIIDS itself follows this three-layer model. It is both the **architectural blueprint** (this document) and an **executable system** (database, API, frontend, integrations). 
+
+**CHIIDS Development:**
+- **Layer 1:** Database schema, ARCHITECTURE docs, templates, integration principles (canonical)
+- **Layer 2:** Semester-updated development roadmap, GitHub Project boards, team assignments
+- **Layer 3:** API (Datasette), Frontend (React/Vite), automation (GitHub Actions), integrations
+
+For current status, bootstrap projects, and semester milestones, see **[CHIIDS-ROADMAP.md](CHIIDS-ROADMAP.md)**.
+
+All meta-projects (BBS, BRPS, BSP, CAI, UNESCO, etc.) are encouraged to follow the **[roadmap template](../templates/META-PROJECT-ROADMAP.md)** for consistency, visibility, and dependency tracking.
+
+---
+
 ## For More Information
 
+- See **[CHIIDS-ROADMAP.md](CHIIDS-ROADMAP.md)** for CHIIDS development status and bootstrap projects
+- See **[templates/META-PROJECT-ROADMAP.md](../templates/META-PROJECT-ROADMAP.md)** for canonical roadmap structure (all projects)
 - See `ECOSYSTEM.md` for the current state of all meta-projects
 - See `GLOSSARY.md` for definitions of key terms
 - See `INTEGRATION-PATHS.md` for how CHIIDS connects to external systems (GitHub, OpenLab, WorldAnvil, Zotero)

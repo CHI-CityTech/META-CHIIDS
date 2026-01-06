@@ -30,6 +30,7 @@ See **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** for the full three-
 
 ### Core Documentation
 - **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** — Three-layer system design, external systems (primary/secondary), publishing workflows, CUNY integration
+- **[CHIIDS-ROADMAP.md](docs/CHIIDS-ROADMAP.md)** — CHIIDS development status, bootstrap projects, semester milestones
 - **[ECOSYSTEM.md](docs/reference/ECOSYSTEM.md)** — Current state of all CHI meta-projects
 - **[GLOSSARY.md](docs/reference/GLOSSARY.md)** — Definitions of key terms (BBS, BRPS, BSP, CAI, meta-project, etc.)
 - **[INTEGRATION-PATHS.md](docs/reference/INTEGRATION-PATHS.md)** — How CHIIDS connects to GitHub, OpenLab, WorldAnvil, Zotero, and other systems
@@ -39,6 +40,7 @@ See **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** for the full three-
 ### Templates
 - **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** — How to create a new CHI meta-project proposal
 - **[PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)** — How StudentResearch tracks semester activity
+- **[META-PROJECT-ROADMAP.md](templates/META-PROJECT-ROADMAP.md)** — Canonical roadmap structure (all projects and meta-projects use this)
 
 ### Database (In Development)
 - **[schema.sql](database/schema.sql)** — Relational database schema for meta-project ontology
