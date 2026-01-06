@@ -29,11 +29,12 @@ See **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** for the full three-
 ## Quick Links
 
 ### Core Documentation
-- **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** — The three-layer system design and how layers connect
-- **[ECOSYSTEM.md](docs/ECOSYSTEM.md)** — Current state of all CHI meta-projects (coming soon)
-- **[GLOSSARY.md](docs/GLOSSARY.md)** — Definitions of key terms (BBS, BRPS, BSP, CAI, meta-project, etc.)
-- **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** — How CHIIDS connects to GitHub, OpenLab, WorldAnvil, Zotero, and other systems
-- **[WORLDANVIL-WORKFLOW.md](docs/WORLDANVIL-WORKFLOW.md)** — Detailed guide for Blended Shadow Puppet world-building
+- **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** — Three-layer system design, external systems (primary/secondary), publishing workflows, CUNY integration
+- **[ECOSYSTEM.md](docs/reference/ECOSYSTEM.md)** — Current state of all CHI meta-projects
+- **[GLOSSARY.md](docs/reference/GLOSSARY.md)** — Definitions of key terms (BBS, BRPS, BSP, CAI, meta-project, etc.)
+- **[INTEGRATION-PATHS.md](docs/reference/INTEGRATION-PATHS.md)** — How CHIIDS connects to GitHub, OpenLab, WorldAnvil, Zotero, and other systems
+- **[WORLDANVIL-WORKFLOW.md](docs/reference/WORLDANVIL-WORKFLOW.md)** — Detailed guide for Blended Shadow Puppet world-building
+- **[CHI Integrated Digital System (CHIDS).md](docs/CHI%20Integrated%20Digital%20System%20(CHIDS).md)** — Original draft engineering specification (canonical source)
 
 ### Templates
 - **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** — How to create a new CHI meta-project proposal
@@ -77,7 +78,7 @@ CHIIDS is guided by CHI's core philosophy of _Holistic Integration_ and the _Bal
 | **Bio-Aware Blended Spaces (BABS)** | Systems | Sensor-driven intelligent environments |
 | **AI-Integrated Performance** | Production | Virtual Orchestra, immersive audio, robotics |
 
-See **[ECOSYSTEM.md](docs/ECOSYSTEM.md)** for comprehensive descriptions.
+See **[docs/reference/ECOSYSTEM.md](docs/reference/ECOSYSTEM.md)** for comprehensive descriptions.
 
 ---
 
