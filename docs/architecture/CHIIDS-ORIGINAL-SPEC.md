@@ -1,53 +1,43 @@
-# **CHI Integrated Digital System (CHIDS)**
+# CHI Integrated Digital System (CHIIDS)
+# Draft Engineering Specification
 
-# **Draft Engineering Specification**
+> **Historical Document:** This is the original CHIIDS engineering specification from September 2024. The current canonical architecture is documented in [ARCHITECTURE.md](ARCHITECTURE.md). This document is preserved as-is with minimal formatting cleanup to maintain historical context.
+>
+> **Original PDF:** [CHIIDS-ORIGINAL-SPEC-2024-09-21.pdf](CHIIDS-ORIGINAL-SPEC-2024-09-21.pdf)
 
 **Project**: CHI Integrated Digital System  
 **Prepared by:** Dr. David B. Smith  
 **Date**: 2024-09-21  
-**Version**: 1.0
+**Version**: 1.0  
+**GitHub Site:** [Meta-CHIIDS](https://github.com/CHI-CityTech/META-CHIIDS)
 
-GitHub Site: [Meta-CHIIDS](https://github.com/CHI-CityTech/META-CHIIDS)
+---
 
-#### 
+## Table of Contents
 
-**[1\. Introduction	1](#1.-introduction)**
+- [1. Introduction](#1-introduction)
+  - [1.1 Overview](#11-overview)
+  - [1.2 Design Considerations](#12-design-considerations)
+  - [1.3 CHIIDS Structural Diagram](#13-chiids-structural-diagram)
+- [2. System Components and Data Types](#2-system-components-and-data-types)
+  - [2.1 CHI System Setup and Organization](#21-chi-system-setup-and-organization)
+  - [2.2 Project Management Data](#22-project-management-data)
+  - [2.3 Research Opportunities Dataset](#23-research-opportunities-dataset)
+  - [2.4 Documentation and Reports](#24-documentation-and-reports)
+  - [2.5 Media Data](#25-media-data)
+  - [2.6 Version Control Data](#26-version-control-data)
+  - [2.7 Archival Data](#27-archival-data)
+  - [2.8 Communication and Engagement Data](#28-communication-and-engagement-data)
+  - [2.9 Data Storage and Backup](#29-data-storage-and-backup)
+- [3. Example Systems](#3-example-systems)
+- [4. Data Management Policies](#4-data-management-policies)
+- [5. Implementation Timeline](#5-implementation-timeline)
 
-[1.1 Overview	1](#1.1-overview)
+---
 
-[1.2 Design Considerations	2](#1.2-design-considerations)
+## 1. Introduction
 
-[**2\. System Components and Data Types	3**](#2.-system-components-and-data-types)
-
-[2.1 CHI System Setup and Organization	3](#2.1-chi-system-setup-and-organization)
-
-[2.2 Project Management Data	3](#2.2-project-management-data)
-
-[2.3. Research Opportunities Dataset	4](#2.3.-research-opportunities-dataset)
-
-[2.4. Documentation and Reports	4](#2.4.-documentation-and-reports)
-
-[2.5. Media Data	4](#2.5.-media-data)
-
-[2.6. Version Control Data	4](#2.6.-version-control-data)
-
-[2.7. Archival Data	4](#2.7.-archival-data)
-
-[2.7. Communication and Engagement Data	5](#2.8.-communication-and-engagement-data)
-
-[2.8. Data Storage and Backup	5](#2.9.-data-storage-and-backup)
-
-[**3\. Example Systems	5**](#3.-tentative-subsystems)
-
-[**4\. Data Management Policies	6**](#4.-data-management-policies)
-
-[**5\. Implementation Timeline	6**](#heading=h.bb2kir6ca9ah)
-
-### 
-
-### **1\. Introduction** {#1.-introduction}
-
-#### **1.1 Overview** {#1.1-overview}
+### 1.1 Overview
 
 Every organization is responsible for effectively managing its information. A well-designed information system should reflect the philosophy and mission of its organization. The Center of Holistic Integration (CHI) has several core approaches that must guide the development of this information system  — identifying integrative activities, seeking voluntary partners, promoting inclusivity, and fostering collaboration across as broad a range of stakeholders as possible. CHI supports participant’s original goals through thoughtful alignment with CHI meta-projects and initiatives. CHI preserves participating project integrity while seeking and exploiting synergies between these projects, optimizing existing tools for collaboration rather than reinventing systems.
 
@@ -83,13 +73,15 @@ Key design considerations include:
 10. **Accessibility and Inclusivity**: The system should accommodate users of all technical abilities and resources, ensuring that everyone can contribute meaningfully.  
 11. **Reuse of Existing Solutions**: CHIIDS should prioritize leveraging existing tools and systems to avoid reinventing solutions, minimizing development time and cost while maximizing integration.
 
-#### **1.3 CHIIDS Structural Diagram** 
+### 1.3 CHIIDS Structural Diagram
 
-![][image1]
+> **Note:** Original diagram not preserved in this export. See [ARCHITECTURE.md](ARCHITECTURE.md) for current system diagrams.
 
-### **2\. System Components and Data Types** {#2.-system-components-and-data-types}
+---
 
-#### **2.1 CHI System Setup and Organization** {#2.1-chi-system-setup-and-organization}
+## 2. System Components and Data Types
+
+### 2.1 CHI System Setup and Organization
 
 * **Data Type**: Organizational Structure Data  
   **Description**: Data related to the roles, teams, and project organization within CHI.  
