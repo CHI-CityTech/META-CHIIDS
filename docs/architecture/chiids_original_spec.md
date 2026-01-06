@@ -1,9 +1,9 @@
 # CHI Integrated Digital System (CHIIDS)
 # Draft Engineering Specification
 
-> **Historical Document:** This is the original CHIIDS engineering specification from September 2024. The current canonical architecture is documented in [ARCHITECTURE.md](ARCHITECTURE.md). This document is preserved as-is with minimal formatting cleanup to maintain historical context.
+> **Historical Document:** This is the original CHIIDS engineering specification from September 2024. The current canonical architecture is documented in [architecture.md](architecture.md). This document is preserved as-is with minimal formatting cleanup to maintain historical context.
 >
-> **Original PDF:** [CHIIDS-ORIGINAL-SPEC-2024-09-21.pdf](CHIIDS-ORIGINAL-SPEC-2024-09-21.pdf)
+> **Original PDF:** [chiids_original_spec_2024_09_21.pdf](chiids_original_spec_2024_09_21.pdf)
 
 **Project**: CHI Integrated Digital System  
 **Prepared by:** Dr. David B. Smith  
