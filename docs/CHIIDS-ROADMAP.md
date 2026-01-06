@@ -44,12 +44,24 @@ CHIIDS is both the **map** (architecture documentation) and the **territory** (e
 
 ## In Progress (Spring 2026 Focus)
 
+### 🔥 URGENT: Public Database Access (Critical Blocker)
+
+**Why Critical:** Users need read access to query projects and research opportunities NOW. Without this, CHIIDS is not functional for its primary purpose.
+
+| Milestone | Target Date | Owner(s) | Status | Priority | Notes |
+|-----------|-------------|----------|--------|----------|-------|
+| **Infrastructure Evaluation** | **January 15** | **[Data Science Student]** | 🔴 **URGENT** | **P0** | Compare Vercel, Fly.io, Railway, AWS RDS for size/cost/performance |
+| **Database Population (All Projects)** | **January 20** | **[Data Science Student]** | 🔴 **URGENT** | **P0** | Populate all CHI meta-projects, dependencies, research opportunities |
+| **Datasette Public Deployment (MVP)** | **January 31** | **[Data Science Student]** | 🔴 **URGENT** | **P0** | Deploy to chosen platform; public read-only access |
+| **Basic Documentation (Query Examples)** | **January 31** | **[Data Science Student]** | 🔴 **URGENT** | **P0** | How to query, example searches, API docs |
+
+### Other Spring 2026 Milestones
+
 | Milestone | Target Date | Owner(s) | Status | Blockers |
 |-----------|-------------|----------|--------|----------|
-| Datasette API Setup & Documentation | March 31 | [To be assigned] | 🟡 In Progress | None |
-| Basic GitHub Actions Sync | March 31 | [To be assigned] | 🟡 In Progress | Database seeding |
+| Basic GitHub Actions Sync | March 31 | [To be assigned] | 🟡 In Progress | Public API live |
 | CUNY Academic Works Discussion + Planning | February 28 | Dr. Smith (librarian liaison) | 🟡 In Progress | Librarian availability |
-| Frontend Wireframes & Data Model | April 15 | [To be assigned] | 🔴 Not started | API finalization |
+| Frontend Wireframes & Data Model | April 15 | [To be assigned] | 🔴 Not started | Public API live |
 | StudentResearch Integration Plan | March 15 | [To be assigned] | 🔴 Not started | Project card standardization |
 
 ---
@@ -79,13 +91,15 @@ CHIIDS is both the **map** (architecture documentation) and the **territory** (e
 
 ### Blocks
 - **All Layer 2 Coordination** — Relies on Project Card templates + GitHub Project Boards
-- **All Layer 3 Execution** — Benefits from Datasette API (not blocking)
+- **🔥 User Access to Projects** — BLOCKED until Datasette deployed (P0)
+- **All Layer 3 Execution** — Benefits from Datasette API (not hard blocking)
 - **Publishing Workflows** — Depend on CUNY Academic Works + OJS setup
 
 ---
 
 ## Key Risks & Blockers
 
+- **🔥 NO PUBLIC DATABASE ACCESS (CRITICAL)** — Impact: **BLOCKING** — Mitigation: Prioritize database population + Datasette deployment by end of January; assign owner immediately
 - **Librarian/CUNY Coordination** — Impact: High — Mitigation: Early engagement (Dr. Smith), clear requirements, pilot with one team
 - **Student Developer Availability** — Impact: High — Mitigation: Break frontend into phases, document architecture, allow contribution from multiple semesters
 - **Data Quality (Seed Data)** — Impact: Medium — Mitigation: Automated validation, semester reviews to verify accuracy
@@ -129,9 +143,36 @@ These are the actual GitHub repositories and tasks that realize CHIIDS:
 
 ---
 
+## Infrastructure Platform Options
+
+**Database Size Considerations:**
+- **Current:** ~5-10MB (seed data with basic CHI projects)
+- **Year 1 Projected:** 50-100MB (all meta-projects, team members, research outputs, dependencies)
+- **Year 3-5 Projected:** 500MB-2GB (historical data, archived projects, full dependency graphs, publications)
+
+**Platform Evaluation (Data Science Student Task):**
+
+| Platform | SQLite Limit | Free Tier | Paid Plans | Performance | Best For |
+|----------|--------------|-----------|------------|-------------|----------|
+| **Vercel** | 512MB (hobby)<br/>4GB (pro) | 512MB free | $20/mo (4GB) | Good (edge CDN) | Small-medium databases |
+| **Fly.io** | Volume-based | 3GB free storage | ~$2-5/mo | Excellent (persistent disk) | Growing databases |
+| **Railway** | No hard limit | $5 credit/mo | ~$5-10/mo | Good | SQLite-friendly hosting |
+| **AWS RDS/S3** | No limit (S3) | Minimal free tier | $15-50/mo | Excellent (scalable) | Large-scale production |
+| **PlanetScale** | MySQL only | Free tier (1GB) | $29/mo | Excellent (serverless) | Requires SQLite → MySQL migration |
+
+**Recommended Approach:**
+1. **Phase 1 (MVP - Jan 2026):** Start with **Fly.io free tier** (3GB persistent storage, sufficient for 2-3 years)
+2. **Phase 2 (Monitor):** Track database growth monthly; upgrade to paid Fly.io (~$5/mo) if approaching 2GB
+3. **Phase 3 (Scale if needed):** If exceeding 4GB, consider AWS S3 + Lambda or migrate to managed PostgreSQL
+
+**Student Deliverable:** Infrastructure evaluation report comparing costs, size limits, deployment complexity, backup strategies, and migration paths.
+
+---
+
 ## Team & Coordination
 
 - **Overall Coordinator:** Dr. David B. Smith
+- **Database & Infrastructure Lead:** [Data Science Student - To be assigned]
 - **API/Backend Lead:** [To be assigned]
 - **Frontend Lead:** [To be assigned]
 - **Integrations Lead:** [To be assigned]
