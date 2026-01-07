@@ -87,7 +87,7 @@ See **[docs/reference/ecosystem.md](docs/reference/ecosystem.md)** for comprehen
 ## Getting Started
 
 ### For Faculty/PIs
-1. Read **[architecture.md](docs/architecture/architecture.md)** — understand the three-layer system
+1. Read **[part_1_operational_management.md](docs/architecture/part_1_operational_management.md)** — understand the three-layer system
 2. Use **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** to propose new projects
 3. Store proposals in `/database/proposals/[project_name]/`
 4. Update SQLite metadata with project information
@@ -100,7 +100,7 @@ See **[docs/reference/ecosystem.md](docs/reference/ecosystem.md)** for comprehen
 5. Document AI usage in your team repo README
 
 ### For StudentResearch Managers
-1. Review **[architecture.md](docs/architecture/architecture.md)** for the coordination layer role
+1. Review **[part_1_operational_management.md](docs/architecture/part_1_operational_management.md)** for the coordination layer role
 2. Use **[PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)** for each active project per semester
 3. Link proposals from META-CHIIDS to team repositories
 4. Maintain semester rosters and milestone tracking

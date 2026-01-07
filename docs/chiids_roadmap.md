@@ -184,7 +184,7 @@ These are the actual GitHub repositories and tasks that realize CHIIDS:
 
 ## Links
 
-- **CHIIDS ARCHITECTURE:** [docs/architecture/architecture.md](../docs/architecture/architecture.md)
+- **CHIIDS ARCHITECTURE:** [Part 1: Operational Management](../architecture/part_1_operational_management.md)
 - **Database Schema:** [database/schema.sql](../database/schema.sql)
 - **CHIIDS Spec:** [docs/CHI Integrated Digital System (CHIDS).md](../docs/CHI%20Integrated%20Digital%20System%20(CHIDS).md)
 - **StudentResearch Repo:** [CHI-CityTech/StudentResearch](https://github.com/CHI-CityTech/StudentResearch)
