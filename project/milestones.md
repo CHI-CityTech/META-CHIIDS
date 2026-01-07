@@ -1,3 +1,9 @@
+---
+project_class: true
+layer: 1
+meta_project: CHIIDS
+---
+
 # CHIIDS Development Milestones
 
 ## Current Sprint: Bootstrap Phase (Jan 7 - Jan 31, 2026)

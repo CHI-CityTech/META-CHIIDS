@@ -242,6 +242,22 @@ Think of this as **class inheritance** in object-oriented programming:
 - **Layer 1 meta-projects** are "object instances" that inherit and implement this class
 - Each instance has the same structure (`/project/` directory, etc.) but different content
 
+### Naming Convention
+
+To distinguish canonical Project Class files from produced deliverables:
+- **Project Class files (Layer 1, in `/project/`)** use UPPERCASE filenames: `README.md`, `ROADMAP.md`, `MILESTONES.md`, `GLOSSARY.md`, `GOVERNANCE.md`.
+- **Deliverables (Layer 0 and project outputs, in `/docs/**`)** use `lowercase_with_underscores.md`.
+
+Additionally, Project Class files include YAML frontmatter for automation:
+
+```
+---
+project_class: true
+layer: 1
+meta_project: <NAME>
+---
+```
+
 ---
 
 ## How the Layers Connect
@@ -327,8 +343,8 @@ These principles guide the design of CHIIDS and all meta-projects:
 - See **[glossary.md](../reference/glossary.md)** for CHIIDS-specific terminology (schema, ontology, layers, projection system)
 
 **CHIIDS as Layer 1 Meta-Project:**
-- See **[project/roadmap.md](../../project/roadmap.md)** for CHIIDS development roadmap
-- See **[project/milestones.md](../../project/milestones.md)** for current sprint and team assignments
+- See **[project/ROADMAP.md](../../project/ROADMAP.md)** for CHIIDS development roadmap
+- See **[project/MILESTONES.md](../../project/MILESTONES.md)** for current sprint and team assignments
 - See **[project/README.md](../../project/README.md)** for CHIIDS meta-project overview
 
 **Layer 1 Resources (in CHI-CityTech):**

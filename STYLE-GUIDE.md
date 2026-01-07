@@ -4,7 +4,7 @@
 
 All documentation files in this repository follow a consistent naming pattern:
 
-**Standard:** `lowercase_with_underscores.md`
+**Standard (Deliverables):** `lowercase_with_underscores.md`
 
 ### Examples
 - ✅ `architecture.md`
@@ -15,8 +15,19 @@ All documentation files in this repository follow a consistent naming pattern:
 
 ### Exceptions
 - `README.md` — Always uppercase (GitHub/GitLab convention)
-- `LICENSE.md` — Always uppercase (standard convention)
+- `LICENSE` / `LICENSE.md` — Always uppercase (standard convention)
 - `CONTRIBUTING.md` — Always uppercase (standard convention)
+- **Project Class files in `/project/` (Layer 1):** Use UPPERCASE filenames: `README.md`, `ROADMAP.md`, `MILESTONES.md`, `GLOSSARY.md`, `GOVERNANCE.md`
+
+Project Class files must include YAML frontmatter for automation:
+
+```
+---
+project_class: true
+layer: 1
+meta_project: <NAME>
+---
+```
 
 ### Rationale
 - Lowercase is easier to type and remember
@@ -34,7 +45,7 @@ Check [chiids_roadmap](chiids_roadmap) for timeline.
 
 If using full paths:
 ```markdown
-[Architecture Overview](docs/architecture/architecture.md)
+[Architecture Overview](docs/architecture/part_1_operational_management.md)
 ```
 
 ## Code Comments & Documentation

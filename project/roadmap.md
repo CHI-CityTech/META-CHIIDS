@@ -1,3 +1,9 @@
+---
+project_class: true
+layer: 1
+meta_project: CHIIDS
+---
+
 # CHIIDS Development Roadmap
 
 ## Current Status: Bootstrap Phase (P0)

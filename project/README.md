@@ -1,3 +1,9 @@
+---
+project_class: true
+layer: 1
+meta_project: CHIIDS
+---
+
 # CHIIDS Meta-Project
 
 ## Overview
@@ -45,8 +51,8 @@ This repository is organized according to the META-* Project Class pattern:
 
 ## Key Documents
 
-- **Development Roadmap:** [roadmap.md](roadmap.md)
-- **Current Sprint:** [milestones.md](milestones.md)
+- **Development Roadmap:** [ROADMAP.md](ROADMAP.md)
+- **Current Sprint:** [MILESTONES.md](MILESTONES.md)
 - **Architecture:** [docs/architecture/](../docs/architecture/)
 - **Database Schema:** [database/schema.sql](../database/schema.sql)
 
