@@ -1,159 +1,133 @@
-# CHIIDS Glossary: Key Terms and Definitions
+# CHIIDS Glossary: Layer 0 Terminology
 
-## Core Concepts
+This glossary defines terms specific to the CHIIDS structural framework (Layer 0). For definitions of specific CHI meta-projects (BBS, BRPS, BSP, CAI, etc.), see the [CHI-CityTech organization](https://github.com/CHI-CityTech) README and individual META-* repositories.
 
-### Balanced Blended Space (BBS)
-The universal theoretical framework developed by CHI that describes how physical, virtual, and conceptual realities interact symmetrically. BBS provides the foundation for all CHI meta-projects and the syntax for describing mediation pathways. Also serves as the core philosophy for how CHIIDS itself is organized.
+---
 
-### Blended Reality Performance System (BRPS)
-The primary engineering test environment for BBS, integrating automation, AI, puppetry, projection, immersive audio, and robotics into a configurable modular platform. BRPS serves as both a research instrument and a creative production environment.
-
-### Blended Shadow Puppet (BSP)
-The flagship artistic meta-project that operationalizes BBS and BRPS within a fictional narrative universe rooted in UNESCO cultural transformation research. Encompasses shadow puppet theatre, AI-driven puppet systems, game design, world-building, and multi-disciplinary creative work.
-
-### Collaborative AI (CAI)
-The research ecosystem and philosophy that treats artificial intelligence as a collaborative partner rather than a tool. CAI emphasizes human–AI co-creation, shared decision-making, and cognitive–computational symmetry.
+## Layer 0: Structural Framework
 
 ### CHIIDS (CHI Integrated Digital System)
-The digital nervous system for all CHI projects, providing the infrastructure, ontology, and workflows that coordinate research, documentation, team collaboration, and public engagement.
+The structural framework (Layer 0) that defines how CHI research projects are organized, related, and coordinated. CHIIDS provides the schema, ontology, and architectural principles that all meta-projects conform to.
+
+### Layer 0 (Structural Framework)
+The foundational definitional layer that specifies the schema, ontology, relationships, and organizational rules for the entire CHI ecosystem. Located in the META-CHIIDS repository. Agnostic to specific project content—defines the structure that projects conform to.
+
+### Projection System
+The conceptual model for understanding Layer 0: like a Mercator projection defines how to display geographic data (but is agnostic to which planet's data is displayed), Layer 0 defines how to organize research projects (but is agnostic to which specific projects use that organization).
+
+### Schema
+The relational database structure (SQLite) that defines how projects, relationships, dependencies, and metadata are stored and queried. See `/database/schema.sql`.
+
+### Ontology
+The formal specification of how projects relate to each other: primary parents, secondary dependencies, tags, domains, and cross-project connections. The ontology defines the vocabulary and rules for describing project relationships.
+
+### META-* Project Class
+The standardized directory structure and organizational pattern that all Layer 1 meta-projects follow. Includes required `/project/` directory with README, roadmap, and milestones. Like a class in object-oriented programming—defines the structure that all meta-project instances inherit.
 
 ---
 
-## Organizational Structures
+## Operational Layers (Territory)
+
+### Layer 1 (Meta-Project Layer)
+The canonical list of CHI meta-projects, located in the [CHI-CityTech organization](https://github.com/CHI-CityTech). Each meta-project conforms to the Layer 0 schema and follows the META-* Project Class pattern. Layer 1 contains the actual projects that instantiate the Layer 0 structure.
+
+**Examples:** Balanced Blended Space (BBS), Blended Reality Performance System (BRPS), Blended Shadow Puppet (BSP), Collaborative AI (CAI), CHIIDS (self-referential)
+
+### Layer 2 (Research Coordination Layer)
+The semester-based coordination hub located in the StudentResearch repository. Links active projects to team assignments, tracks milestones, and coordinates semester work. Persistent but updated each term.
+
+### Layer 3 (Execution Layer)
+The distributed set of individual team repositories where actual code, assets, and deliverables are created. Each active project has its own repo for hands-on work.
+
+### Self-Referential
+CHIIDS's unique property: it is both the Layer 0 framework definition AND a Layer 1 meta-project. CHIIDS experiences its own Layer 2 coordination and Layer 3 execution while simultaneously defining the structure that all layers follow.
+
+---
+
+## Project Organization
 
 ### Meta-Project
-A top-level project that organizes, spawns, or integrates multiple sub-projects, research activities, and creative pipelines. Meta-projects are permanent and strategic; they define research directions and establish cross-disciplinary connections.
-
-**Examples:** BBS, BRPS, BSP, CAI, UNESCO World-Building, CHIIDS
-
-### Sub-Project
-A research or production component that exists within a meta-project. Sub-projects may be ongoing or time-limited, but are always connected to a larger meta-project.
-
-**Examples:** AI Puppet Control (under BRPS), Personalized LLMs (under CAI), Lumbra (under BSP)
+A top-level strategic initiative in Layer 1 that organizes multiple sub-projects, research activities, and creative work. Meta-projects are permanent, define research directions, and conform to the Layer 0 schema.
 
 ### Primary Parent
-The single meta-project assigned to a project for organizational clarity. The choice is often arbitrary but declared; it indicates which domain "owns" the project for administrative purposes.
+The single meta-project designated as a project's organizational home. Used for hierarchy clarity. Stored in the database schema as a required relationship.
 
 ### Secondary Dependency
-A meta-project (other than the primary parent) that a project relies upon, informs, or influences. Unlike primary parents, projects may have multiple secondary dependencies, reflecting their combinative nature in BBS.
+Additional meta-projects that a project relies upon, informs, or connects with. Unlike primary parent (singular), projects may have multiple secondary dependencies. Reflects combinative, interdisciplinary nature of CHI research.
 
-**Example:** BABS (Bio-Aware Blended Spaces) has BRPS as primary parent but depends on CAI for intelligent behavior.
+### Tag
+A label applied to projects for categorization and filtering. Projects can have multiple tags (domain tags, status tags, semester tags). Tags enable many-to-many relationships and cross-cutting organization.
 
----
-
-## CHIIDS Architecture & Data
-
-### Meta-Project Layer (Layer 1)
-The permanent, canonical foundation of CHIIDS, stored in the META-CHIIDS repository. Contains all project proposals, the SQLite ontology database, and long-term documentation. Does not change by semester; instead, it grows as new projects are added.
-
-### Research Coordination Layer (Layer 2)
-The semester-updated operational layer, stored in StudentResearch. Contains project cards, student assignments, team memberships, and semester-specific milestones. Persistent across semesters but refreshed each term.
-
-### Execution Layer (Layer 3)
-The distributed set of team repositories where actual research and development work happens. Each active project has its own repo; students commit code, assets, and documentation directly here.
-
-### Proposal
-A canonical, versioned document describing a CHI meta-project: its goals, scope, relationships to other projects, team structure, and alignment with BBS principles. Proposals live permanently in META-CHIIDS and are the authoritative source of project definition.
-
-### Project Card
-A summary document in StudentResearch that links a proposal to active semester work. Project Cards list assigned students, team repository links, semester milestones, and tracking issues. Unlike proposals, cards are created fresh each semester for active projects.
-
-### SQLite Database (Ontology Engine)
-The relational database stored in META-CHIIDS that indexes all projects, their relationships, dependencies, tags, and metadata. Allows querying and automation; does not store full proposal text but rather pointers and relationships.
-
-### GitHub Actions
-Automated workflows that keep CHIIDS layers synchronized, auto-generate reports and visualizations, validate schema consistency, and notify teams of important updates.
+### Domain
+A thematic or disciplinary categorization (e.g., Theory, Engineering, Performance, AI, UNESCO Research). Used to organize projects by subject area.
 
 ---
 
-## Workflow & Collaboration
+## Data & Infrastructure
+
+### SQLite Database
+The relational database that stores project metadata, relationships, dependencies, and tags. Enables programmatic querying and automation. Located in `/database/schema.sql` with seed data in `/database/seed_data.sql`.
+
+### Datasette
+The API layer that exposes the SQLite database as a JSON API for consumption by the frontend and external systems. Provides read-only public access to project data.
+
+### Relational Structure
+The way projects are connected through primary parent, secondary dependencies, tags, and domains. Allows querying like "show all projects that depend on CAI" or "list all Engineering domain projects."
+
+### Metadata
+Structured information about projects stored in the database: name, description, status, creation date, team assignments, repository links, etc. Distinct from project content (which lives in individual repos).
+
+---
+
+## Workflow & Coordination
 
 ### Semester
-An academic term (Fall, Spring, Summer) during which StudentResearch is updated with active projects, student assignments, and milestones. Semesters do not reset CHIIDS or team repos; they add a time-based index to ongoing work.
+An academic term (Fall, Spring, Summer) used to organize coordination work in Layer 2. Semesters provide temporal indexing for active projects and team assignments. Work persists across semesters; the semester tag identifies when work happened.
+
+### Project Card
+A coordination document in StudentResearch (Layer 2) that links a meta-project to active semester work. Contains team roster, repository links, milestones, and tracking issues. Created fresh each semester for active projects.
 
 ### Team Repository
-An independent GitHub repository owned by a research or production team, where code, assets, documentation, and actual project work are stored. Each project should have its own repo.
-
-### GitHub Issue
-A tracked task, discussion, or piece of work within a GitHub repository. Issues can be associated with milestones, projects, and labels for organization and automation.
-
-### GitHub Project Board
-A Kanban-style board for organizing issues and work across a repository, with columns for different workflow stages (e.g., To Do, In Progress, Done).
+An individual GitHub repository in Layer 3 where a specific team's execution work happens. Contains code, assets, documentation, and deliverables. Each project has its own repo.
 
 ### Milestone
-A collection of related issues and pull requests that collectively represent a significant step toward a project goal. Milestones are often semester-aligned or narrative-arc-aligned.
-
-### AI Usage Documentation
-Records of how AI tools were used in a project's research, planning, or execution. Required transparency practice in CHI to support the Collaborative AI philosophy.
+A collection of related tasks or issues that represent progress toward a project goal. Often semester-aligned or feature-aligned. Used for tracking and planning.
 
 ---
 
-## External System Integration
+## Integration & Automation
 
-### OpenLab
-A community engagement platform used for public-facing project announcements, blog posts, newsletters, and knowledge archiving. Projects may use OpenLab for visibility with audiences outside GitHub/CHI.
+### GitHub Actions
+Automated workflows that synchronize data between layers, validate schema consistency, generate reports, and update visualizations. Keeps CHIIDS components in sync without manual intervention.
 
-### WorldAnvil
-A specialized world-building platform used for the Blended Shadow Puppet universe. WorldAnvil serves as the "live" repository for approved narrative content, with GitHub serving as the proposal and review space.
+### Integration Path
+A documented procedure for connecting CHIIDS to external systems (GitHub, CUNY Academic Works, Zenodo, WorldAnvil, Zotero). See [Part 4: External Integration](../architecture/part_4_external_integration.md) for details.
 
-### Zotero
-A collaborative bibliographic and reference management tool. CHI maintains group libraries for BBS, BRPS, BSP, CAI, UNESCO, SEID, and QuantumMusic projects. All significant research is cited through Zotero.
-
-### Discord
-An informal real-time communication platform used for quick discussions, announcements, and team coordination outside of formal GitHub workflows.
+### API (Application Programming Interface)
+A programmatic interface for accessing CHIIDS data. Datasette provides a JSON API for querying the project database. Used by the frontend and external tools.
 
 ---
 
-## BBS & Mediation Concepts
+## Documentation Structure
 
-### Mediation Pathway
-In BBS, the route by which a signal, idea, or intent flows from a source through one or more vectors to a destination. Mediation pathways can be physical, virtual, cognitive, or computational.
+### Part 1-5 (Architecture Documentation)
+The five-part architecture specification:
+- **Part 1:** Operational Management (Layer 0 + Layers 1-3)
+- **Part 2:** Data Infrastructure (database, API, frontend, backups)
+- **Part 3:** Public Engagement (publishing, website, journal, social media)
+- **Part 4:** External Integration (GitHub, CUNY, Zenodo, WorldAnvil, Zotero)
+- **Part 5:** Archival & Preservation (storage, backup, recovery, compliance)
 
-### SVD (Source–Vector–Destination)
-The formal syntax notation for representing mediation pathways in BBS. Every communication, action, or transformation can be described as: Source → Vector(s) → Destination.
-
-### Cognition–Computation Symmetry
-The BBS principle that cognitive (human) and computational (AI) agents are equally valid participants in the system. No hierarchy; instead, complementary strengths and shared decision-making.
-
-### Combinative Reality
-The state in which physical, virtual, and conceptual realities coexist and interact symmetrically. BBS enables combinative reality; BRPS tests it; BSP and other projects instantiate it.
-
----
-
-## Tagging & Organization
-
-### Domain Tags
-Labels that categorize projects by their primary domain or framework. Common tags: BBS, BRPS, BSP, CAI, UNESCO, AVMI, SEID, QuantumMusic, CHIIDS.
-
-### Semester Tags
-Labels used to organize work by academic term (e.g., Fall2025, Spring2026).
-
-### Status Labels
-Indicators of project phase: draft, active, completed, archived, paused.
-
----
-
-## Roles & Responsibilities
-
-### Faculty / Principal Investigator (PI)
-Defines meta-projects, maintains proposals, establishes dependencies, approves new project instantiations. Overall stewards of CHIIDS and BBS framework.
-
-### Student Researcher
-Assigned to a team project, works directly in their team's repository, documents AI usage, updates project milestones, and reports progress via StudentResearch and GitHub Issues.
-
-### Team Lead / Project Manager
-Coordinates a specific project's team, manages StudentResearch project cards, ensures milestone tracking, facilitates communication between students and faculty.
-
-### AI Collaborator
-Assists in writing, analysis, synthesis, planning, and documentation. Treated as a team member; all AI contributions are documented and reviewed by humans.
+### /project/ Directory
+The standardized directory in every META-* repository containing meta-project management documents (README, roadmap, milestones). Part of the META-* Project Class pattern.
 
 ---
 
 ## For More Information
 
-- **Three-Layer Architecture:** See [Part 1: Operational Management](../architecture/part_1_operational_management.md)
-- **Current Ecosystem State:** See [ecosystem.md](ecosystem.md)
-- **Integration with External Systems:** See [Part 4: External Integration](../architecture/part_4_external_integration.md)
-- **WorldAnvil Detailed Workflow:** See `WORLDANVIL-WORKFLOW.md`
-- **Database Schema:** See `/database/schema.sql`
+- **Architecture Overview:** See [Part 1: Operational Management](../architecture/part_1_operational_management.md)
+- **Layer 0 Framework Details:** See [docs/architecture/](../architecture/)
+- **META-* Project Class Pattern:** See Part 1, "META-* Project Class Pattern" section
+- **Database Schema:** See [database/schema.sql](../../database/schema.sql)
+- **CHIIDS as Meta-Project:** See [project/README.md](../../project/README.md)
 
