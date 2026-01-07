@@ -183,6 +183,67 @@ Each project has its own repo. Students own and commit to their team's repo. No 
 
 ---
 
+## META-* Project Class Pattern
+
+All Layer 1 meta-projects follow a standardized directory structure (the "META-* Project Class"). This pattern is defined in Layer 0 and instantiated by each meta-project repository.
+
+### Standard Directory Structure
+
+```
+META-<ProjectName>/
+├── project/              # Meta-project management (Layer 1 self-documentation)
+│   ├── README.md         # About this meta-project
+│   ├── roadmap.md        # Development roadmap and priorities
+│   └── milestones.md     # Sprint planning and release schedule
+│
+├── docs/                 # Project deliverables and documentation
+│   ├── proposals/        # Project proposals (if applicable)
+│   ├── research/         # Research findings
+│   └── specifications/   # Technical specifications
+│
+└── [other directories]   # Project-specific content (code, assets, etc.)
+```
+
+### The `/project/` Directory
+
+Every META-* repository includes a `/project/` directory containing:
+
+**`README.md`** — Meta-project overview
+- Purpose and goals
+- Relationship to other meta-projects (primary parent, dependencies)
+- Team structure and ownership
+- Current status
+
+**`roadmap.md`** — Development roadmap
+- Current phase and priorities
+- Upcoming milestones
+- Long-term vision
+- Dependencies and blockers
+
+**`milestones.md`** — Sprint planning
+- Current sprint details
+- Team assignments
+- Task breakdowns
+- Success criteria
+
+### Self-Referential Example: CHIIDS
+
+CHIIDS follows its own pattern:
+- `/project/` — CHIIDS as a Layer 1 meta-project (development planning)
+- `/docs/architecture/` — Layer 0 framework definition (CHIIDS's deliverable)
+- `/database/` — Schema specifications (deliverable)
+
+This separation allows CHIIDS to experience its own Layer 2 (coordination) and Layer 3 (execution) work while defining the Layer 0 framework.
+
+### Object-Oriented Analogy
+
+Think of this as **class inheritance** in object-oriented programming:
+- **Layer 0 (META-CHIIDS)** defines the "META-* Project Class" with required properties and methods
+- **Layer 1 meta-projects** are "object instances" that inherit and implement this class
+- Each instance has the same structure (`/project/` directory, etc.) but different content
+
+---
+
 ## How the Layers Connect
 
 ```
@@ -255,12 +316,21 @@ These principles guide the design of CHIIDS and all meta-projects:
 
 ## For More Information
 
+**Architecture Documentation:**
 - See **[Part 2: Data Infrastructure](part_2_data_infrastructure.md)** for SQLite, Datasette, Frontend, backups
 - See **[Part 3: Public Engagement](part_3_public_engagement.md)** for publishing, website, journal, social media
-- See **[Part 4: External Integration](part_4_external_integration.md)** for GitHub, CUNY Academic Works, Zenodo, WorldAnvil, Zotero
+- See **[Part 4: External Integration](part_4_external_integration.md)** for external system integration procedures (GitHub, CUNY systems, Zenodo, WorldAnvil, Zotero)
 - See **[Part 5: Archival & Preservation](part_5_archival_preservation.md)** for long-term storage, recovery, archival policy
-- See **[chiids_roadmap.md](chiids_roadmap.md)** for CHIIDS development status and bootstrap projects
-- See **[ecosystem.md](../reference/ecosystem.md)** for current state of all meta-projects
-- See **[glossary.md](../reference/glossary.md)** for definitions of key terms
-- See **[integration_paths.md](../reference/integration_paths.md)** for how CHIIDS connects to external systems
-- See `/database/schema.sql` for the relational database structure
+
+**Layer 0 Technical References:**
+- See **[database/schema.sql](../../database/schema.sql)** for the relational database structure
+- See **[glossary.md](../glossary.md)** for CHIIDS-specific terminology (schema, ontology, layers, projection system)
+
+**CHIIDS as Layer 1 Meta-Project:**
+- See **[project/roadmap.md](../../project/roadmap.md)** for CHIIDS development roadmap
+- See **[project/milestones.md](../../project/milestones.md)** for current sprint and team assignments
+- See **[project/README.md](../../project/README.md)** for CHIIDS meta-project overview
+
+**Layer 1 Resources (in CHI-CityTech):**
+- For canonical meta-project list → See CHI-CityTech organization README
+- All META-* repos follow the pattern documented in "META-* Project Class Pattern" section above
