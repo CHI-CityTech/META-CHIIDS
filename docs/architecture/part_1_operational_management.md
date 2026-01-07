@@ -2,7 +2,14 @@
 
 ## Overview
 
-The CHI Integrated Digital System (CHIIDS) is a distributed digital ecosystem consisting of three interacting layers, each with distinct responsibilities and temporal characteristics. This document describes the **internal operational structure**—how projects are defined, coordinated, and executed.
+The CHI Integrated Digital System (CHIIDS) operates as a **projection system**:
+
+- **META-CHIIDS (Layer 0)** = The *structural framework* — schema, ontology, and organizational rules (like a projection system)
+- **Layers 1-3 (Territory)** = The *actual data* — meta-projects, coordination, and execution conforming to the Layer 0 framework
+
+This document describes the three operational layers and how they interact. **CHIIDS itself is self-referential:** it is both the framework-maker (Layer 0) and a meta-project in the territory (Layer 1), so CHIIDS has its own Layer 2 coordination and Layer 3 execution work.
+
+*Analogy:* A Mercator projection is a framework for displaying geographical data. It's agnostic to the specific planet or data being displayed—it's the *system* for organizing whatever data conforms to it. Similarly, Layer 0 defines the *system* for organizing CHI research projects; Layers 1-3 are the actual projects and work using that system.
 
 For data infrastructure (databases, APIs, storage), see **[Part 2: Data Infrastructure](part_2_data_infrastructure.md)**.  
 For public engagement and publishing, see **[Part 3: Public Engagement](part_3_public_engagement.md)**.  
@@ -13,24 +20,46 @@ For archival and preservation, see **[Part 5: Archival & Preservation](part_5_ar
 
 ---
 
-## Important: CHIIDS as Structural Blueprint, Not Territory
+## Layer 0: Structural Framework (META-CHIIDS Repository)
 
-**CHIIDS is the architectural map, not the territory.**
+**Purpose:** Define the *structural framework* — the schema, rules, and organizational principles that any CHI research initiative would conform to.
 
-This repository defines the **structure and schema** for how the CHI research ecosystem is organized. It does not contain the projects themselves. For the actual Project Map and project details, see the authoritative source:
+**Contents:**
+- Relational database schema (SQLite) — structure for describing projects, relationships, metadata
+- Meta-project ontology — how projects relate, dependencies, categorization, tagging rules
+- Architectural principles and integration rules
+- Long-term documentation and system design decisions
+- Configuration files (datasette.yml, etc.)
 
-- **For the Canonical Project Map** → [CHI-CityTech Organization](https://github.com/CHI-CityTech)
-  - README lists all META-projects and their relationships
-  - Individual META-* repos (META-Balanced-Blended-Space, META-BRPS, etc.) contain project details
-  - Projects are tagged to show membership in multiple meta-projects
-  
-- **For Semester Activity & Coordination** → [StudentResearch Repository](https://github.com/CHI-CityTech/StudentResearch)
-  - Project Cards, team assignments, milestones
-  
-- **For Execution & Deliverables** → Individual team repositories in CHI-CityTech org
-  - Code, assets, research logs, sprint tracking
+**What it is NOT:**
+- Does not contain actual project content
+- Does not contain semester coordination or team assignments
+- Does not contain execution work or deliverables
+- Does not make decisions *about* what to do—only defines the *framework* for organizing
 
-This architecture document explains the *structure* that organizes all of that activity.
+**Key Principle:**
+Layer 0 is the *projection system*. It's agnostic to the specific data being organized. It could apply to any CHI initiative or research program using the same structural principles. Layers 1-3 are the actual projects and work conforming to this framework.
+
+---
+
+## The Three Operational Layers (Territory)
+
+### Layer 1: Meta-Project Layer (Permanent, Canonical)
+
+**Location:** [CHI-CityTech Organization](https://github.com/CHI-CityTech)
+
+**Contents:**
+- Canonical Project Map (in CHI-CityTech README)
+- All meta-projects conforming to Layer 0 schema
+- Individual META-* repositories (META-Balanced-Blended-Space, META-BRPS, META-BSP, etc.)
+- Project relationships, dependencies, and cross-tags
+- **Including:** META-CHIIDS itself as a meta-project
+
+**Purpose:**
+Define *what* each CHI meta-project is, how they relate, what problems they solve, and their long-term vision. Layer 1 conforms to the schema defined in Layer 0, but does not change by semester.
+
+**Key Principle:**
+Projects are defined once, thoroughly, with clear dependencies and relationships. They conform to the Layer 0 schema. Many projects can belong to multiple meta-projects via tagging. The canonical list lives here.
 
 ---
 
@@ -55,12 +84,15 @@ Define the *structure* for how CHI meta-projects are organized, related, and tag
 **Key Principle:**
 Projects conform to a canonical structure (defined here), with clear schema for relationships and tags. Many projects can belong to multiple meta-projects via the tagging system. CHIIDS is the *map of the system*, not the territory.
 
-**Examples:**
+
+
+**Examples (all in CHI-CityTech):**
 - Balanced Blended Space (BBS) — Universal framework
 - Blended Reality Performance System (BRPS) — Modular test environment
 - Blended Shadow Puppet (BSP) — Flagship creative testbed
 - Collaborative AI (CAI) — AI-human co-creation ecosystem
 - BABS (Bio-Aware Blended Spaces) — Sensor-driven intelligent environment
+- **CHIIDS** — The meta-project that defines and coordinates the entire research ecosystem
 
 ---
 
