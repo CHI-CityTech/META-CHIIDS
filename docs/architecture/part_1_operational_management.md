@@ -17,16 +17,20 @@ For archival and preservation, see **[Part 5: Archival & Preservation](part_5_ar
 
 **CHIIDS is the architectural map, not the territory.**
 
-This repository documents **how** the CHI research ecosystem is organized and coordinated. It does not duplicate project content. For project details, proposals, and active work, see the authoritative sources:
+This repository defines the **structure and schema** for how the CHI research ecosystem is organized. It does not contain the projects themselves. For the actual Project Map and project details, see the authoritative source:
 
-- **For Meta-Project Descriptions & Proposals** → [CHI-CityTech Organization](https://github.com/CHI-CityTech)
-  - Example: [META-Balanced-Blended-Space](https://github.com/CHI-CityTech/META-Balanced-Blended-Space)
+- **For the Canonical Project Map** → [CHI-CityTech Organization](https://github.com/CHI-CityTech)
+  - README lists all META-projects and their relationships
+  - Individual META-* repos (META-Balanced-Blended-Space, META-BRPS, etc.) contain project details
+  - Projects are tagged to show membership in multiple meta-projects
+  
 - **For Semester Activity & Coordination** → [StudentResearch Repository](https://github.com/CHI-CityTech/StudentResearch)
   - Project Cards, team assignments, milestones
+  
 - **For Execution & Deliverables** → Individual team repositories in CHI-CityTech org
   - Code, assets, research logs, sprint tracking
 
-This architecture document explains the *structure* and *principles* that organize all that activity.
+This architecture document explains the *structure* that organizes all of that activity.
 
 ---
 
@@ -34,19 +38,22 @@ This architecture document explains the *structure* and *principles* that organi
 
 ### Layer 1: Meta-Project Layer (Permanent, Canonical)
 
-**Location:** `META-CHIIDS` repository (this repo)
+**Location:** `META-CHIIDS` repository (this repo) — *The Structural Blueprint*
 
 **Contents:**
-- Project proposals (canonical, versioned)
-- Relational database schema (SQLite)
-- Meta-project ontology (dependencies, relationships, tags)
-- Long-term documentation and architectural decisions
+- Relational database schema (SQLite) defining project structure
+- Meta-project ontology (how projects relate, dependencies, tagging system)
+- Architectural principles and integration rules
+- Long-term documentation and system design decisions
+- Configuration files (datasette.yml, etc.)
+
+**Important:** The actual *Project Map* (canonical list of projects and their details) lives in the [CHI-CityTech organization](https://github.com/CHI-CityTech). CHIIDS defines the **structure and schema** that the Project Map conforms to, not the project content itself.
 
 **Purpose:**
-Define *what* each CHI meta-project is, how they relate, and what problems they solve. This layer does not change by semester.
+Define the *structure* for how CHI meta-projects are organized, related, and tagged. This layer specifies: "If we want to track projects and their relationships, here's the schema." It does not change by semester; it only evolves when the structural design itself needs to change.
 
 **Key Principle:**
-Projects are defined once, thoroughly, with clear dependencies. Proposals are the authoritative source of truth for project structure, not temporary semester work.
+Projects conform to a canonical structure (defined here), with clear schema for relationships and tags. Many projects can belong to multiple meta-projects via the tagging system. CHIIDS is the *map of the system*, not the territory.
 
 **Examples:**
 - Balanced Blended Space (BBS) — Universal framework
