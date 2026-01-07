@@ -324,7 +324,7 @@ These principles guide the design of CHIIDS and all meta-projects:
 
 **Layer 0 Technical References:**
 - See **[database/schema.sql](../../database/schema.sql)** for the relational database structure
-- See **[glossary.md](../glossary.md)** for CHIIDS-specific terminology (schema, ontology, layers, projection system)
+- See **[glossary.md](../reference/glossary.md)** for CHIIDS-specific terminology (schema, ontology, layers, projection system)
 
 **CHIIDS as Layer 1 Meta-Project:**
 - See **[project/roadmap.md](../../project/roadmap.md)** for CHIIDS development roadmap

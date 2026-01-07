@@ -167,3 +167,44 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 This roadmap follows the CHIIDS self-referential model: CHIIDS is experiencing its own Layer 2 (coordination) and Layer 3 (execution) work while simultaneously defining the Layer 0 framework that governs all CHI projects.
 
 **Last Updated:** January 7, 2026
+
+---
+
+## Detailed Specifications (Parts 2–5)
+
+### Part 2: Data Infrastructure (Layer 0 implementation)
+- SQLite schema: finalize tables for `projects`, `relationships`, `tags`, `domains`, `repos`, `people`
+- Datasette: configure metadata, permissions, canned queries, JSON pagination, CORS
+- Frontend: API contracts (endpoints, shapes), search/filter semantics, error handling
+- Backups: schedule, retention, encryption, restore runbook; staging vs prod policies
+- Performance: indices for dependency queries; view optimizations for common lists
+
+### Part 3: Public Engagement
+- Publishing pipeline: source of truth, review gates, auto-publish triggers
+- Website: information architecture (IA), navigation, search, accessibility baseline
+- OJS (CHI Publications): journal setup, submission workflow, DOI policy integration
+- CUNY Academic Works: deposit criteria, metadata mapping, automated export from CHIIDS
+- Social: content templates, cadence, governance for announcements and highlights
+
+### Part 4: External Integration
+- GitHub: Actions for schema validation, report generation, catalog build; label/taxonomy
+- Zenodo: DOI minting workflow; metadata mapping from CHIIDS; preservation copies
+- WorldAnvil: sync model (authoritative fields vs derived); review/approval flow
+- Zotero: group libraries; citation sync; bibliography exports per meta-project
+- CUNY systems: OpenLab site structure, Teams/SharePoint document policies, SSO touchpoints
+
+### Part 5: Archival & Preservation
+- Storage tiers: active vs archival; cold storage policy; checksum strategy
+- Backup windows: daily/weekly/monthly cadence; offsite rotation; restore testing
+- Recovery: RTO/RPO targets; disaster drills; dependency rebuild procedures
+- Metadata preservation: provenance, file manifests, DOI linkage, catalog snapshots
+- Compliance: FERPA/IRB where applicable; audit trails; access controls
+
+---
+
+## Consolidated Blockers (Parts 2–5)
+- Owners unassigned for database population and Datasette deployment (P0)
+- Hosting platform decision pending (P0): Vercel vs Fly.io vs Railway vs AWS
+- External credentials: Zenodo, CUNY Academic Works, OJS, WorldAnvil
+- Policy decisions: backup retention, publishing governance, DOI workflows
+
