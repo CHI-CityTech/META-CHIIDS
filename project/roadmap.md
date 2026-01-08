@@ -79,11 +79,17 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 
 ## P2: Integration & Automation (Mar 2026)
 
-### 6. GitHub Integration
+### 6. GitHub Integration & Project Hierarchy
 - [ ] GitHub Actions for schema validation
 - [ ] Auto-sync StudentResearch data
 - [ ] Generate project reports
 - [ ] Build catalog from metadata
+- [ ] **Clarify project hierarchy generation workflow:**
+  - [ ] Determine if `generate_hierarchy.yml` workflow should live in META-CHIIDS or CHI-CityTech repo
+  - [ ] Document seed data sourcing (CHI data dump) vs live database transition
+  - [ ] Plan migration of hierarchy report from static markdown to Datasette view
+  - [ ] Establish when/how hierarchy generation runs (on every push, scheduled, manual)
+- [ ] **Organize StudentResearch repository** (currently exists but needs structure)
 
 ### 7. External System Integration
 - [ ] CUNY Academic Works API connection
@@ -194,9 +200,10 @@ This roadmap follows the CHIIDS self-referential model: CHIIDS is experiencing i
 
 ### Part 4: External Integration
 - GitHub: Actions for schema validation, report generation, catalog build; label/taxonomy
+- **Project Hierarchy Generation:** Clarify ownership (META-CHIIDS vs CHI-CityTech); document seed data sourcing; plan transition to Datasette view
 - Zenodo: DOI minting workflow; metadata mapping from CHIIDS; preservation copies
 - WorldAnvil: sync model (authoritative fields vs derived); review/approval flow
-- Zotero: group libraries; citation sync; bibliography exports per meta-project
+- Zotero: group libraries; citation sync; bibliography exports per meta-project; formal integration with CUNY Academic Works and Zenodo
 - CUNY systems: OpenLab site structure, Teams/SharePoint document policies, SSO touchpoints
 
 ### Part 5: Archival & Preservation
