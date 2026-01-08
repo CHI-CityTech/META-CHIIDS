@@ -3,14 +3,14 @@
  * Queries run against localhost:8001 (local Datasette instance)
  */
 
-const API_BASE = "http://localhost:8001/database";
+const API_BASE = "http://localhost:8001/chiids";
 
 export const api = {
   /**
    * Get all projects with optional filters
    */
   async getProjects(filters = {}) {
-    let url = `${API_BASE}/projects.json`;
+    let url = `${API_BASE}/projects.json?_shape=objects`;
     const params = new URLSearchParams();
 
     if (filters.search) {
@@ -27,7 +27,7 @@ export const api = {
     }
 
     const qs = params.toString();
-    if (qs) url += `?${qs}`;
+    if (qs) url += `&${qs}`;
 
     try {
       const response = await fetch(url);
@@ -44,7 +44,7 @@ export const api = {
    * Get a single project by slug
    */
   async getProjectBySlug(slug) {
-    const url = `${API_BASE}/projects.json?slug=${encodeURIComponent(slug)}`;
+    const url = `${API_BASE}/projects.json?_shape=objects&slug=${encodeURIComponent(slug)}`;
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error("Failed to fetch project");
@@ -60,7 +60,7 @@ export const api = {
    * Get all dependencies
    */
   async getDependencies() {
-    const url = `${API_BASE}/dependencies.json`;
+    const url = `${API_BASE}/dependencies.json?_shape=objects`;
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error("Failed to fetch dependencies");
@@ -76,7 +76,7 @@ export const api = {
    * Get dependencies for a specific project
    */
   async getProjectDependencies(projectSlug) {
-    const url = `${API_BASE}/dependencies.json?source_project_slug=${encodeURIComponent(projectSlug)}`;
+    const url = `${API_BASE}/dependencies.json?_shape=objects&source_project_slug=${encodeURIComponent(projectSlug)}`;
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error("Failed to fetch project dependencies");
