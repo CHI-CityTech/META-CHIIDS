@@ -6,7 +6,7 @@ The digital nervous system for the Center for Holistic Integration (CHI) and the
 
 CHIIDS is a distributed, three-layer digital ecosystem designed to support the entire lifecycle of CHI's meta-projects: from theoretical proposal through active research to long-term archival.
 
-**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Abstract](ABSTRACT.md)** | **[Getting Started](#getting-started)**
+**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Getting Started](#getting-started)**
 
 ---
 
@@ -68,19 +68,16 @@ CHIIDS is guided by CHI's core philosophy of _Holistic Integration_ and the _Bal
 
 ---
 
-## CHI Meta-Projects Supported
+## Layer 0 Framework Examples
 
-| Meta-Project | Domain | Role |
-|--|--|--|
-| **Balanced Blended Space (BBS)** | Theory | Universal framework for combinative reality |
-| **Blended Reality Performance System (BRPS)** | Engineering | Modular test environment for BBS |
-| **Blended Shadow Puppet (BSP)** | Creative | Flagship artistic testbed; world-building |
-| **Collaborative AI (CAI)** | AI/Human Collaboration | Partnership models for co-creation |
-| **UNESCO World-Building** | Research | Cultural transformation → fictional universe |
-| **Bio-Aware Blended Spaces (BABS)** | Systems | Sensor-driven intelligent environments |
-| **AI-Integrated Performance** | Production | Virtual Orchestra, immersive audio, robotics |
+CHIIDS (this repository) defines the **structural framework** for organizing CHI meta-projects. Actual meta-projects (Layer 1) live in the **[CHI-CityTech organization](https://github.com/CHI-CityTech)**, where each follows the META-* Project Class pattern.
 
-See **[CHI-CityTech organization](https://github.com/CHI-CityTech)** for comprehensive project repositories.
+**Example Meta-Projects:**
+- **Balanced Blended Space (BBS)** — Theory: Universal framework for combinative reality
+- **Blended Reality Performance System (BRPS)** — Engineering: Modular test environment for BBS
+- **Collaborative AI (CAI)** — AI/Human Collaboration: Partnership models for co-creation
+
+*For the complete list of CHI meta-projects, see the [CHI-CityTech organization](https://github.com/CHI-CityTech).*
 
 ---
 
