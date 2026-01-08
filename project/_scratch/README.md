@@ -33,4 +33,6 @@ Promoted from `project/_scratch/` after review.
 
 ---
 
-See [project/README.md](../README.md) for the complete authority model.
+For the full authority model, see:
+- **[project/AUTHORITY-MODEL.md](../AUTHORITY-MODEL.md)** — Canonical rules
+- **[docs/architecture/repository_structure.md](../../docs/architecture/repository_structure.md)** — Detailed guide with examples

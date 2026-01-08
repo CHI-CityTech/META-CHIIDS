@@ -37,7 +37,7 @@ See **[Part 1: Operational Management](docs/architecture/part_1_operational_mana
 
 - Purpose: A unified system for coordinating CHI research, collaboration, and long-term knowledge stewardship.
 - Audience: Faculty, researchers, students, and partners who want to understand CHI's meta-projects and how they connect.
-- Authority: See the Repository Authority Model in [project/AUTHORITY-MODEL.md](project/AUTHORITY-MODEL.md).
+- Authority: See the Repository Authority Model in [project/AUTHORITY-MODEL.md](project/AUTHORITY-MODEL.md) (canonical rules) or [docs/architecture/repository_structure.md](docs/architecture/repository_structure.md) (detailed guide).
 - Foundations: The original engineering specification lives in [project/architecture/chiids_original_spec.md](project/architecture/chiids_original_spec.md).
 
 ## Cornerstones

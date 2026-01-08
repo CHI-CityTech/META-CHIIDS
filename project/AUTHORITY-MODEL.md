@@ -1,26 +1,20 @@
 # Repository Authority Model
 
-This document defines the **Repository Authority Model** for META-CHIIDS — how we organize authoritative materials, deliverables, and working drafts across the repository.
+**Canonical Reference** — This document defines the authority tiers for META-CHIIDS repository organization.
 
-The authority model ensures clarity about what's official, what's published, and what's in-progress. It aligns with CHIIDS's philosophical commitment to preserving project integrity and making governance transparent.
+For detailed explanation, examples, and promotion workflows, see **[docs/architecture/repository_structure.md](../docs/architecture/repository_structure.md)**.
 
 ---
 
-## Why We Need an Authority Model
+## Three-Tier Authority Model
 
-A meta-project repository serves multiple audiences:
-- **Contributors** need to know which files control workflows and automation
-- **Readers** need to distinguish polished deliverables from rough drafts
-- **Governance** requires clear versioning and review for authoritative decisions
-
-The authority model creates three tiers:
-1. **Control Plane** (`project/`): Generative, canonical materials that define how CHIIDS operates
-2. **Deliverables** (`docs/`): Published outputs intended for stakeholders and collaborators
+1. **Control Plane** (`project/`): Canonical, generative materials that define how CHIIDS operates
+2. **Deliverables** (`docs/`): Published outputs intended for stakeholders and collaborators  
 3. **Drafts** (`project/_scratch/`): Non-authoritative experiments and discussion artifacts
 
 ---
 
-## Directory Authority Model
+## Directory Definitions
 
 ### `project/` (Control Plane)
 
@@ -92,67 +86,18 @@ The authority model creates three tiers:
 
 ---
 
-## Promotion Rules
+## Promotion Criteria
 
-### From `_scratch/` to `project/`
+**From `_scratch/` to `project/`:**  
+Only if it becomes a controlling rule, operational template, or reference that automation depends on.
 
-Promote a `_scratch/` file to `project/` **only if** it becomes:
-- A controlling rule (e.g., data extraction rules, governance policy)
-- An operational template or contract (e.g., schema specification)
-- A reference that automation or tooling depends on
-
-**Promotion process:**
-1. Rename or move the file to `project/` (removing `_scratch/` path)
-2. Add a one-line note: `Promoted from project/_scratch/ after review.`
-3. Update `project/README.md` to document the new file
-4. Commit with message: `Promote [filename] from _scratch/ to project/ — now authoritative`
-
-### From `_scratch/` to `docs/`
-
-Promote a `_scratch/` file to `docs/` **only if** it becomes:
-- A published report or research summary
-- A human-facing guide intended for readers
-- A curated deliverable reflecting team consensus
-
-**Promotion process:**
-1. Rename or move the file to appropriate `docs/` subdirectory
-2. Add a one-line note: `Promoted from project/_scratch/ after review.`
-3. Ensure it's written for external readers (not internal discussion)
-4. Commit with message: `Publish [filename] to docs/ — ready for readers`
-
----
-
-## Examples: Promotion Decisions
-
-### Example 1: A Data Extraction Rule
-**Scenario:** You've designed a rule for how to parse GitHub READMEs and extract project metadata.
-
-- **Current state:** Documented in `project/_scratch/data_extraction_rules.md` (for discussion)
-- **When it's finalized:** Promote to `project/DATA_EXTRACTION_RULES.md` (ingestion agents will read it)
-- **How to promote:** Move file, add "Promoted from…" note, commit
-
-### Example 2: An Architecture Diagram Analysis
-**Scenario:** You've created a detailed analysis comparing old and new CHIIDS architectures.
-
-- **Current state:** In `project/_scratch/DIAGRAM-ANALYSIS-FOR-CHATGPT.md` (discussion artifact)
-- **If it becomes a deliverable:** Move to `docs/architecture/` and rewrite for readers
-- **If it becomes a rule:** Promote to `project/ARCHITECTURE-RULES.md`
-- **If it remains discussion:** Keep in `_scratch/` indefinitely (useful for context)
-
-### Example 3: A Proposal Briefing
-**Scenario:** You have a comprehensive briefing document for AI agents to generate proposals.
-
-- **Current state:** In `project/_scratch/PROPOSAL_BRIEFING.md` (input for agents, not authoritative)
-- **Never promote to `project/`:** This briefing is for agent input, not a control rule
-- **Possibly promote to `docs/`:** If you want to publish it for readers to understand proposal generation
-- **Keep in `_scratch/`:** If it's useful as context but not a deliverable
+**From `_scratch/` to `docs/`:**  
+Only if it becomes a published report, human-facing guide, or curated deliverable.
 
 ---
 
 ## Related Documents
 
-- **[project/README.md](README.md)** — Index to the control plane directory
-- **[project/ROADMAP.md](ROADMAP.md)** — Development priorities and milestones
-- **[project/GOVERNANCE.md](GOVERNANCE.md)** — Decision-making processes
-- **[project/GLOSSARY.md](GLOSSARY.md)** — Authoritative vocabulary
+- **[docs/architecture/repository_structure.md](../docs/architecture/repository_structure.md)** — Detailed explanation, examples, and workflows
+- **[project/README.md](README.md)** — Control plane directory index
 - **[project/_scratch/README.md](_scratch/README.md)** — Non-authoritative drafts guidance
