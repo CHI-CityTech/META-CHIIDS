@@ -96,6 +96,9 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 - [x] Part 1: Operational Management (Layer 0 + Layers 1-3)
 - [x] Clarify projection system analogy
 - [x] Part 4: External Integration (clarified CHIIDS internal vs external)
+- [x] Root README: Mission-driven overview and authority links
+- [x] Original Spec: Move to project/architecture and update references
+- [x] Authority Model: Document directory roles in project/README.md
 - [ ] Complete Part 2: Data Infrastructure (database design, Datasette, frontend architecture)
 - [ ] Complete Part 3: Public Engagement (publishing pipeline, website IA)
 - [ ] Complete Part 5: Archival & Preservation (backup strategy, recovery procedures)
@@ -270,7 +273,7 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 
 This roadmap follows the CHIIDS self-referential model: CHIIDS is experiencing its own Layer 2 (coordination) and Layer 3 (execution) work while simultaneously defining the Layer 0 framework that governs all CHI projects.
 
-**Last Updated:** January 7, 2026
+**Last Updated:** January 8, 2026
 
 ---
 
