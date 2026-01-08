@@ -16,6 +16,8 @@ CHIIDS integrates research coordination, project management, collaborative AI wo
 
 **Core Philosophy:** Integration over Creation — orchestrate existing systems rather than build redundant tools.
 
+At its core, CHIIDS is organized around four cornerstones that reflect CHI’s mission and operating model: **Management**, **Communications**, **Storage**, and **Integration**. These work together to align projects with CHI’s goals, facilitate collaboration, preserve knowledge, and connect external systems without reinventing the wheel.
+
 The system operates across four layers:
 
 - **Layer 0 (Structural Framework)** — Schema, ontology, and organizational rules (this repository)
@@ -34,12 +36,27 @@ See **[Part 1: Operational Management](docs/architecture/part_1_operational_mana
 - Authority: See the Repository Authority Model in [project/README.md](project/README.md#directory-authority-model).
 - Foundations: The original engineering specification lives in [project/architecture/chiids_original_spec.md](project/architecture/chiids_original_spec.md).
 
-## Core Components
+## Cornerstones
 
-- Project Management: Define meta-projects, relationships, and governance across CHI.
-- Communications: Coordinate semester work and cross-team collaboration.
-- Storage: Preserve artifacts, decisions, and research outputs over time.
-- Integration: Connect external platforms (GitHub, Zotero, WorldAnvil, OpenLab) into one coherent system.
+### Management
+- Plan and govern meta-projects and subprojects; assign tasks and track progress.
+- Align voluntary partners’ goals with CHI initiatives while preserving project integrity.
+- Maintain roadmaps, governance, and project relationships across the ecosystem.
+
+### Communications
+- Enable real-time collaboration and status flow across teams and semesters.
+- Support public engagement with clear, accessible updates and summaries.
+- Coordinate cross-team work without centralizing execution into a single repo.
+
+### Storage
+- Organize and secure documentation, deliverables, code, and media for long-term stewardship.
+- Ensure versioning, retrieval, and archival across projects and publishing pipelines.
+- Support both active work and preservation requirements.
+
+### Integration
+- Connect CHIIDS to external systems (GitHub, OpenLab, Zotero, WorldAnvil, City Tech platforms).
+- Leverage existing tools to avoid redundancy; prioritize interoperability.
+- Maintain smooth data and workflow interactions while protecting project integrity.
 
 ---
 
