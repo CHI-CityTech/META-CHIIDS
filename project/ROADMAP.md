@@ -6,6 +6,10 @@ meta_project: CHIIDS
 
 # CHIIDS Development Roadmap
 
+## Overview
+
+The CHIIDS Development Roadmap charts the path from bootstrap (database, API, core documentation) through production (frontend, automation, integration, and publishing). This roadmap integrates all major objectives: building a meta-project ontology, developing discovery interfaces (both graphical and AI-powered), implementing three-layer integration (meta-projects → semester coordination → execution), automating data flows, and establishing long-term archival and preservation. The roadmap is organized in phases (P0–P3) with clear deadlines, owners, and success metrics. Each phase builds on previous work to create a sustainable system supporting CHI's mission of holistic integration across research, collaboration, and knowledge stewardship.
+
 ## Current Status: Bootstrap Phase (P0)
 
 CHIIDS is in critical bootstrap phase, establishing foundational infrastructure for all CHI projects.
