@@ -16,7 +16,7 @@ For public engagement and publishing, see **[Part 3: Public Engagement](part_3_p
 For external integrations, see **[Part 4: External Integration](part_4_external_integration.md)**.  
 For archival and preservation, see **[Part 5: Archival & Preservation](part_5_archival_preservation.md)**.
 
-> **Historical Note:** This architecture evolved from the [original CHIIDS engineering specification](../../project/architecture/chiids_original_spec_2024_09_21.pdf) (September 2024). The original spec provides foundational context for the design decisions documented here.
+> **Historical Note:** This architecture evolved from the [original CHIIDS engineering specification](../../project/architecture/chiids_original_spec.md) (September 2024). The original spec provides foundational context for the design decisions documented here.
 
 ---
 

@@ -6,7 +6,7 @@ The digital nervous system for the Center for Holistic Integration (CHI) and its
 
 CHIIDS is a distributed, three-layer digital ecosystem designed to support the entire lifecycle of CHI's meta-projects: from theoretical proposal through active research to long-term archival.
 
-**[Original Specification](project/architecture/chiids_original_spec_2024_09_21.pdf)** | **[Repository Authority Model](project/AUTHORITY-MODEL.md)** | **[Getting Started](#getting-started)**
+**[Original Specification](project/architecture/chiids_original_spec.md)** | **[Repository Authority Model](project/AUTHORITY-MODEL.md)** | **[Getting Started](#getting-started)**
 
 ---
 
@@ -20,7 +20,7 @@ At its core, CHIIDS is organized around four cornerstones that reflect CHI’s m
 
 > CHIIDS supports participants’ original goals through thoughtful alignment with CHI meta-projects and initiatives. It preserves participating project integrity while seeking and exploiting synergies between these projects — optimizing existing tools for collaboration rather than reinventing systems.
 
-**Philosophical Model:** CHIIDS embodies holistic integration—aligning voluntary partners, preserving each project's intent, and cultivating synergies instead of centralizing execution. We prefer integration over reinvention, maintain inclusivity across disciplines and resource levels, and use the system to safeguard integrity while enabling collaboration. For the full framing, see the [original specification](project/architecture/chiids_original_spec_2024_09_21.pdf).
+**Philosophical Model:** CHIIDS embodies holistic integration—aligning voluntary partners, preserving each project's intent, and cultivating synergies instead of centralizing execution. We prefer integration over reinvention, maintain inclusivity across disciplines and resource levels, and use the system to safeguard integrity while enabling collaboration. For the full framing, see the [original specification](project/architecture/chiids_original_spec.md).
 
 The system operates across four layers:
 
@@ -38,7 +38,7 @@ See **[Part 1: Operational Management](docs/architecture/part_1_operational_mana
 - Purpose: A unified system for coordinating CHI research, collaboration, and long-term knowledge stewardship.
 - Audience: Faculty, researchers, students, and partners who want to understand CHI's meta-projects and how they connect.
 - Authority: See the Repository Authority Model in [project/AUTHORITY-MODEL.md](project/AUTHORITY-MODEL.md) (canonical rules) or [docs/architecture/repository_structure.md](docs/architecture/repository_structure.md) (detailed guide).
-- Foundations: The original engineering specification lives in [project/architecture/chiids_original_spec_2024_09_21.pdf](project/architecture/chiids_original_spec_2024_09_21.pdf) (also available as [markdown](project/architecture/chiids_original_spec.md)).
+- Foundations: The original engineering specification lives in [project/architecture/chiids_original_spec.md](project/architecture/chiids_original_spec.md) (also available as [PDF](project/architecture/chiids_original_spec_2024_09_21.pdf)).
 
 ## Cornerstones
 
@@ -215,7 +215,7 @@ MIT License. See [LICENSE](LICENSE) for details.
 ## For More Information
 
 - **Authority Model:** See [project/AUTHORITY-MODEL.md](project/AUTHORITY-MODEL.md)
-- **Original Specification:** [project/architecture/chiids_original_spec_2024_09_21.pdf](project/architecture/chiids_original_spec_2024_09_21.pdf) (also [markdown](project/architecture/chiids_original_spec.md))
+- **Original Specification:** [project/architecture/chiids_original_spec.md](project/architecture/chiids_original_spec.md) (also [PDF](project/architecture/chiids_original_spec_2024_09_21.pdf))
 - **Architecture Overview:** [docs/architecture/](docs/architecture/)
 - **Layer 0 Framework:** [Part 1: Operational Management](docs/architecture/part_1_operational_management.md)
 - **Development Roadmap:** [project/ROADMAP.md](project/ROADMAP.md)

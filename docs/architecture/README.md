@@ -155,5 +155,5 @@ These are the normative architectural specifications. They define the "correct" 
 - **[ecosystem.md](../reference/ecosystem.md)** — Current state of all CHI meta-projects
 - **[integration_paths.md](../reference/integration_paths.md)** — Detailed integration workflows (GitHub, WorldAnvil, etc.)
 - **[ROADMAP.md](../../project/ROADMAP.md)** — CHIIDS development status and roadmap (canonical)
- - **[chiids_original_spec_2024_09_21.pdf](../../project/architecture/chiids_original_spec_2024_09_21.pdf)** — Original September 2024 engineering specification (historical, also [markdown](../../project/architecture/chiids_original_spec.md))
+ - **[chiids_original_spec.md](../../project/architecture/chiids_original_spec.md)** — Original September 2024 engineering specification (historical, also [PDF](../../project/architecture/chiids_original_spec_2024_09_21.pdf))
 - **[project_hierarchy.md](project_hierarchy.md)** — Auto-generated visualization of project dependencies
