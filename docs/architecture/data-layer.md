@@ -89,10 +89,24 @@ The SQLite database stores the **canonical meta-project ontology**—the authori
 - Maps projects to tags
 - Allows classification by domain, keyword, framework, etc.
 
-**`project_activity`** — Semester-level tracking  
-- Links projects to StudentResearch semester activity
-- Tracks team assignments, student participation, semester goals
-- Maintains history of project evolution across semesters
+**`project_activity`** — Semester-level tracking and three-layer integration  
+- `activity_id`: Unique identifier
+- `project_id`: Link to canonical project (Layer 1)
+- `semester`: Semester identifier (e.g., "2026-01-spring")
+- `team_repo_url`: Link to execution team repository (Layer 3)
+- `student_names`: Team members
+- `goals`: Semester goals for the project
+- `status`: Activity status (active, completed, paused)
+- `github_issue_url`: Link to StudentResearch issue
+- `project_card_url`: Link to StudentResearch project card
+- **Critical role**: Bridges canonical projects (Meta-Project Layer) with semester activity (Research Coordination Layer) and team repositories (Execution Layer)
+
+This table is **essential for integration** because it:
+- Links permanent project definitions to temporary semester activity
+- Connects StudentResearch coordination (Layer 2) to actual team work (Layer 3)
+- Maintains historical record of project evolution across semesters
+- Enables querying "Which teams worked on BSP in Spring 2026?"
+- Supports analysis of project participation patterns over time
 
 **`bbs_syntax`** — Balanced Blended Space mappings  
 - Tracks how projects implement BBS transformations
@@ -179,10 +193,119 @@ curl "http://localhost:8001/chiids/proposals.json?status=submitted"
 3. **StudentResearch**: Links back to active projects and proposals
 4. **CHI-CityTech Meta-Projects**: Can query related projects and dependencies
 5. **Data Export**: JSON responses support research analysis and reporting
+6. **Project Activity Integration**: Query semester activity to see which teams worked on which projects
+
+---
+
+## Project Activities: Bridging the Three-Layer System
+
+### Why Project Activities Matter
+
+The `project_activity` table is **critical to CHIIDS integration** because it bridges all three layers:
+
+```
+Meta-Project Layer (Permanent)      Research Coordination Layer        Execution Layer (Semester)
+                                    (Semester-Updated)
+    
+┌──────────────────┐          ┌─────────────────────┐          ┌──────────────────┐
+│   projects       │◄─────────┤  project_activity   │─────────►│  team_repo_url   │
+│                  │          │                     │          │                  │
+│ - name           │          │ - project_id        │          │ team-bsp-spring  │
+│ - description    │          │ - semester          │          │ team-bbs-spring  │
+│ - dependencies   │          │ - team_repo_url     │          │ etc.             │
+│ - status         │          │ - student_names     │          │                  │
+│ - maturity_level │          │ - goals             │          │  (actual code,   │
+│                  │          │ - github_issue_url  │          │   assets,        │
+│                  │          │ - project_card_url  │          │   deliverables)  │
+└──────────────────┘          └─────────────────────┘          └──────────────────┘
+                                        ▲
+                                        │
+                                        ▼
+                              StudentResearch Repo
+                            (coordination hub)
+                            - GitHub Projects board
+                            - team rosters
+                            - semester milestones
+```
+
+### Storage of Project Activities
+
+The Data Layer stores project activities to:
+
+- **Preserve history**: Every semester's work is recorded permanently (not deleted after semester ends)
+- **Track evolution**: See how projects evolve across multiple semesters
+- **Maintain context**: Connect team work back to canonical project definitions
+- **Enable analysis**: Query "Which semesters has project X been active?" or "How many students worked on the BBS project?"
+
+**Key storage attributes:**
+
+| Field | Purpose |
+|---|---|
+| `semester` | Timestamp for when activity occurred (preserved permanently) |
+| `project_id` | FK to canonical project (integrates with Meta-Project Layer) |
+| `team_repo_url` | Direct link to execution work (integrates with Layer 3) |
+| `student_names` | Captures who participated (for credits, attribution) |
+| `goals` | Records what was planned (vs. what was accomplished) |
+| `github_issue_url` | Links to StudentResearch coordination (Layer 2) |
+| `created_date`, `last_updated` | Audit trail of when activity record was created/modified |
+
+### Integration of Project Activities
+
+The Data Layer integrates project activities through:
+
+1. **API Queries**: Query project activity across semesters
+   ```bash
+   # All semesters a project has been active
+   curl "http://localhost:8001/chiids/project_activity.json?project_id=1"
+   
+   # All teams working in a semester
+   curl "http://localhost:8001/chiids/project_activity.json?semester=2026-01-spring"
+   
+   # Find teams for a specific project
+   curl "http://localhost:8001/chiids/project_activity.json?project_id=3&semester=2026-01-spring"
+   ```
+
+2. **Frontend Display**: Project detail pages show activity history
+   - Current semester status and team
+   - Historical participation across all semesters
+   - Links to team repositories and GitHub issues
+
+3. **External Integration**: StudentResearch can query CHIIDS to:
+   - Validate that project exists in Meta-Project Layer
+   - Link semester activity to canonical definitions
+   - Export project participation for reports
+
+4. **Historical Analysis**: Researchers can query to understand:
+   - Project maturity over time (prototype → production)
+   - Student participation patterns
+   - Project dependency evolution
+   - Which meta-projects are actively developed
+
+### Example: Querying Project Activity
+
+**Scenario:** "I want to see all work done on the Balanced Blended Space (BBS) project"
+
+```javascript
+// Frontend code:
+const projects = await api.getProjects({ search: "Balanced Blended Space" });
+const bbsProject = projects[0]; // Get BBS project record
+
+// Query all activity for BBS across all semesters
+const activities = await fetch(
+  `http://localhost:8001/chiids/project_activity.json?project_id=${bbsProject.project_id}`
+);
+
+// Results show:
+// - Spring 2025: team-bbs-2025sp in StudentResearch
+// - Fall 2025: team-bbs-2025fa in StudentResearch
+// - Spring 2026: team-bbs-2026sp (current)
+// Each linked to actual GitHub team repos
+```
 
 ---
 
 ## Presentation Layer: React Frontend
+
 
 ### Purpose
 
