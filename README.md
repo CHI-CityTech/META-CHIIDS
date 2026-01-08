@@ -6,36 +6,39 @@ The digital nervous system for the Center for Holistic Integration (CHI) and the
 
 CHIIDS is a distributed, three-layer digital ecosystem designed to support the entire lifecycle of CHI's meta-projects: from theoretical proposal through active research to long-term archival.
 
-**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Abstract](ABSTRACT.md)** | **[Getting Started](#getting-started)**
+**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Getting Started](#getting-started)**
 
 ---
 
 ## What is CHIIDS?
 
-CHIIDS integrates research coordination, project management, collaborative AI workflows, and knowledge archiving across all CHI initiatives (BBS, BRPS, BSP, CAI, UNESCO World-Building, and more).
+CHIIDS integrates research coordination, project management, collaborative AI workflows, and knowledge archiving across all CHI initiatives.
 
 **Core Philosophy:** Integration over Creation — orchestrate existing systems rather than build redundant tools.
 
-The system is built on three interacting layers:
+The system operates across four layers:
 
-1. **Meta-Project Layer** — Permanent project proposals, ontology, and dependencies
-2. **Research Coordination** — Semester-updated student assignments and project tracking  
-3. **Execution** — Individual team repositories where actual work happens
+- **Layer 0 (Structural Framework)** — Schema, ontology, and organizational rules (this repository)
+- **Layer 1 (Meta-Projects)** — Permanent projects conforming to Layer 0 structure
+- **Layer 2 (Coordination)** — Semester-based research assignments and tracking
+- **Layer 3 (Execution)** — Individual team repositories where work happens
 
-See **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** for the full three-layer system description.
+See **[Part 1: Operational Management](docs/architecture/part_1_operational_management.md)** for the complete Layer 0 framework description.
 
 ---
 
 ## Quick Links
 
 ### Core Documentation
-- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** — The three-layer system design and how layers connect
-- **[ECOSYSTEM.md](docs/ECOSYSTEM.md)** — Current state of all CHI meta-projects (coming soon)
-- **[GLOSSARY.md](docs/GLOSSARY.md)** — Definitions of key terms (BBS, BRPS, BSP, CAI, meta-project, etc.)
-- **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** — How CHIIDS connects to GitHub, OpenLab, WorldAnvil, Zotero, and other systems
-- **[WORLDANVIL-WORKFLOW.md](docs/WORLDANVIL-WORKFLOW.md)** — Detailed guide for Blended Shadow Puppet world-building
+- **[Part 1: Operational Management](docs/architecture/part_1_operational_management.md)** — Layer 0 framework, META-* Project Class pattern, naming conventions
+- **[Architecture Overview](docs/architecture/)** — Five-part architecture (operational, data, engagement, integration, archival)
+- **[ROADMAP](project/ROADMAP.md)** — CHIIDS development status, bootstrap milestones, P0 blockers
+- **[GLOSSARY](project/GLOSSARY.md)** — Canonical glossary with alphabetical index and cross-references
+- **[INTEGRATION-PATHS.md](docs/reference/integration_paths.md)** — How CHIIDS connects to GitHub, OpenLab, WorldAnvil, Zotero
+- **[WORLDANVIL-WORKFLOW.md](docs/reference/worldanvil_workflow.md)** — Detailed guide for Blended Shadow Puppet world-building
 
 ### Templates
+- **[META-* Project Class Templates](templates/meta_project_class/)** — Standardized scaffolds (README, ROADMAP, MILESTONES, GLOSSARY, GOVERNANCE) for all META-* repos
 - **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** — How to create a new CHI meta-project proposal
 - **[PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)** — How StudentResearch tracks semester activity
 
@@ -65,26 +68,23 @@ CHIIDS is guided by CHI's core philosophy of _Holistic Integration_ and the _Bal
 
 ---
 
-## CHI Meta-Projects Supported
+## Layer 0 Framework Examples
 
-| Meta-Project | Domain | Role |
-|--|--|--|
-| **Balanced Blended Space (BBS)** | Theory | Universal framework for combinative reality |
-| **Blended Reality Performance System (BRPS)** | Engineering | Modular test environment for BBS |
-| **Blended Shadow Puppet (BSP)** | Creative | Flagship artistic testbed; world-building |
-| **Collaborative AI (CAI)** | AI/Human Collaboration | Partnership models for co-creation |
-| **UNESCO World-Building** | Research | Cultural transformation → fictional universe |
-| **Bio-Aware Blended Spaces (BABS)** | Systems | Sensor-driven intelligent environments |
-| **AI-Integrated Performance** | Production | Virtual Orchestra, immersive audio, robotics |
+CHIIDS (this repository) defines the **structural framework** for organizing CHI meta-projects. Actual meta-projects (Layer 1) live in the **[CHI-CityTech organization](https://github.com/CHI-CityTech)**, where each follows the META-* Project Class pattern.
 
-See **[ECOSYSTEM.md](docs/ECOSYSTEM.md)** for comprehensive descriptions.
+**Example Meta-Projects:**
+- **Balanced Blended Space (BBS)** — Theory: Universal framework for combinative reality
+- **Blended Reality Performance System (BRPS)** — Engineering: Modular test environment for BBS
+- **Collaborative AI (CAI)** — AI/Human Collaboration: Partnership models for co-creation
+
+*For the complete list of CHI meta-projects, see the [CHI-CityTech organization](https://github.com/CHI-CityTech).*
 
 ---
 
 ## Getting Started
 
 ### For Faculty/PIs
-1. Read **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** — understand the three-layer system
+1. Read **[Part 1: Operational Management](docs/architecture/part_1_operational_management.md)** — understand Layer 0 and the operational layers
 2. Use **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** to propose new projects
 3. Store proposals in `/database/proposals/[project_name]/`
 4. Update SQLite metadata with project information
@@ -97,14 +97,14 @@ See **[ECOSYSTEM.md](docs/ECOSYSTEM.md)** for comprehensive descriptions.
 5. Document AI usage in your team repo README
 
 ### For StudentResearch Managers
-1. Review **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** for the coordination layer role
+1. Review **[part_1_operational_management.md](docs/architecture/part_1_operational_management.md)** for the coordination layer role
 2. Use **[PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)** for each active project per semester
 3. Link proposals from META-CHIIDS to team repositories
 4. Maintain semester rosters and milestone tracking
 
 ### For System Integration
-1. Read **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** for GitHub, OpenLab, WorldAnvil, Zotero guidance
-2. For world-building workflows, see **[WORLDANVIL-WORKFLOW.md](docs/WORLDANVIL-WORKFLOW.md)**
+1. Read **[integration_paths.md](docs/reference/integration_paths.md)** for GitHub, OpenLab, WorldAnvil, Zotero guidance
+2. For world-building workflows, see **[worldanvil_workflow.md](docs/reference/worldanvil_workflow.md)**
 
 ---
 
@@ -147,19 +147,25 @@ META-CHIIDS/ (this repository)
 
 ## System Components
 
-### Meta-Project Layer (Permanent)
+### Layer 0: Structural Framework (Permanent)
 **Location:** This repository  
-**Contains:** Proposals, SQLite ontology, dependencies, long-term documentation  
-**Purpose:** Define what each CHI project is and how they relate  
-**Key:** Does not change by semester
+**Contains:** Schema, ontology, META-* Project Class pattern, architectural documentation  
+**Purpose:** Define the structure that all CHI projects conform to  
+**Key:** Agnostic to specific project content; defines the organizational framework
 
-### Research Coordination Layer (Semester-Updated)
+### Layer 1: Meta-Projects (Permanent)
+**Location:** [CHI-CityTech organization](https://github.com/CHI-CityTech)  
+**Contains:** Project definitions, proposals, dependencies, roadmaps  
+**Purpose:** Instantiate the Layer 0 structure with actual CHI initiatives  
+**Key:** Each meta-project follows the META-* Project Class pattern
+
+### Layer 2: Research Coordination (Semester-Updated)
 **Location:** StudentResearch repository  
 **Contains:** Project Cards, student assignments, team memberships, milestones  
-**Purpose:** Connect abstract projects to actual semester work  
+**Purpose:** Connect meta-projects to semester work  
 **Key:** Persistent but refreshed each term
 
-### Execution Layer (Distributed)
+### Layer 3: Execution (Distributed)
 **Location:** Individual team repositories  
 **Contains:** Code, assets, research logs, deliverables  
 **Purpose:** Where actual research and development happens  
@@ -177,7 +183,7 @@ CHIIDS connects to:
 - **Zotero** — Academic references
 - **Specialized tools** — ArcGIS, Airtable, Overleaf, etc.
 
-See **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** for full integration guidance.
+See **[integration_paths.md](docs/reference/integration_paths.md)** for full integration guidance.
 
 ---
 
@@ -189,8 +195,8 @@ The CHIIDS ecosystem is stored in a SQLite database (`database/chiids.db`) with 
 
 **Web UI (Recommended for Local Use):**
 1. **Local Web Interface:** Run `python3 -m datasette database/chiids.db` → Open http://localhost:8001
-2. **How to Use:** See [USAGE.md](USAGE.md) for search, filter, and export instructions
-3. **Cloud Hosting:** See [DATASETTE.md](DATASETTE.md) for deployment to Railway, Render, or Heroku
+2. **How to Use:** See [Usage Guide](docs/usage.md) for search, filter, and export instructions
+3. **Cloud Hosting:** See [Datasette Integration](docs/integrations/datasette.md) for deployment to Railway, Render, or Heroku
 
 **CLI (Quick Queries - Works Everywhere):**
 
@@ -239,7 +245,7 @@ See [database/INITIALIZATION.md](database/INITIALIZATION.md) for example queries
 ### Cloud Deployment (Public Access)
 
 **Option 1: Railway (Recommended for Datasette)**
-Railway natively supports Python ASGI apps. See [DATASETTE.md](DATASETTE.md) for step-by-step deployment.
+Railway natively supports Python ASGI apps. See [Datasette Integration](docs/integrations/datasette.md) for step-by-step deployment.
 
 **Option 2: Render.com**
 Similar to Railway; also supports Python web services well.
@@ -253,7 +259,7 @@ python3 -m datasette database/chiids.db
 # Open http://localhost:8001 in your browser
 ```
 
-See [DATASETTE.md](DATASETTE.md) for detailed deployment instructions.
+See [Datasette Integration](docs/integrations/datasette.md) for detailed deployment instructions.
 
 ### On GitHub Pages
 
@@ -277,11 +283,13 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ## For More Information
 
-- **Architecture & Design:** [ARCHITECTURE.md](docs/ARCHITECTURE.md)
-- **Current Ecosystem:** [ECOSYSTEM.md](docs/ECOSYSTEM.md)
-- **Key Terms:** [GLOSSARY.md](docs/GLOSSARY.md)
-- **External Integration:** [INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)
-- **World-Building:** [WORLDANVIL-WORKFLOW.md](docs/WORLDANVIL-WORKFLOW.md)
+- **Layer 0 Framework:** [Part 1: Operational Management](docs/architecture/part_1_operational_management.md)
+- **Architecture Overview:** [docs/architecture/](docs/architecture/)
+- **Development Roadmap:** [project/ROADMAP.md](project/ROADMAP.md)
+- **Key Terms:** [project/GLOSSARY.md](project/GLOSSARY.md)
+- **External Integration:** [integration_paths.md](docs/reference/integration_paths.md)
+- **World-Building:** [worldanvil_workflow.md](docs/reference/worldanvil_workflow.md)
+- **META-* Templates:** [templates/meta_project_class/](templates/meta_project_class/)
 - **Create a Proposal:** [PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)
 - **Coordinate Research:** [PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)
 

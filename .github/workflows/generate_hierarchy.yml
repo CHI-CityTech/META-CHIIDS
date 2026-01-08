@@ -53,7 +53,7 @@ jobs:
           conn.close()
           
           # Generate markdown
-          with open('docs/PROJECT_HIERARCHY.md', 'w') as f:
+          with open('docs/architecture/project_hierarchy.md', 'w') as f:
             f.write("# CHIIDS Project Hierarchy (Auto-Generated)\n\n")
             f.write("_Last generated: " + __import__('datetime').datetime.now().isoformat() + "_\n\n")
             
@@ -76,13 +76,13 @@ jobs:
               if row['description']:
                 f.write(f"  - _{row['description']}_\n")
           
-          print("✓ Generated docs/PROJECT_HIERARCHY.md")
+          print("✓ Generated docs/architecture/project_hierarchy.md")
           EOF
 
       - name: Commit and push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add docs/PROJECT_HIERARCHY.md
+          git add docs/architecture/project_hierarchy.md
           git commit -m "chore: auto-generate project hierarchy report" || echo "No changes to commit"
           git push

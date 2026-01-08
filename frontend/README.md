@@ -82,4 +82,4 @@ npm run build
 
 ---
 
-For backend setup, see [../DATASETTE.md](../DATASETTE.md)
+For backend setup, see [../docs/integrations/datasette.md](../docs/integrations/datasette.md)

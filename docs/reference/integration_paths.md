@@ -2,9 +2,13 @@
 
 This document describes how CHIIDS connects to and integrates with external systems, platforms, and tools used by CHI. It consolidates guidance for GitHub, OpenLab, WorldAnvil, Zotero, and other services.
 
+**See Also:** [Part 1: Operational Management](../architecture/part_1_operational_management.md) for the Layer 0 framework and operational layers (Layers 1-3). See [Part 4: External Integration](../architecture/part_4_external_integration.md) for detailed integration specifications.
+
 ## Core Integration Philosophy
 
 CHIIDS follows the principle of **"Integration over Creation"**: instead of building redundant tools, we orchestrate existing systems into a cohesive ecosystem via APIs, metadata linking, and shared workflows.
+
+This document focuses on **external integrations** (systems outside of CHIIDS). For internal connections between CHIIDS layers, see Part 1.
 
 ---
 
