@@ -10,25 +10,95 @@ Single glossary for the META-CHIIDS project and framework. Use this file as the 
 
 ---
 
+## Quick Reference (Alphabetical)
+
+[A](#a) · [C](#c) · [D](#d) · [G](#g) · [I](#i) · [L](#l) · [M](#m) · [O](#o) · [P](#p) · [R](#r) · [S](#s) · [T](#t)
+
+### A
+- [API](#api-application-programming-interface) `[Integration]`
+
+### C
+- [CHIIDS](#chiids-chi-integrated-digital-system) `[Layer 0]`
+
+### D
+- [Datasette](#datasette) `[Data]`
+- [Domain](#domain) `[Organization]`
+
+### G
+- [GitHub Actions](#github-actions) `[Integration]`
+
+### I
+- [Integration Path](#integration-path) `[Integration]`
+
+### L
+- [Layer 0](#layer-0-structural-framework) `[Layer 0]`
+- [Layer 1](#layer-1-meta-project-layer) `[Layers]`
+- [Layer 2](#layer-2-research-coordination-layer) `[Layers]`
+- [Layer 3](#layer-3-execution-layer) `[Layers]`
+
+### M
+- [META-* Project Class](#meta--project-class) `[Layer 0]`
+- [Meta-Project](#meta-project) `[Organization]`
+- [Metadata](#metadata) `[Data]`
+- [Milestone](#milestone) `[Workflow]`
+
+### O
+- [Ontology](#ontology) `[Layer 0]`
+
+### P
+- [Part 1-5](#part-1-5-architecture-documentation) `[Documentation]`
+- [Primary Parent](#primary-parent) `[Organization]`
+- [Project Card](#project-card) `[Workflow]`
+- [Projection System](#projection-system) `[Layer 0]`
+- [/project/ Directory](#project-directory) `[Documentation]`
+
+### R
+- [Relational Structure](#relational-structure) `[Data]`
+
+### S
+- [Schema](#schema) `[Layer 0]`
+- [Secondary Dependency](#secondary-dependency) `[Organization]`
+- [Self-Referential](#self-referential) `[Layers]`
+- [Semester](#semester) `[Workflow]`
+- [SQLite Database](#sqlite-database) `[Data]`
+
+### T
+- [Tag](#tag) `[Organization]`
+- [Team Repository](#team-repository) `[Workflow]`
+
+---
+
 ## Layer 0: Structural Framework
 
 ### CHIIDS (CHI Integrated Digital System)
 The structural framework (Layer 0) that defines how CHI research projects are organized, related, and coordinated. CHIIDS provides the schema, ontology, and architectural principles that all meta-projects conform to.
 
+*See also: [Layer 0](#layer-0-structural-framework), [Schema](#schema), [Ontology](#ontology)*
+
 ### Layer 0 (Structural Framework)
 The foundational definitional layer that specifies the schema, ontology, relationships, and organizational rules for the entire CHI ecosystem. Located in the META-CHIIDS repository. Agnostic to specific project content—defines the structure that projects conform to.
+
+*See also: [CHIIDS](#chiids-chi-integrated-digital-system), [Projection System](#projection-system), [Layer 1](#layer-1-meta-project-layer)*
 
 ### Projection System
 The conceptual model for understanding Layer 0: like a Mercator projection defines how to display geographic data (but is agnostic to which planet's data is displayed), Layer 0 defines how to organize research projects (but is agnostic to which specific projects use that organization).
 
+*See also: [Layer 0](#layer-0-structural-framework), [Schema](#schema)*
+
 ### Schema
 The relational database structure (SQLite) that defines how projects, relationships, dependencies, and metadata are stored and queried. See [database/schema.sql](../database/schema.sql).
+
+*See also: [SQLite Database](#sqlite-database), [Ontology](#ontology), [Relational Structure](#relational-structure)*
 
 ### Ontology
 The formal specification of how projects relate to each other: primary parents, secondary dependencies, tags, domains, and cross-project connections. The ontology defines the vocabulary and rules for describing project relationships.
 
+*See also: [Primary Parent](#primary-parent), [Secondary Dependency](#secondary-dependency), [Tag](#tag), [Domain](#domain)*
+
 ### META-* Project Class
 The standardized directory structure and organizational pattern that all Layer 1 meta-projects follow. Includes required `/project/` directory with README, roadmap, and milestones. Like a class in object-oriented programming—defines the structure that all meta-project instances inherit.
+
+*See also: [/project/ Directory](#project-directory), [Layer 1](#layer-1-meta-project-layer), [Meta-Project](#meta-project)*
 
 ---
 
@@ -39,14 +109,22 @@ The canonical list of CHI meta-projects, located in the [CHI-CityTech organizati
 
 **Examples:** Balanced Blended Space (BBS), Blended Reality Performance System (BRPS), Blended Shadow Puppet (BSP), Collaborative AI (CAI), CHIIDS (self-referential)
 
+*See also: [Layer 0](#layer-0-structural-framework), [META-* Project Class](#meta--project-class), [Meta-Project](#meta-project)*
+
 ### Layer 2 (Research Coordination Layer)
 The semester-based coordination hub located in the StudentResearch repository. Links active projects to team assignments, tracks milestones, and coordinates semester work. Persistent but updated each term.
+
+*See also: [Project Card](#project-card), [Semester](#semester), [Milestone](#milestone)*
 
 ### Layer 3 (Execution Layer)
 The distributed set of individual team repositories where actual code, assets, and deliverables are created. Each active project has its own repo for hands-on work.
 
+*See also: [Team Repository](#team-repository), [Layer 2](#layer-2-research-coordination-layer)*
+
 ### Self-Referential
 CHIIDS's unique property: it is both the Layer 0 framework definition AND a Layer 1 meta-project. CHIIDS experiences its own Layer 2 coordination and Layer 3 execution while simultaneously defining the structure that all layers follow.
+
+*See also: [CHIIDS](#chiids-chi-integrated-digital-system), [Layer 0](#layer-0-structural-framework), [Layer 1](#layer-1-meta-project-layer)*
 
 ---
 
@@ -55,11 +133,17 @@ CHIIDS's unique property: it is both the Layer 0 framework definition AND a Laye
 ### Meta-Project
 A top-level strategic initiative in Layer 1 that organizes multiple sub-projects, research activities, and creative work. Meta-projects are permanent, define research directions, and conform to the Layer 0 schema.
 
+*See also: [Layer 1](#layer-1-meta-project-layer), [META-* Project Class](#meta--project-class), [Primary Parent](#primary-parent)*
+
 ### Primary Parent
 The single meta-project designated as a project's organizational home. Used for hierarchy clarity. Stored in the database schema as a required relationship.
 
+*See also: [Meta-Project](#meta-project), [Secondary Dependency](#secondary-dependency), [Ontology](#ontology)*
+
 ### Secondary Dependency
 Additional meta-projects that a project relies upon, informs, or connects with. Unlike primary parent (singular), projects may have multiple secondary dependencies. Reflects combinative, interdisciplinary nature of CHI research.
+
+*See also: [Primary Parent](#primary-parent), [Relational Structure](#relational-structure)*
 
 ### Tag
 A label applied to projects for categorization and filtering. Projects can have multiple tags (domain tags, status tags, semester tags). Tags enable many-to-many relationships and cross-cutting organization.
