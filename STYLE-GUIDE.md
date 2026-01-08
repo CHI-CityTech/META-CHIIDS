@@ -8,7 +8,6 @@ All documentation files in this repository follow a consistent naming pattern:
 
 ### Examples
 - ✅ `architecture.md`
-- ✅ `chiids_roadmap.md`
 - ✅ `project_hierarchy.md`
 - ✅ `integration_paths.md`
 - ✅ `worldanvil_workflow.md`
@@ -40,7 +39,7 @@ meta_project: <NAME>
 When linking to documentation files, use **relative paths** without the `.md` extension where possible:
 ```markdown
 See [architecture](architecture) for system design.
-Check [chiids_roadmap](chiids_roadmap) for timeline.
+Check [ROADMAP](project/ROADMAP) for timeline.
 ```
 
 If using full paths:

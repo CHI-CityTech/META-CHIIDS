@@ -6,7 +6,7 @@ The digital nervous system for the Center for Holistic Integration (CHI) and the
 
 CHIIDS is a distributed, three-layer digital ecosystem designed to support the entire lifecycle of CHI's meta-projects: from theoretical proposal through active research to long-term archival.
 
-**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Getting Started](#getting-started)**
+**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Repository Authority Model](project/README.md#directory-authority-model)** | **[Getting Started](#getting-started)**
 
 ---
 

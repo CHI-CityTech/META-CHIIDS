@@ -49,6 +49,16 @@ export default function ProjectCard({ project }) {
               {project.status}
             </span>
           )}
+          {project.maturity_level && (
+            <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-semibold">
+              {project.maturity_level}
+            </span>
+          )}
+          {typeof project.priority !== 'undefined' && project.priority !== null && (
+            <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-semibold">
+              P{project.priority}
+            </span>
+          )}
         </div>
       </div>
     </div>

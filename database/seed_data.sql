@@ -369,6 +369,21 @@ INSERT INTO project_tags (project_id, tag_id)
 SELECT (SELECT project_id FROM projects WHERE slug = 'personalized-llms'), tag_id FROM tags WHERE tag_name IN ('AI/HumanCollaboration', 'Zotero');
 
 -- ============================================================================
+-- SET DEFAULTS FOR NEW FIELDS (Migration 002 compatibility)
+-- ============================================================================
+
+-- Ensure priority and maturity_level set for all existing projects
+UPDATE projects SET priority = COALESCE(priority, 3);
+UPDATE projects SET maturity_level = COALESCE(maturity_level, 'prototype');
+
+-- Optional example proposal and linkage (kept minimal)
+-- INSERT INTO proposals (title, slug, summary, status, link_url, storage_hint)
+-- VALUES ('BSP Pilot Proposal', 'bsp-pilot-proposal', 'Initial pilot proposal for Blended Shadow Puppet enhancements.', 'accepted', NULL, 'repo');
+-- INSERT INTO project_proposals (project_id, proposal_id, relationship)
+-- SELECT (SELECT project_id FROM projects WHERE slug = 'blended-shadow-puppet'), proposal_id, 'originates'
+-- FROM proposals WHERE slug = 'bsp-pilot-proposal';
+
+-- ============================================================================
 -- VERIFY DATA
 -- ============================================================================
 

@@ -1,3 +1,11 @@
+⚠️ **NON-AUTHORITATIVE DRAFT**
+
+This document was generated for ChatGPT discussion purposes. It is retained in `project/_scratch/` for reference but should not be treated as authoritative architectural guidance.
+
+For authoritative architecture documentation, see [docs/architecture/](../../docs/architecture/).
+
+---
+
 # CHIIDS Diagram Analysis: Old vs. New Architecture
 
 ## Task for ChatGPT Analysis
@@ -161,3 +169,5 @@ The diagram should reflect this maturity and self-awareness.
 ---
 
 **For ChatGPT:** Please analyze these two models and provide feedback on the efficacy of the old diagram vs. the new architecture. Suggest visual improvements that would make the three-layer system clearer to someone new to CHI.
+
+Promoted from `docs/` to `project/_scratch/` as non-authoritative discussion material.

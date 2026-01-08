@@ -72,6 +72,16 @@ export default function ProjectDetail() {
               {project.status}
             </span>
           )}
+          {project.maturity_level && (
+            <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-semibold">
+              {project.maturity_level}
+            </span>
+          )}
+          {typeof project.priority !== 'undefined' && project.priority !== null && (
+            <span className="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full font-semibold">
+              Priority: P{project.priority}
+            </span>
+          )}
         </div>
 
         {project.description && (
@@ -97,6 +107,18 @@ export default function ProjectDetail() {
             <div>
               <dt className="text-sm font-medium text-gray-600">Created</dt>
               <dd className="text-lg text-gray-900">{project.created_at}</dd>
+            </div>
+          )}
+          {typeof project.priority !== 'undefined' && project.priority !== null && (
+            <div>
+              <dt className="text-sm font-medium text-gray-600">Priority</dt>
+              <dd className="text-lg text-gray-900">P{project.priority}</dd>
+            </div>
+          )}
+          {project.maturity_level && (
+            <div>
+              <dt className="text-sm font-medium text-gray-600">Maturity</dt>
+              <dd className="text-lg text-gray-900">{project.maturity_level}</dd>
             </div>
           )}
         </div>
