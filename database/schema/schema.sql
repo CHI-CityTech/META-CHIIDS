@@ -23,6 +23,8 @@ CREATE TABLE IF NOT EXISTS projects (
     lead_contact TEXT,  -- PI/faculty contact email
     repository_url TEXT,  -- Link to main repository
     zotero_group_id TEXT,  -- Zotero group identifier if applicable
+    priority INTEGER DEFAULT 3,  -- 1 (highest) to 5 (lowest)
+    maturity_level TEXT DEFAULT 'prototype', -- idea, proposal, prototype, pilot, production, archived
     FOREIGN KEY (primary_parent_id) REFERENCES projects(project_id)
 );
 
@@ -91,6 +93,32 @@ CREATE TABLE IF NOT EXISTS project_activity (
     UNIQUE (project_id, semester)
 );
 
+-- Proposals: Ideas and formal proposals linked to projects
+CREATE TABLE IF NOT EXISTS proposals (
+    proposal_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    slug TEXT NOT NULL UNIQUE,
+    summary TEXT,
+    status TEXT NOT NULL DEFAULT 'draft',  -- idea, draft, submitted, accepted, rejected, archived
+    submitted_by TEXT,
+    link_url TEXT,
+    storage_hint TEXT,
+    created_date TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_updated TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Project_Proposals: Many-to-many linkage
+CREATE TABLE IF NOT EXISTS project_proposals (
+    project_proposal_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    project_id INTEGER NOT NULL,
+    proposal_id INTEGER NOT NULL,
+    relationship TEXT DEFAULT 'related',  -- originates, implements, relates
+    created_date TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (project_id) REFERENCES projects(project_id),
+    FOREIGN KEY (proposal_id) REFERENCES proposals(proposal_id),
+    UNIQUE (project_id, proposal_id)
+);
+
 -- ============================================================================
 -- INDEXES FOR PERFORMANCE
 -- ============================================================================
@@ -103,6 +131,9 @@ CREATE INDEX idx_dependencies_depends_on ON dependencies(depends_on_id);
 CREATE INDEX idx_project_tags_project ON project_tags(project_id);
 CREATE INDEX idx_project_tags_tag ON project_tags(tag_id);
 CREATE INDEX idx_project_activity_semester ON project_activity(semester);
+CREATE INDEX IF NOT EXISTS idx_proposals_status ON proposals(status);
+CREATE INDEX IF NOT EXISTS idx_project_proposals_project ON project_proposals(project_id);
+CREATE INDEX IF NOT EXISTS idx_project_proposals_proposal ON project_proposals(proposal_id);
 
 -- ============================================================================
 -- VIEWS FOR COMMON QUERIES

@@ -8,7 +8,7 @@ Run these commands from the repository root to create and populate the SQLite da
 
 ```bash
 # Create database and load schema
-sqlite3 database/chiids.db < database/schema.sql
+sqlite3 database/chiids.db < database/schema/schema.sql
 
 # Populate with seed data
 sqlite3 database/chiids.db < database/seed_data.sql
@@ -75,10 +75,12 @@ Then run queries interactively. Exit with `.quit`
 ```
 database/
 ├── chiids.db                 # ← Created after running schema.sql and seed_data.sql
-├── schema.sql                # Relational schema (run first)
+├── schema/                   # Relational schema folder
+│   └── schema.sql            # Canonical schema (run first)
 ├── seed_data.sql             # Initial meta-projects (run second)
 └── migrations/
-    └── 001_initial_schema.sql   # Versioned migration file
+    ├── 001_initial_schema.sql   # Versioned migration file
+    └── 002_add_priority_maturity_proposals.sql
 ```
 
 ---
@@ -86,7 +88,7 @@ database/
 ## Important Notes
 
 - **Do NOT commit `chiids.db` to git** — It's a binary database file that changes with each query
-- **Always keep `schema.sql` and `seed_data.sql` in git** — These are the source of truth
+- **Always keep `schema/schema.sql` and `seed_data.sql` in git** — These are the source of truth
 - **Reinitialize when needed** — If you want to reset the database: `rm database/chiids.db` then rerun the initialization commands
 
 ---
@@ -107,6 +109,23 @@ Once database is verified:
 1. Create Python CLI tool for querying
 2. Set up GitHub Action for semester sync
 3. Add database initialization to README setup instructions
+
+---
+
+## Applying Migrations (Incremental)
+
+If you already have `database/chiids.db` and want to apply only changes since the last version, run the migration scripts in order:
+
+```bash
+# Apply migration 002 (adds priority, maturity_level, proposals tables)
+sqlite3 database/chiids.db < database/migrations/002_add_priority_maturity_proposals.sql
+
+# Verify new columns exist
+sqlite3 database/chiids.db "PRAGMA table_info(projects);"
+
+# (Optional) Re-run seed to set defaults for new fields
+sqlite3 database/chiids.db < database/seed_data.sql
+```
 
 ---
 
