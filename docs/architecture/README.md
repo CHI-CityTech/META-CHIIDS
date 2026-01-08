@@ -6,13 +6,15 @@ This folder contains the **normative architectural specifications** for **CHIIDS
 
 The architecture is organized in **five interconnected parts**, each addressing a different aspect of the system:
 
-1. **[Part 1: Operational Management](part_1_operational_management.md)** — Internal structure (three layers)
-2. **[Part 2: Data Infrastructure](part_2_data_infrastructure.md)** — Technical systems (database, API, frontend, backups)
-3. **[Part 3: Public Engagement](part_3_public_engagement.md)** — Publishing and public-facing features
-4. **[Part 4: External Integration](part_4_external_integration.md)** — Connections to external systems and organizations
-5. **[Part 5: Archival & Preservation](part_5_archival_preservation.md)** — Long-term storage and recovery
+1. **[ARCHITECTURE.md](ARCHITECTURE.md)** — GitHub repository structure (three-layer system)
+2. **[Data Layer](data-layer.md)** — Database, API, and frontend implementation (Storage + Integration cornerstones)
+3. **[Part 1: Operational Management](part_1_operational_management.md)** — Internal structure (three layers)
+4. **[Part 2: Data Infrastructure](part_2_data_infrastructure.md)** — Technical systems (database, API, frontend, backups)
+5. **[Part 3: Public Engagement](part_3_public_engagement.md)** — Publishing and public-facing features
+6. **[Part 4: External Integration](part_4_external_integration.md)** — Connections to external systems and organizations
+7. **[Part 5: Archival & Preservation](part_5_archival_preservation.md)** — Long-term storage and recovery
 
-**Start here:** If you're new to CHIIDS, read **[Part 1](part_1_operational_management.md)** first to understand the three-layer operational model. Then explore the other parts based on what you need to know.
+**Start here:** If you're new to CHIIDS, read **[ARCHITECTURE.md](ARCHITECTURE.md)** to understand the GitHub repository structure, then **[Data Layer](data-layer.md)** to see how the database and API implement Storage + Integration. Then explore the other parts based on what you need to know.
 
 ---
 
@@ -129,12 +131,16 @@ This document answers:
 
 | You want to know... | See... |
 |---|---|
-| How is CHIIDS organized? | [Part 1: Operational Management](part_1_operational_management.md) |
+| How is the GitHub repository structured? | [ARCHITECTURE.md](ARCHITECTURE.md) |
+| How is data stored, queried, and displayed? | [Data Layer](data-layer.md) |
+| How is CHIIDS organized operationally? | [Part 1: Operational Management](part_1_operational_management.md) |
 | Where is data stored? How is it backed up? | [Part 2: Data Infrastructure](part_2_data_infrastructure.md) |
 | How do we publish research? | [Part 3: Public Engagement](part_3_public_engagement.md) |
 | How does CHIIDS integrate with other systems? | [Part 4: External Integration](part_4_external_integration.md) |
 | How do we preserve CHIIDS data long-term? | [Part 5: Archival & Preservation](part_5_archival_preservation.md) |
-| Three-layer model details | [Part 1: Operational Management](part_1_operational_management.md#the-three-layers) |
+| Three-layer repository model | [ARCHITECTURE.md](ARCHITECTURE.md#the-three-layers) |
+| Database schema and API endpoints | [Data Layer](data-layer.md) |
+| Three-layer operational model details | [Part 1: Operational Management](part_1_operational_management.md#the-three-layers) |
 | StudentResearch structure | [Part 1: Operational Management](part_1_operational_management.md#layer-2-research-coordination-layer-persistent-semester-updated) |
 | Meta-project proposals | [CHI-CityTech GitHub](https://github.com/CHI-CityTech) |
 | Semester activity and project assignments | [StudentResearch GitHub](https://github.com/CHI-CityTech/StudentResearch) |
