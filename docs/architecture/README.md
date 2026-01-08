@@ -154,6 +154,6 @@ These are the normative architectural specifications. They define the "correct" 
 - **[glossary.md](../reference/glossary.md)** — Definitions of key terms (BBS, BRPS, BSP, meta-project, etc.)
 - **[ecosystem.md](../reference/ecosystem.md)** — Current state of all CHI meta-projects
 - **[integration_paths.md](../reference/integration_paths.md)** — Detailed integration workflows (GitHub, WorldAnvil, etc.)
-- **[chiids_roadmap.md](../chiids_roadmap.md)** — CHIIDS development status and roadmap
+- **[ROADMAP.md](../../project/ROADMAP.md)** — CHIIDS development status and roadmap (canonical)
 - **[chiids_original_spec.md](chiids_original_spec.md)** — Original September 2024 engineering specification (historical)
 - **[project_hierarchy.md](project_hierarchy.md)** — Auto-generated visualization of project dependencies
