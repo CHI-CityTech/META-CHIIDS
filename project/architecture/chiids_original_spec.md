@@ -75,7 +75,9 @@ Key design considerations include:
 
 ### 1.3 CHIIDS Structural Diagram
 
-> **Note:** Original diagram not preserved in this export. See [ARCHITECTURE.md](ARCHITECTURE.md) for current system diagrams.
+![CHIIDS V1 System Map showing the four core components - Management, Communications, Storage, and Integration - with CHIIDS at the center and dependent categories extending from each cornerstone](../../assets/CHIIDS_V1.jpg)
+
+*The original specification diagram: CHIIDS at the center with Storage (top), Management (right), Communications (bottom), and Integration (left), each with their dependent categories.*
 
 ---
 
