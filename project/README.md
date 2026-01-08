@@ -1,10 +1,24 @@
 # Project Class: Authoritative META-CHIIDS Control Plane
 
-The `project/` directory contains the **authoritative, controlling information** that defines how META-CHIIDS operates. Materials here are:
+Welcome to the control plane for META-CHIIDS. This document explains the **Repository Authority Model** — how we organize authoritative materials, deliverables, and working drafts across the repository.
 
-- **Generative:** They control workflows, automation, and tooling behavior
-- **Canonical:** They are the source of truth for project governance and operational decisions
-- **Versioned:** Changes to these files should be carefully reviewed and tracked
+The authority model ensures clarity about what's official, what's published, and what's in-progress. It aligns with CHIIDS's philosophical commitment to preserving project integrity and making governance transparent.
+
+---
+
+## Why We Need an Authority Model
+
+A meta-project repository serves multiple audiences:
+- **Contributors** need to know which files control workflows and automation
+- **Readers** need to distinguish polished deliverables from rough drafts
+- **Governance** requires clear versioning and review for authoritative decisions
+
+The authority model creates three tiers:
+1. **Control Plane** (`project/`): Generative, canonical materials that define how CHIIDS operates
+2. **Deliverables** (`docs/`): Published outputs intended for stakeholders and collaborators
+3. **Drafts** (`project/_scratch/`): Non-authoritative experiments and discussion artifacts
+
+---
 
 ## Directory Authority Model
 
