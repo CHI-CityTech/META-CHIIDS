@@ -2,58 +2,71 @@
 
 **Status:** Outline (to be completed)
 
-This document describes how CHIIDS integrates with and connects to external systems, platforms, and organizations:
+This document describes how CHIIDS integrates with external systems and platforms, and clarifies the boundary between internal CHIIDS components and external integrations.
 
-- GitHub workflows and automations
-- Zenodo for research output archival
-- WorldAnvil for virtual worlds and collaborative documentation
-- Zotero for bibliography and reference management
-- Cross-institutional communication and data exchange
-- API specifications and integration patterns
+## CHIIDS Internal Components
 
-## Contents
+### Version Control & Collaboration
+- **GitHub Organization (chi-projects):** Central repository for all meta-project repositories and StudentResearch coordination
+  - CHI-CityTech, CHI-WorldAnvil, and other Layer 1 meta-project repositories
+  - StudentResearch repository (for tracking student research work)
+  - GitHub Actions for automation and deployment
 
-### GitHub Integration
-- Automated project synchronization
-- GitHub Actions workflows (syncing StudentResearch to CHIIDS database)
-- Issue tracking and project boards
-- Code repository organization
-- Team access and permissions
+### Data Infrastructure
+- **SQLite Database:** Project ontology, research opportunities, team/student metadata, proposals, milestones
+- **Datasette API:** Read-only public endpoints for data access
+- **React Frontend (Vite):** Web application for browsing, searching, filtering, and dependency visualization
 
-### Zenodo Integration
-- Research output archival
-- Batch export of completed projects
-- Metadata preservation
-- DOI assignment and linking
-- Cross-institutional visibility
+### Bibliography & Reference System
+- **Zotero Collections/Libraries:** Formal CHIIDS bibliographic management and tag-based information organization
+  - Multiple integrated collections for different project domains
+  - Serves as internal reference hub
+  - Can link to both CUNY Academic Works and Zenodo deposits
 
-### WorldAnvil Integration
-- Virtual world documentation and collaboration
-- Automated wiki synchronization
-- Media organization and asset management
-- Team collaboration features
-- Linking to CHIIDS project metadata
+### Automation & Scripts
+- **Python CLI Tools:** Data management and integration workflows
+- **GitHub Actions:** Deployment, testing, and data synchronization
 
-### Zotero Integration
-- Bibliography and reference management
-- Group library organization
-- Automatic metadata synchronization
-- Integration with publications and papers
-- Semester-based collection updates
+---
 
-### CUNY Systems Integration
-- CIS (Campus Information System) connectivity
-- OpenLab (CUNY's open-source course platform)
-- Google Drive / Nextcloud for file sharing
-- Microsoft Teams for internal communication (optional)
-- SharePoint for institutional compliance (optional)
+## External System Integrations
 
-### External Organization Communication
-- Data exchange protocols
-- API specifications and security
-- Webhook integrations
-- Authentication and authorization
-- Compliance and data privacy
+### Academic/Institutional Archival
+- **CUNY Academic Works:** Primary institutional repository for CUNY-based research outputs
+  - Serves as archival destination for research emerging from CUNY infrastructure
+  - Integrated via Zotero references
+
+- **Zenodo:** International open-access repository for CHI Hub projects developed outside CUNY infrastructure
+  - Provides DOI assignment and long-term preservation
+  - Target for external CHI Hub outputs
+  - Integrated via Zotero references
+
+### Public Engagement & World-Building
+- **WorldAnvil:** Fictive universe world-building platform
+  - Public-facing collaborative space for narrative and setting documentation
+  - Separate from technical CHIIDS infrastructure
+
+### Researcher Workflow Integration
+- **CHI-OpenLab Integration:** Connection between CUNY OpenLab platform and WordPress-based frontend
+  - Planned integration point
+  - Status: In development
+
+- **Google Suite (Docs, Sheets, Drive):** Researcher tools for daily workflow
+  - Currently used by researchers for collaboration and documentation
+  - Integration strategy: TBD
+  - Decision: Internal vs. external classification pending further discussion
+
+---
+
+## Integration Principles
+
+1. **Zotero as Reference Hub:** All external integrations that produce citable outputs (CUNY Academic Works, Zenodo) are discoverable and referenceable through CHIIDS Zotero collections.
+
+2. **Scope-Based Archival:**
+   - CUNY-based research → CUNY Academic Works (primary)
+   - External CHI Hubs → Zenodo (supplementary/international)
+
+3. **Researcher-Centric Design:** Integration decisions consider how researchers currently work and maintain their workflows.
 
 ---
 
