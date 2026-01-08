@@ -18,6 +18,8 @@ CHIIDS integrates research coordination, project management, collaborative AI wo
 
 At its core, CHIIDS is organized around four cornerstones that reflect CHI’s mission and operating model: **Management**, **Communications**, **Storage**, and **Integration**. These work together to align projects with CHI’s goals, facilitate collaboration, preserve knowledge, and connect external systems without reinventing the wheel.
 
+> CHIIDS supports participants’ original goals through thoughtful alignment with CHI meta-projects and initiatives. It preserves participating project integrity while seeking and exploiting synergies between these projects — optimizing existing tools for collaboration rather than reinventing systems.
+
 The system operates across four layers:
 
 - **Layer 0 (Structural Framework)** — Schema, ontology, and organizational rules (this repository)
@@ -169,7 +171,7 @@ META-CHIIDS/ (this repository)
 
 ## System Integration
 
-CHIIDS integrates with GitHub, StudentResearch, OpenLab, WorldAnvil, Zotero, and more — bringing existing platforms into one coherent workflow. See **[integration_paths.md](docs/reference/integration_paths.md)** for details.
+CHIIDS integrates with GitHub, StudentResearch, OpenLab, WorldAnvil, Zotero, and more — bringing existing platforms into one coherent workflow. See **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** for details.
 
 ---
 
@@ -178,6 +180,13 @@ CHIIDS integrates with GitHub, StudentResearch, OpenLab, WorldAnvil, Zotero, and
 - Interactive App: See the [frontend](frontend/README.md) for a modern React UI to browse projects and dependencies.
 - Data Access: Use the local Datasette UI or API when developing; engineering details are documented under [docs/architecture/](docs/architecture/).
 - Organization: Browse active meta-projects at the [CHI-CityTech organization](https://github.com/CHI-CityTech).
+
+## Public Engagement
+
+- Website: Public-facing content will be published via CHI’s OpenLab/WordPress site, coordinated from CHIIDS artifacts and status. See [OpenLab_Integration.md](OpenLab_Integration.md).
+- Publications: CHI Publications (OJS) will provide peer-reviewed articles and proceedings; DOIs are managed via Zenodo with citation metadata synchronized.
+- Citations: Zotero group libraries track references across meta-projects; bibliographies are exported per project and preserved alongside artifacts.
+- World-Building: Public storytelling and engagement via WorldAnvil. See **[WORLDANVIL-WORKFLOW.md](docs/WORLDANVIL-WORKFLOW.md)**.
 
 ---
 
