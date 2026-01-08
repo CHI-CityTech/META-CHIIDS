@@ -6,7 +6,7 @@ canonical: true
 
 # META-CHIIDS Glossary (Canonical)
 
-Single glossary for the META-CHIIDS project and framework. Use this file as the source of truth; other references should point here.
+Single glossary for the META-CHIIDS project and framework. Other references should point here.
 
 ---
 
