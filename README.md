@@ -6,7 +6,7 @@ The digital nervous system for the Center for Holistic Integration (CHI) and its
 
 CHIIDS is a distributed, three-layer digital ecosystem designed to support the entire lifecycle of CHI's meta-projects: from theoretical proposal through active research to long-term archival.
 
-**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Repository Authority Model](project/README.md#directory-authority-model)** | **[Getting Started](#getting-started)**
+**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Repository Authority Model](project/AUTHORITY-MODEL.md)** | **[Getting Started](#getting-started)**
 
 ---
 
@@ -37,7 +37,7 @@ See **[Part 1: Operational Management](docs/architecture/part_1_operational_mana
 
 - Purpose: A unified system for coordinating CHI research, collaboration, and long-term knowledge stewardship.
 - Audience: Faculty, researchers, students, and partners who want to understand CHI's meta-projects and how they connect.
-- Authority: See the Repository Authority Model in [project/README.md](project/README.md#directory-authority-model).
+- Authority: See the Repository Authority Model in [project/AUTHORITY-MODEL.md](project/AUTHORITY-MODEL.md).
 - Foundations: The original engineering specification lives in [project/architecture/chiids_original_spec.md](project/architecture/chiids_original_spec.md).
 
 ## Cornerstones
@@ -214,7 +214,7 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ## For More Information
 
-- **Authority Model:** See [project/README.md](project/README.md#directory-authority-model)
+- **Authority Model:** See [project/AUTHORITY-MODEL.md](project/AUTHORITY-MODEL.md)
 - **Original Specification:** [project/architecture/chiids_original_spec.md](project/architecture/chiids_original_spec.md)
 - **Architecture Overview:** [docs/architecture/](docs/architecture/)
 - **Layer 0 Framework:** [Part 1: Operational Management](docs/architecture/part_1_operational_management.md)
