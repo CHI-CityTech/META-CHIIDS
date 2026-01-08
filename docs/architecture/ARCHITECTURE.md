@@ -1,10 +1,14 @@
 # CHIIDS Architecture: Three-Layer System
 
-> **Historical Note:** This architecture evolved from the [original CHIIDS engineering specification](../../project/architecture/chiids_original_spec.md) (September 2024). The original spec provides foundational context for the design decisions documented here.
+> **Scope:** This document describes the **GitHub repository architecture**—how the CHI research ecosystem is *organized and coordinated* across repositories. For the larger CHIIDS system architecture encompassing all four cornerstones (Management, Communications, Storage, Integration), see the [original CHIIDS engineering specification](../../project/architecture/chiids_original_spec.md).
+
+> **Historical Note:** This three-layer repository model evolved from the [original CHIIDS engineering specification](../../project/architecture/chiids_original_spec.md) (September 2024). The original spec provides foundational context for the design decisions documented here.
 
 ## Overview
 
-The CHI Integrated Digital System (CHIIDS) is a distributed digital ecosystem consisting of three interacting layers, each with distinct responsibilities and temporal characteristics. This document describes how these layers work together to support the Balanced Blended Space (BBS) framework and all related CHI meta-projects.
+This document describes the **GitHub repository structure** that organizes the CHI research ecosystem. The CHI Integrated Digital System (CHIIDS) is a distributed digital ecosystem consisting of three interacting layers in this repository model, each with distinct responsibilities and temporal characteristics. These layers work together to support the Balanced Blended Space (BBS) framework and all related CHI meta-projects.
+
+**Note:** The larger CHIIDS architectural framework encompasses four foundational cornerstones—Management, Communications, Storage, and Integration—which are described in the original specification. This document focuses on how those systems are *coordinated through GitHub repositories*.
 
 ---
 
