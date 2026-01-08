@@ -20,6 +20,8 @@ At its core, CHIIDS is organized around four cornerstones that reflect CHI’s m
 
 > CHIIDS supports participants’ original goals through thoughtful alignment with CHI meta-projects and initiatives. It preserves participating project integrity while seeking and exploiting synergies between these projects — optimizing existing tools for collaboration rather than reinventing systems.
 
+**Philosophical Model:** CHIIDS embodies holistic integration—aligning voluntary partners, preserving each project’s intent, and cultivating synergies instead of centralizing execution. We prefer integration over reinvention, maintain inclusivity across disciplines and resource levels, and use the system to safeguard integrity while enabling collaboration. For the full framing, see the [original specification](project/architecture/chiids_original_spec.md).
+
 The system operates across four layers:
 
 - **Layer 0 (Structural Framework)** — Schema, ontology, and organizational rules (this repository)
