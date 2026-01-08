@@ -97,6 +97,12 @@ CHIIDS (this repository) defines the **structural framework** for organizing CHI
 - Governance: Layer 0 defines how projects, data, and collaboration are organized; Layers 1–3 apply those rules in practice.
 - Principle: Integration over Creation — we connect existing tools to avoid redundancy and focus on meaningful outcomes.
 
+## Scope
+
+- Internal Coordination: The distributed three-layer system (Layers 1–3) organizes research, coordination, and execution across teams.
+- Public Engagement: Websites, publications, citations, and storytelling (OpenLab/WordPress, OJS/Zenodo, Zotero, WorldAnvil) communicate CHI work outward.
+- External Integration: CHIIDS connects to partner and institutional systems (GitHub, OpenLab, Zotero, WorldAnvil, City Tech platforms) to keep work interoperable.
+
 ## Where to Explore
 
 - Meta-Projects: Browse the [CHI-CityTech organization](https://github.com/CHI-CityTech) to see active initiatives.
