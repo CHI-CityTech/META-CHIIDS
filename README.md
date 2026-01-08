@@ -6,41 +6,41 @@ The digital nervous system for the Center for Holistic Integration (CHI) and the
 
 CHIIDS is a distributed, three-layer digital ecosystem designed to support the entire lifecycle of CHI's meta-projects: from theoretical proposal through active research to long-term archival.
 
-**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Abstract](docs/overview.md)** | **[Getting Started](#getting-started)**
+**[Original Proposal v1.0](https://docs.google.com/document/d/1X0aqvqdeZxtAF902jXT1ZbHkHBc3ir7pMu6n1M7OTQ4/edit?usp=sharing)** | **[Abstract](ABSTRACT.md)** | **[Getting Started](#getting-started)**
 
 ---
 
 ## What is CHIIDS?
 
-CHIIDS integrates research coordination, project management, collaborative AI workflows, and knowledge archiving across all CHI initiatives (BBS, BRPS, BSP, CAI, UNESCO World-Building, and more).
+CHIIDS integrates research coordination, project management, collaborative AI workflows, and knowledge archiving across all CHI initiatives.
 
 **Core Philosophy:** Integration over Creation — orchestrate existing systems rather than build redundant tools.
 
-The system is built on three interacting layers:
+The system operates across four layers:
 
-1. **Meta-Project Layer** — Permanent project proposals, ontology, and dependencies
-2. **Research Coordination** — Semester-updated student assignments and project tracking  
-3. **Execution** — Individual team repositories where actual work happens
+- **Layer 0 (Structural Framework)** — Schema, ontology, and organizational rules (this repository)
+- **Layer 1 (Meta-Projects)** — Permanent projects conforming to Layer 0 structure
+- **Layer 2 (Coordination)** — Semester-based research assignments and tracking
+- **Layer 3 (Execution)** — Individual team repositories where work happens
 
-See **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** for the full three-layer system description.
+See **[Part 1: Operational Management](docs/architecture/part_1_operational_management.md)** for the complete Layer 0 framework description.
 
 ---
 
 ## Quick Links
 
 ### Core Documentation
-- **[ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)** — Three-layer system design, external systems (primary/secondary), publishing workflows, CUNY integration
-- **[CHIIDS-ROADMAP.md](docs/CHIIDS-ROADMAP.md)** — CHIIDS development status, bootstrap projects, semester milestones
-- **[ECOSYSTEM.md](docs/reference/ECOSYSTEM.md)** — Current state of all CHI meta-projects
-- **[GLOSSARY.md](docs/reference/GLOSSARY.md)** — Definitions of key terms (BBS, BRPS, BSP, CAI, meta-project, etc.)
-- **[INTEGRATION-PATHS.md](docs/reference/INTEGRATION-PATHS.md)** — How CHIIDS connects to GitHub, OpenLab, WorldAnvil, Zotero, and other systems
-- **[WORLDANVIL-WORKFLOW.md](docs/reference/WORLDANVIL-WORKFLOW.md)** — Detailed guide for Blended Shadow Puppet world-building
-- **[CHI Integrated Digital System (CHIDS).md](docs/CHI%20Integrated%20Digital%20System%20(CHIDS).md)** — Original draft engineering specification (canonical source)
+- **[Part 1: Operational Management](docs/architecture/part_1_operational_management.md)** — Layer 0 framework, META-* Project Class pattern, naming conventions
+- **[Architecture Overview](docs/architecture/)** — Five-part architecture (operational, data, engagement, integration, archival)
+- **[ROADMAP](project/ROADMAP.md)** — CHIIDS development status, bootstrap milestones, P0 blockers
+- **[GLOSSARY](project/GLOSSARY.md)** — Canonical glossary with alphabetical index and cross-references
+- **[INTEGRATION-PATHS.md](docs/reference/integration_paths.md)** — How CHIIDS connects to GitHub, OpenLab, WorldAnvil, Zotero
+- **[WORLDANVIL-WORKFLOW.md](docs/reference/worldanvil_workflow.md)** — Detailed guide for Blended Shadow Puppet world-building
 
 ### Templates
+- **[META-* Project Class Templates](templates/meta_project_class/)** — Standardized scaffolds (README, ROADMAP, MILESTONES, GLOSSARY, GOVERNANCE) for all META-* repos
 - **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** — How to create a new CHI meta-project proposal
 - **[PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)** — How StudentResearch tracks semester activity
-- **[META-PROJECT-ROADMAP.md](templates/META-PROJECT-ROADMAP.md)** — Canonical roadmap structure (all projects and meta-projects use this)
 
 ### Database (In Development)
 - **[schema.sql](database/schema.sql)** — Relational database schema for meta-project ontology
@@ -80,14 +80,14 @@ CHIIDS is guided by CHI's core philosophy of _Holistic Integration_ and the _Bal
 | **Bio-Aware Blended Spaces (BABS)** | Systems | Sensor-driven intelligent environments |
 | **AI-Integrated Performance** | Production | Virtual Orchestra, immersive audio, robotics |
 
-See **[docs/reference/ecosystem.md](docs/reference/ecosystem.md)** for comprehensive descriptions.
+See **[CHI-CityTech organization](https://github.com/CHI-CityTech)** for comprehensive project repositories.
 
 ---
 
 ## Getting Started
 
 ### For Faculty/PIs
-1. Read **[part_1_operational_management.md](docs/architecture/part_1_operational_management.md)** — understand the three-layer system
+1. Read **[Part 1: Operational Management](docs/architecture/part_1_operational_management.md)** — understand Layer 0 and the operational layers
 2. Use **[PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)** to propose new projects
 3. Store proposals in `/database/proposals/[project_name]/`
 4. Update SQLite metadata with project information
@@ -107,7 +107,7 @@ See **[docs/reference/ecosystem.md](docs/reference/ecosystem.md)** for comprehen
 
 ### For System Integration
 1. Read **[integration_paths.md](docs/reference/integration_paths.md)** for GitHub, OpenLab, WorldAnvil, Zotero guidance
-2. For world-building workflows, see **[WORLDANVIL-WORKFLOW.md](docs/WORLDANVIL-WORKFLOW.md)**
+2. For world-building workflows, see **[worldanvil_workflow.md](docs/reference/worldanvil_workflow.md)**
 
 ---
 
@@ -150,19 +150,25 @@ META-CHIIDS/ (this repository)
 
 ## System Components
 
-### Meta-Project Layer (Permanent)
+### Layer 0: Structural Framework (Permanent)
 **Location:** This repository  
-**Contains:** Proposals, SQLite ontology, dependencies, long-term documentation  
-**Purpose:** Define what each CHI project is and how they relate  
-**Key:** Does not change by semester
+**Contains:** Schema, ontology, META-* Project Class pattern, architectural documentation  
+**Purpose:** Define the structure that all CHI projects conform to  
+**Key:** Agnostic to specific project content; defines the organizational framework
 
-### Research Coordination Layer (Semester-Updated)
+### Layer 1: Meta-Projects (Permanent)
+**Location:** [CHI-CityTech organization](https://github.com/CHI-CityTech)  
+**Contains:** Project definitions, proposals, dependencies, roadmaps  
+**Purpose:** Instantiate the Layer 0 structure with actual CHI initiatives  
+**Key:** Each meta-project follows the META-* Project Class pattern
+
+### Layer 2: Research Coordination (Semester-Updated)
 **Location:** StudentResearch repository  
 **Contains:** Project Cards, student assignments, team memberships, milestones  
-**Purpose:** Connect abstract projects to actual semester work  
+**Purpose:** Connect meta-projects to semester work  
 **Key:** Persistent but refreshed each term
 
-### Execution Layer (Distributed)
+### Layer 3: Execution (Distributed)
 **Location:** Individual team repositories  
 **Contains:** Code, assets, research logs, deliverables  
 **Purpose:** Where actual research and development happens  
@@ -180,7 +186,7 @@ CHIIDS connects to:
 - **Zotero** — Academic references
 - **Specialized tools** — ArcGIS, Airtable, Overleaf, etc.
 
-See **[INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)** for full integration guidance.
+See **[integration_paths.md](docs/reference/integration_paths.md)** for full integration guidance.
 
 ---
 
@@ -280,11 +286,13 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ## For More Information
 
-- **Architecture & Design:** [ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md)
-- **Current Ecosystem:** [ECOSYSTEM.md](docs/ECOSYSTEM.md)
-- **Key Terms:** [GLOSSARY.md](docs/GLOSSARY.md)
-- **External Integration:** [INTEGRATION-PATHS.md](docs/INTEGRATION-PATHS.md)
-- **World-Building:** [WORLDANVIL-WORKFLOW.md](docs/WORLDANVIL-WORKFLOW.md)
+- **Layer 0 Framework:** [Part 1: Operational Management](docs/architecture/part_1_operational_management.md)
+- **Architecture Overview:** [docs/architecture/](docs/architecture/)
+- **Development Roadmap:** [project/ROADMAP.md](project/ROADMAP.md)
+- **Key Terms:** [project/GLOSSARY.md](project/GLOSSARY.md)
+- **External Integration:** [integration_paths.md](docs/reference/integration_paths.md)
+- **World-Building:** [worldanvil_workflow.md](docs/reference/worldanvil_workflow.md)
+- **META-* Templates:** [templates/meta_project_class/](templates/meta_project_class/)
 - **Create a Proposal:** [PROJECT_PROPOSAL_TEMPLATE.md](templates/PROJECT_PROPOSAL_TEMPLATE.md)
 - **Coordinate Research:** [PROJECT_CARD_TEMPLATE.md](templates/PROJECT_CARD_TEMPLATE.md)
 
