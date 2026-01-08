@@ -2,7 +2,7 @@
 
 <img src="assets/ChatGPT_CHIIDS_Logo.png" alt="CHIIDS Logo" width="100" align="right" style="margin-left: 15px; margin-bottom: 15px;"/>
 
-The digital nervous system for the Center for Holistic Integration (CHI) and the Balanced Blended Space (BBS) framework.
+The digital nervous system for the Center for Holistic Integration (CHI) and its family of meta-projects (e.g., Balanced Blended Space (BBS), Blended Reality Performance System (BRPS), Collaborative AI (CAI)).
 
 CHIIDS is a distributed, three-layer digital ecosystem designed to support the entire lifecycle of CHI's meta-projects: from theoretical proposal through active research to long-term archival.
 
@@ -66,7 +66,7 @@ See **[Part 1: Operational Management](docs/architecture/part_1_operational_mana
 
 ## Key Principles
 
-CHIIDS is guided by CHI's core philosophy of _Holistic Integration_ and the _Balanced Blended Space (BBS)_ framework:
+CHIIDS is guided by CHI's core philosophy of _Holistic Integration_ and serves multiple meta-project frameworks (e.g., BBS, BRPS, CAI):
 
 - **Scalability**: Accommodate growing participants, projects, and datasets
 - **Interoperability**: Seamless integration with existing platforms; no redundant systems
