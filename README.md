@@ -202,7 +202,7 @@ CHIIDS integrates with GitHub, StudentResearch, OpenLab, WorldAnvil, Zotero, and
 
 ![CHIIDS V1 System Map showing the four core components - Project Management, Communications, Storage, and Integration with External Systems - and their interconnected subsystems and data flows within the Center for Holistic Integration's digital ecosystem](assets/CHIIDS_V1.jpg)
 
-*Visual representation of the CHIIDS integrated system architecture and component relationships*
+*Visual representation of the CHIIDS integrated system architecture and component relationships. This map mirrors the original specification’s quadrant diagram: CHIIDS at the center with Storage (top), Management (right), Communications (bottom), and Integration (left), each with their dependent categories.*
 
 ---
 
