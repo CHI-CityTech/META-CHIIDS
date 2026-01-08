@@ -91,17 +91,18 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 
 ### 3. Architecture Documentation ✅ IN PROGRESS
 **Deadline:** January 15, 2026  
-**Status:** Part 1 complete, Parts 2-5 outlined, P4 restructured
+**Status:** Repository structure documented, data layer integrated, Parts 2-5 outlined
 
-- [x] Part 1: Operational Management (Layer 0 + Layers 1-3)
-- [x] Clarify projection system analogy
-- [x] Part 4: External Integration (clarified CHIIDS internal vs external)
-- [x] Root README: Mission-driven overview and authority links
-- [x] Original Spec: Move to project/architecture and update references
-- [x] Authority Model: Document directory roles in project/README.md
-- [ ] Complete Part 2: Data Infrastructure (database design, Datasette, frontend architecture)
-- [ ] Complete Part 3: Public Engagement (publishing pipeline, website IA)
-- [ ] Complete Part 5: Archival & Preservation (backup strategy, recovery procedures)
+- [x] Part 1 / ARCHITECTURE.md: GitHub three-layer repository structure
+- [x] Root README: Mission-driven overview with four cornerstones
+- [x] Original Spec: Moved to project/architecture with full diagram
+- [x] Authority Model: Split into canonical rules (project/) + detailed guide (docs/)
+- [x] Data Layer: Database schema, Datasette API, React frontend as Storage + Integration implementation
+- [x] Project Activities: Three-layer integration (meta-projects → semester coordination → team work)
+- [ ] Complete Part 2: Data Infrastructure (full database documentation, disaster recovery)
+- [ ] Complete Part 3: Public Engagement (publishing pipeline, website architecture)
+- [ ] Complete Part 4: External Integration (GitHub automation, Zenodo, Zotero, WorldAnvil)
+- [ ] Complete Part 5: Archival & Preservation (backup strategy, recovery procedures, compliance)
 
 ---
 
@@ -118,6 +119,33 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 - [ ] Add dependency graph visualization (Recharts)
 - [ ] Improve styling and UX
 - [ ] Deploy to Vercel or Netlify
+
+### 4b. AI Agent: Natural Language Query Interface (NEW)
+**Status:** In development by external project team  
+**Owner:** AI/ML Team (external)
+
+**Purpose:** Develop conversational AI agent that serves as front-end authority for natural language queries about projects and research integrations.
+
+**Capabilities:**
+- [ ] Query CHIIDS database to answer human language questions about projects
+- [ ] Understand research integration questions (e.g., "What projects use AR/VR?" "Show me AI-related work")
+- [ ] Provide intelligent recommendations for project collaborations
+- [ ] Navigate project dependencies and explain relationships
+- [ ] Access extended project data (proposals, activity history, team rosters)
+- [ ] Generate summaries of project portfolios and research areas
+
+**Integration Points:**
+- [ ] Consume Datasette API for project queries
+- [ ] Access extended metadata (project_activity, dependencies, proposals)
+- [ ] Integrate with React frontend as alternative discovery interface
+- [ ] Potentially serve as chatbot/assistant component in main application
+
+**Coordination:**
+- [ ] Define API contracts with Datasette (what queries must be fast/reliable)
+- [ ] Establish prompt engineering standards for consistency
+- [ ] Set up evaluation metrics for query accuracy
+- [ ] Plan integration with frontend (embedded vs standalone)
+- [ ] Document use cases and example interactions
 
 ### 5. Project Ideas Pipeline (P1)
 **Owner:** Data Science Student + UX Designer
@@ -213,11 +241,11 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 ## Future Enhancements (Beyond Spring 2026)
 
 ### Advanced Features
-- Natural language search (semantic search across projects)
-- AI-assisted project recommendation
-- Automated dependency detection
+- Semantic search improvements for AI Agent
+- Automated dependency detection from code repositories
 - Cross-project analytics dashboard
 - Research impact visualization
+- Advanced filtering by time-series analysis (project lifecycle tracking)
 
 ### Sustainability
 - Long-term archival strategy implementation
@@ -230,42 +258,74 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 ## Dependencies & Blockers
 
 **Critical Blockers (P0):**
-1. ⚠️ Data science student assignment (needed for database + deployment)
-2. ⚠️ Platform evaluation and decision
-3. ⚠️ Database population with project data
+1. ⚠️ Data science student assignment (needed for database population + Datasette deployment)
+2. ⚠️ Platform evaluation and decision (Vercel vs Fly.io vs Railway vs AWS for Datasette hosting)
+3. ⚠️ Database population with all CHI projects and proposals
+4. ⚠️ Production deployment and migration from local SQLite
+
+**P1 Integration Points:**
+1. Database must be populated before frontend can display real data
+2. Project activities table must be synced with StudentResearch for semester tracking
+3. AI Agent project depends on stable Datasette API with documented contracts
+4. Dependency graph depends on complete project relationship mapping
 
 **Medium Priority:**
-1. Frontend developer availability
-2. CUNY Academic Works API access
-3. Zenodo API credentials
+1. Frontend developer availability for React enhancements
+2. CUNY Academic Works API access for publication integration
+3. Zenodo API credentials for research output archival
+4. WorldAnvil API integration specifications
 
 **Low Priority:**
-1. WorldAnvil integration specifications
-2. Social media automation decisions
+1. Social media automation decisions
+2. OJS deployment timeline
+3. External repository scanning edge cases
 
 ---
 
 ## Success Metrics
 
 **Phase P0 (Bootstrap):**
-- [ ] Database populated with all projects
-- [ ] Datasette API publicly accessible
-- [ ] Basic documentation complete
+- [ ] Database populated with all CHI projects and proposals
+- [ ] Datasette API publicly accessible and documented
+- [ ] Architecture documentation complete through Part 2
+- [ ] Data layer fully integrated with project activities
 
-**Phase P1 (Frontend):**
-- [ ] Working frontend deployed
-- [ ] Users can browse and search projects
-- [ ] Dependency graph functional
+**Phase P1 (Frontend & Discovery):**
+- [ ] Working frontend deployed with search/filter/details
+- [ ] Users can browse and filter projects
+- [ ] Dependency graph visualization functional
+- [ ] AI Agent can answer natural language queries about projects
+- [ ] Ideas pipeline operational
 
-**Phase P2 (Integration):**
-- [ ] GitHub automation running
-- [ ] External systems connected
-- [ ] Data flows automatically
+**Phase P2 (Integration & Automation):**
+- [ ] GitHub automation running for data synchronization
+- [ ] External systems connected (Zenodo, Zotero, CUNY systems)
+- [ ] Project activity synced with StudentResearch
+- [ ] Data flows automatically across layers
 
-**Phase P3 (Publishing):**
+**Phase P3 (Publishing & Sustainability):**
 - [ ] Public engagement pipeline operational
-- [ ] Documentation comprehensive
-- [ ] System self-sustaining
+- [ ] Documentation comprehensive and maintained
+- [ ] System self-sustaining with clear ownership
+- [ ] Backup and recovery procedures tested
+
+---
+
+## Integrated Objective Summary
+
+CHIIDS aims to implement a complete meta-project management system with these integrated objectives:
+
+1. **Data Management** (P0): SQLite database capturing project ontology, proposals, activities, and dependencies
+2. **Public API** (P0): Datasette providing standardized JSON interface for programmatic access
+3. **User Discovery** (P1): React frontend for browsing, searching, and understanding projects
+4. **Natural Language Interface** (P1): AI Agent for conversational queries about research integrations
+5. **Three-Layer Integration** (P0-P2): Connect meta-project definitions → semester coordination → execution repositories
+6. **Automation** (P2): GitHub scanning, data ingestion, and synchronization
+7. **External Integration** (P2-P3): Zenodo, Zotero, CUNY systems, WorldAnvil
+8. **Publishing** (P3): Public engagement pipeline from project data to public-facing content
+9. **Preservation** (P3-P5): Long-term archival, backup, and recovery strategies
+
+All components work together to support CHI's mission of **holistic integration** across diverse projects, participants, and systems.
 
 ---
 
