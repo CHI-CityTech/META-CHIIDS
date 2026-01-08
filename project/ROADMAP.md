@@ -14,18 +14,62 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 
 ## P0: Critical Path (Deadline: Jan 31, 2026)
 
+### 0. Data Source & Schema Planning ⚠️ **PREREQUISITE**
+**Deadline:** January 15, 2026  
+**Owner:** Project Lead + Data Science Student
+
+**Data Source Inventory:**
+- [ ] Document all project idea list locations and formats
+- [ ] Identify all CHI-CityTech GitHub repos to ingest
+- [ ] List external repositories requiring linking
+- [ ] Map ROADMAP file locations across all repos
+- [ ] Locate proposal storage (Google Docs, repo, etc.) - DECISION NEEDED
+- [ ] Define metadata extraction rules per source type
+
+**Schema Extensions:**
+- [ ] Add `maturity_level` column (idea/sketch/proposal/active/completed/archived)
+- [ ] Add `priority` column (blocker/high/medium/low)
+- [ ] Create `proposals` table (title, description, source_url, type, status)
+- [ ] Create `project_proposals` junction table
+- [ ] Create views for filtering by maturity/priority
+- [ ] Document all new schema changes
+
+**Decisions Required:**
+- [ ] Where do proposals live? (distributed per-project vs centralized repo)
+- [ ] How are ideas submitted? (web form, GitHub issues, Google Docs)
+- [ ] Who can create ideas/proposals? (open vs restricted)
+- [ ] Approval workflow for promoting ideas → projects
+
 ### 1. Database Population & Access ⚠️ **BLOCKER**
 **Deadline:** January 20, 2026  
 **Owner:** Data Science Student (to be assigned)
 
-- [ ] Populate SQLite database with all CHI meta-projects
-- [ ] Add project relationships, dependencies, and tags
-- [ ] Validate schema integrity
-- [ ] Document data entry procedures
+**Automated Ingestion Agent:**
+- [ ] Build GitHub org scanner to extract repo metadata
+- [ ] Parse README.md, project/ROADMAP.md, project/GOVERNANCE.md from each repo
+- [ ] Extract project data: name, domain, type, description, lead_contact, repository_url
+- [ ] Parse ROADMAP files to identify planned/proposed projects
+- [ ] Map project dependencies from documentation
+- [ ] Import project ideas from designated ideas location
+- [ ] Validate all imported data against schema
+- [ ] Handle conflicts/duplicates in merge process
+- [ ] Create rollback procedure for bad imports
+
+**Manual Data Entry (if needed):**
+- [ ] Define procedure for adding projects not in GitHub
+- [ ] Create CSV import format for batch uploads
+- [ ] Document approval process before import
+
+**Verification:**
+- [ ] Validate schema integrity for all imported data
+- [ ] Check dependency relationships are valid
+- [ ] Verify all tag references exist
+- [ ] Document data quality metrics
 
 **Blockers:**
 - No data science student assigned yet
-- Database currently empty except seed data
+- Proposal storage location not yet decided
+- Data source inventory not yet complete
 
 ### 2. Datasette Public Deployment ⚠️ **BLOCKER**
 **Deadline:** January 31, 2026  
@@ -36,6 +80,9 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 - [ ] Configure CORS for frontend consumption
 - [ ] Set up automated backups
 - [ ] Create basic API documentation
+- [ ] Configure canned queries for common reports
+- [ ] Set up monitoring/uptime alerts
+- [ ] Document disaster recovery procedures
 
 **Blockers:**
 - Platform evaluation not started
@@ -44,58 +91,103 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 
 ### 3. Architecture Documentation ✅ IN PROGRESS
 **Deadline:** January 15, 2026  
-**Status:** Part 1 complete, Parts 2-5 outlined
+**Status:** Part 1 complete, Parts 2-5 outlined, P4 restructured
 
 - [x] Part 1: Operational Management (Layer 0 + Layers 1-3)
 - [x] Clarify projection system analogy
-- [ ] Complete Part 2: Data Infrastructure
-- [ ] Complete Part 3: Public Engagement
-- [ ] Complete Part 4: External Integration
-- [ ] Complete Part 5: Archival & Preservation
+- [x] Part 4: External Integration (clarified CHIIDS internal vs external)
+- [ ] Complete Part 2: Data Infrastructure (database design, Datasette, frontend architecture)
+- [ ] Complete Part 3: Public Engagement (publishing pipeline, website IA)
+- [ ] Complete Part 5: Archival & Preservation (backup strategy, recovery procedures)
 
 ---
 
-## P1: Frontend & Visualization (Feb 2026)
+## P1: Frontend & Ideas Pipeline (Feb 2026)
 
-### 4. React Frontend Development
-**Owner:** Data Science Student + Frontend Developer
+### 4. React Frontend Development ✅ WORKING
+**Status:** Connected to Datasette, displaying 14 seed projects
+**Owner:** Frontend Developer + Data Science Student
 
-- [ ] Build React + Vite frontend
-- [ ] Connect to Datasette JSON API
-- [ ] Implement project list with search/filters
-- [ ] Create project detail pages
+- [x] Build React + Vite frontend
+- [x] Connect to Datasette JSON API (with _shape=objects)
+- [x] Implement project list with search/filters
+- [x] Create project detail pages
 - [ ] Add dependency graph visualization (Recharts)
+- [ ] Improve styling and UX
 - [ ] Deploy to Vercel or Netlify
 
-### 5. Dependency Graph Visualization
+### 5. Project Ideas Pipeline (P1)
+**Owner:** Data Science Student + UX Designer
+
+**Ideas Management:**
+- [ ] Add `maturity_level` field to schema (idea/sketch/proposal/active/completed/archived)
+- [ ] Build ideas submission form (name, domain, description, tags)
+- [ ] Create ideas browser interface (separate from active projects)
+- [ ] Filter/search ideas by domain, tags, maturity
+- [ ] Show idea status: under_review, approved, rejected, implemented
+
+**Promotion Workflow:**
+- [ ] Admin panel to review ideas
+- [ ] Approve idea → create project with maturity=proposal
+- [ ] Reject idea with reasoning
+- [ ] Convert approved idea to GitHub issue in StudentResearch
+- [ ] Track lifecycle: idea → proposal → active → completed/archived
+
+**Priority System:**
+- [ ] Add `priority` column (blocker/high/medium/low)
+- [ ] Display priority in project list
+- [ ] Filter by priority
+- [ ] Block other projects when dependency is blocker
+
+**Proposals Tracking:**
+- [ ] Create proposals table (with source tracking)
+- [ ] Link proposals to projects
+- [ ] Show proposal status (under_review, approved, implemented)
+- [ ] Display proposal documents as external links
+- [ ] Extract proposals from ROADMAP files automatically
+- [ ] Support manual proposal submission
+
+### 6. Dependency Graph Visualization
 **Owner:** Data Science Student
 
 - [ ] Design graph layout algorithm
-- [ ] Implement interactive visualization
+- [ ] Implement interactive visualization (Recharts or D3)
 - [ ] Show primary parents and secondary dependencies
-- [ ] Add filtering by domain/type/status
+- [ ] Add filtering by domain/type/status/priority
+- [ ] Highlight blocker dependencies in red
+- [ ] Click to drill into related projects
 
 ---
 
 ## P2: Integration & Automation (Mar 2026)
 
-### 6. GitHub Integration & Project Hierarchy
-- [ ] GitHub Actions for schema validation
-- [ ] Auto-sync StudentResearch data
-- [ ] Generate project reports
-- [ ] Build catalog from metadata
-- [ ] **Clarify project hierarchy generation workflow:**
-  - [ ] Determine if `generate_hierarchy.yml` workflow should live in META-CHIIDS or CHI-CityTech repo
-  - [ ] Document seed data sourcing (CHI data dump) vs live database transition
-  - [ ] Plan migration of hierarchy report from static markdown to Datasette view
-  - [ ] Establish when/how hierarchy generation runs (on every push, scheduled, manual)
-- [ ] **Organize StudentResearch repository** (currently exists but needs structure)
+### 7. GitHub Integration & Project Hierarchy
+**Owner:** Data Science Student + DevOps
 
-### 7. External System Integration
+**Project Hierarchy Workflow:**
+- [ ] Determine if `generate_hierarchy.yml` lives in META-CHIIDS or CHI-CityTech repo
+- [ ] Document seed data sourcing (CHI data dump) vs live database transition
+- [ ] Plan migration of hierarchy report from static markdown to Datasette view
+- [ ] Establish generation schedule (on push, scheduled, manual trigger)
+
+**GitHub Org Scanning:**
+- [ ] Scan CHI-CityTech org for all repositories
+- [ ] Extract metadata from each repo (README, ROADMAP, etc.)
+- [ ] Build reverse-mapping: GitHub repo → CHIIDS project_id
+- [ ] Auto-update repository_url field when repos are renamed/moved
+- [ ] Handle external repos requiring linking
+
+**StudentResearch Integration:**
+- [ ] Organize StudentResearch repository structure
+- [ ] Link semester activity to projects
+- [ ] Sync team assignments to project_activity table
+- [ ] Auto-create/update issue templates for projects
+
+### 8. External System Integration
 - [ ] CUNY Academic Works API connection
 - [ ] Zenodo DOI assignment workflow
 - [ ] WorldAnvil synchronization (if applicable)
-- [ ] Zotero bibliography integration
+- [ ] Zotero bibliography integration (query collections, sync citations)
 
 ---
 
