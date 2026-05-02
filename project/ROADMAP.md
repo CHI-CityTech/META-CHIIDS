@@ -27,7 +27,7 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 - [ ] Identify all CHI-CityTech GitHub repos to ingest
 - [ ] List external repositories requiring linking
 - [ ] Map ROADMAP file locations across all repos
-- [ ] Locate proposal storage (Google Docs, repo, etc.) - DECISION NEEDED
+- [x] Locate proposal storage: grant solicitations and grant-writing operations live in `CHI-Grants`; canonical proposal metadata and project linkage live in `META-CHIIDS`
 - [ ] Define metadata extraction rules per source type
 
 **Schema Extensions:**
@@ -39,7 +39,7 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 - [ ] Document all new schema changes
 
 **Decisions Required:**
-- [ ] Where do proposals live? (distributed per-project vs centralized repo)
+- [x] Where do proposals live? Centralized model: `CHI-Grants` for operational solicitation/grant materials; `META-CHIIDS` for canonical proposal records and cross-project linkage
 - [ ] How are ideas submitted? (web form, GitHub issues, Google Docs)
 - [ ] Who can create ideas/proposals? (open vs restricted)
 - [ ] Approval workflow for promoting ideas → projects
@@ -72,7 +72,7 @@ CHIIDS is in critical bootstrap phase, establishing foundational infrastructure 
 
 **Blockers:**
 - No data science student assigned yet
-- Proposal storage location not yet decided
+- Proposal operating model decided; schema and ingestion implementation still pending
 - Data source inventory not yet complete
 
 ### 2. Datasette Public Deployment ⚠️ **BLOCKER**

@@ -20,8 +20,10 @@ Version control, project management, issue tracking, automation.
 ### How CHIIDS Uses GitHub
 
 **Proposal Storage**
-- All project proposals live in the META-CHIIDS repository (`/database/` and individual project files)
-- Versioned and auditable
+- `META-CHIIDS` is the canonical home for proposal metadata, project linkage, and lifecycle tracking
+- `CHI-Grants` is the operational home for grant solicitations, sponsor requirements, budget drafts, and shared grant-writing workflow
+- Individual project repositories may reference proposal or solicitation records, but they should not be the authoritative home for cross-project grant materials
+- Versioned and auditable through linked records across the CHI organization
 
 **Project Management**
 - GitHub Issues and Project Boards track milestones, tasks, and dependencies
@@ -45,6 +47,7 @@ Version control, project management, issue tracking, automation.
 ### Best Practices
 - Label issues with both project name and semester (e.g., `BSP`, `Fall2025`)
 - Link proposal files in issue descriptions when discussing implementation
+- Store grant call packages and solicitation-specific working files in `CHI-Grants`, then link the relevant CHIIDS proposal record
 - Use GitHub Discussions for cross-project or meta-project conversations
 - Archive closed issues yearly for historical reference
 
