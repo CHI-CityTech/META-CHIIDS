@@ -6,6 +6,12 @@ This folder contains the initial proposal and planning documents for the CHI rel
 
 It is the documentation home for defining what the backend should do, how it should be structured, and what references support the work.
 
+## Current Thrust And Student
+
+- Current thrust: Implementation of the CHI relational research project database backend, with emphasis on schema definition, automated ingestion, provenance tracking, and a stable read-only API.
+- Student researcher: Hosain Ali.
+- Term: Spring 2026.
+
 ## What Is In This Folder
 
 - [INITIAL_PROPOSAL.md](INITIAL_PROPOSAL.md): Original initial proposal (reconciled SoW baseline for Spring 2026).
